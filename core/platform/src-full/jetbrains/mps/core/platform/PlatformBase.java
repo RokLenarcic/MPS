@@ -44,6 +44,21 @@ class PlatformBase implements Platform {
   private final Deque<ComponentPlugin2> myComponentPlugins = new ArrayDeque<>();
 
   PlatformBase(PlatformOptionsBuilder options) {
+  }
+
+  @Override
+  public <T extends CoreComponent> T findComponent(@NotNull Class<T> componentClass) {
+    // myComponentPlugins is a stack, but we would like to consult core plugins first
+    for (Iterator<ComponentPlugin2> it = myComponentPlugins.descendingIterator(); it.hasNext();) {
+      final ComponentPlugin2 cp = it.next();
+      if (cp instanceof ComponentHost) {
+        T rv = ((ComponentHost) cp).findComponent(componentClass);
+        if (rv != null) {
+          return rv;
+        }
+      }
+
+    }
     MPSCore myCore = initAndRegister(new MPSCore());
     if (options.loadsPersistence()) {
       initAndRegister(new MPSPersistence(myCore));
@@ -77,20 +92,7 @@ class PlatformBase implements Platform {
         }
       }.run();
     }
-  }
 
-  @Override
-  public <T extends CoreComponent> T findComponent(@NotNull Class<T> componentClass) {
-    // myComponentPlugins is a stack, but we would like to consult core plugins first
-    for (Iterator<ComponentPlugin2> it = myComponentPlugins.descendingIterator(); it.hasNext();) {
-      final ComponentPlugin2 cp = it.next();
-      if (cp instanceof ComponentHost) {
-        T rv = ((ComponentHost) cp).findComponent(componentClass);
-        if (rv != null) {
-          return rv;
-        }
-      }
-    }
     return null;
   }
 
