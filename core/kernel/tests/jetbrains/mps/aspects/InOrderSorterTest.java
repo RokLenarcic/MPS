@@ -28,10 +28,10 @@ import java.util.Random;
 
 public class InOrderSorterTest {
 
-  public static class MyOrdered implements OrderParticipant<String> {
+  public static class MyOrdered implements OrderParticipant2<String> {
     private String myId;
-    private List<OrderParticipant<String>> myPrevious = new ArrayList<>();
-    private List<OrderParticipant<String>> myNext = new ArrayList<>();
+    private List<OrderParticipant2<String>> myPrevious = new ArrayList<>();
+    private List<OrderParticipant2<String>> myNext = new ArrayList<>();
     MyOrdered(String id) {
       myId = id;
     }
@@ -46,7 +46,7 @@ public class InOrderSorterTest {
       return myId;
     }
     @Override
-    public int compareTo(@NotNull OrderParticipant<String> o) {
+    public int compareTo(@NotNull OrderParticipant2<String> o) {
       if (myPrevious.contains(o)) {
         return 1;
       }

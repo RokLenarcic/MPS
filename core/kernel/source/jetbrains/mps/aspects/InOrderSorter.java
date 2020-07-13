@@ -24,7 +24,7 @@ import java.util.Collection;
 import java.util.Comparator;
 import java.util.List;
 
-public class InOrderSorter<T extends OrderParticipant<String>> {
+public class InOrderSorter<T extends OrderParticipant2<String>> {
   private Collection<T> myItems;
 
   public InOrderSorter(Collection<T> items) {
@@ -63,7 +63,7 @@ public class InOrderSorter<T extends OrderParticipant<String>> {
       } while (changed);
     }
     ArrayList<T> items = new ArrayList<>(myItems);
-    items.sort(Comparator.comparing(OrderParticipant::getId));
+    items.sort(Comparator.comparing(OrderParticipant2::getId));
     ArrayList<T> sorted = new ArrayList<>();
     while (!items.isEmpty()) {
       boolean changed = false;

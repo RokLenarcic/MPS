@@ -21,7 +21,7 @@
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.aspects.OrderDescriptor" />
-    <classNode dependClassName="jetbrains.mps.aspects.OrderParticipant" />
+    <classNode dependClassName="jetbrains.mps.aspects.OrderParticipant2" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
