@@ -98,7 +98,7 @@ public class DirectoryIndexExcludeUpdater extends AbstractProjectComponent {
     ApplicationManager.getApplication().removeApplicationListener(myListener);
     myConnection.disconnect();
     final SRepository repository = getRepository();
-    repository.getModelAccess().runReadAction(() -> myRepositoryListener.unsubscribeFrom(repository));
+    repository.getModelAccess().runReadAction(() -> myRepositoryListener.unsubscribeFrom2(repository));
   }
 
   private SRepository getRepository() {

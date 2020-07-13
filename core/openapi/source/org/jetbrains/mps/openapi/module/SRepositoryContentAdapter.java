@@ -46,7 +46,7 @@ public class SRepositoryContentAdapter extends SModuleListenerBase implements
     repository.addRepositoryListener(this);
   }
 
-  public void unsubscribeFrom(SRepository repository) {
+  public void unsubscribeFrom2(SRepository repository) {
     repository.getModelAccess().checkReadAccess();
     repository.removeRepositoryListener(this);
   }

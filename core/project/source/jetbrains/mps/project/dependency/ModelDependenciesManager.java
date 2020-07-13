@@ -242,7 +242,7 @@ public class ModelDependenciesManager {
 
     public void dispose() {
       myIsDisposed = true;
-      unsubscribeFrom(myRepository);
+      unsubscribeFrom2(myRepository);
     }
   }
 }

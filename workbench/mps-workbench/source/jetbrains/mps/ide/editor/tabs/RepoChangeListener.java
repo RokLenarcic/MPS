@@ -61,7 +61,7 @@ class RepoChangeListener extends SRepositoryContentAdapter implements ProjectCom
   @Override
   public void projectClosed() {
     if (myProject != null) {
-      myProject.getRepository().getModelAccess().runReadAction(() -> unsubscribeFrom(myProject.getRepository()));
+      myProject.getRepository().getModelAccess().runReadAction(() -> unsubscribeFrom2(myProject.getRepository()));
     }
     myChangedRoots.clear();
     myTabsComponents.clear();
