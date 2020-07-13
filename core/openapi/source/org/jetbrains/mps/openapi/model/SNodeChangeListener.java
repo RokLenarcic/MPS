@@ -16,7 +16,7 @@
 package org.jetbrains.mps.openapi.model;
 
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.event.SNodeAddEvent;
+import org.jetbrains.mps.openapi.event.SNodeAddEvent2;
 import org.jetbrains.mps.openapi.event.SNodeRemoveEvent;
 import org.jetbrains.mps.openapi.event.SPropertyChangeEvent;
 import org.jetbrains.mps.openapi.event.SReferenceChangeEvent;
@@ -35,6 +35,6 @@ import org.jetbrains.mps.openapi.event.SReferenceChangeEvent;
 public interface SNodeChangeListener {
   void propertyChanged(@NotNull SPropertyChangeEvent event);
   void referenceChanged(@NotNull SReferenceChangeEvent event);
-  void nodeAdded(@NotNull SNodeAddEvent event);
+  void nodeAdded(@NotNull SNodeAddEvent2 event);
   void nodeRemoved(@NotNull SNodeRemoveEvent event);
 }

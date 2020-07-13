@@ -17,7 +17,7 @@ package jetbrains.mps.smodel.impl;
 
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.event.SNodeAddEvent;
+import org.jetbrains.mps.openapi.event.SNodeAddEvent2;
 import org.jetbrains.mps.openapi.event.SNodeRemoveEvent;
 import org.jetbrains.mps.openapi.event.SPropertyChangeEvent;
 import org.jetbrains.mps.openapi.event.SReferenceChangeEvent;
@@ -128,7 +128,7 @@ public final class StructureAspectChangeTracker extends SRepositoryListenerBase 
   }
 
   @Override
-  public void nodeAdded(@NotNull SNodeAddEvent event) {
+  public void nodeAdded(@NotNull SNodeAddEvent2 event) {
     structureModelChanged(event.getModel());
   }
 

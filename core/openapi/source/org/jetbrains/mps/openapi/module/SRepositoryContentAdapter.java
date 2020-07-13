@@ -16,7 +16,7 @@
 package org.jetbrains.mps.openapi.module;
 
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.event.SNodeAddEvent;
+import org.jetbrains.mps.openapi.event.SNodeAddEvent2;
 import org.jetbrains.mps.openapi.event.SNodeReadEvent;
 import org.jetbrains.mps.openapi.event.SNodeRemoveEvent;
 import org.jetbrains.mps.openapi.event.SPropertyChangeEvent;
@@ -224,7 +224,7 @@ public class SRepositoryContentAdapter extends SModuleListenerBase implements
   public void referenceChanged(@NotNull SReferenceChangeEvent event) {}
 
   @Override
-  public void nodeAdded(@NotNull SNodeAddEvent event) {}
+  public void nodeAdded(@NotNull SNodeAddEvent2 event) {}
 
   @Override
   public void nodeRemoved(@NotNull SNodeRemoveEvent event) {}

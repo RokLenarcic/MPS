@@ -36,7 +36,7 @@ import org.apache.log4j.Logger;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.event.SNodeAddEvent;
+import org.jetbrains.mps.openapi.event.SNodeAddEvent2;
 import org.jetbrains.mps.openapi.event.SNodeRemoveEvent;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.EditableSModel;
@@ -90,7 +90,7 @@ public class LanguageDescriptorModelProvider extends DescriptorModelProvider {
     }
 
     @Override
-    public void nodeAdded(@NotNull SNodeAddEvent event) {
+    public void nodeAdded(@NotNull SNodeAddEvent2 event) {
       if (!event.isRoot()) {
         return;
       }

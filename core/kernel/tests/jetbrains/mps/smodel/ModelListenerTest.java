@@ -23,7 +23,7 @@ import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.event.SNodeAddEvent;
+import org.jetbrains.mps.openapi.event.SNodeAddEvent2;
 import org.jetbrains.mps.openapi.event.SNodeReadEvent;
 import org.jetbrains.mps.openapi.event.SNodeRemoveEvent;
 import org.jetbrains.mps.openapi.event.SPropertyChangeEvent;
@@ -912,7 +912,7 @@ public class ModelListenerTest {
     public final List<String> myChangedReferences = new ArrayList<String>();
 
     @Override
-    public void nodeAdded(@NotNull SNodeAddEvent event) {
+    public void nodeAdded(@NotNull SNodeAddEvent2 event) {
       myAdded.add(event.getChild());
     }
 

@@ -140,7 +140,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.event.SNodeAddEvent" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.event.SNodeAddEvent2" />
     <classNode dependClassName="org.jetbrains.mps.openapi.event.SNodeRemoveEvent" />
     <classNode dependClassName="org.jetbrains.mps.openapi.event.SReferenceChangeEvent" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />

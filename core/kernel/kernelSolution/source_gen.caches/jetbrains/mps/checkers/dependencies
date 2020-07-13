@@ -200,7 +200,7 @@
     <classNode dependClassName="jetbrains.mps.util.containers.MultiMap" />
     <classNode dependClassName="jetbrains.mps.util.containers.SetBasedMultiMap" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.event.SNodeAddEvent" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.event.SNodeAddEvent2" />
     <classNode dependClassName="org.jetbrains.mps.openapi.event.SNodeRemoveEvent" />
     <classNode dependClassName="org.jetbrains.mps.openapi.event.SPropertyChangeEvent" />
     <classNode dependClassName="org.jetbrains.mps.openapi.event.SReferenceChangeEvent" />

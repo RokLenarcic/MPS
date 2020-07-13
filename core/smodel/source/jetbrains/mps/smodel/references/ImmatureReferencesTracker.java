@@ -17,7 +17,7 @@ package jetbrains.mps.smodel.references;
 
 import jetbrains.mps.smodel.StaticReference;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.event.SNodeAddEvent;
+import org.jetbrains.mps.openapi.event.SNodeAddEvent2;
 import org.jetbrains.mps.openapi.event.SNodeRemoveEvent;
 import org.jetbrains.mps.openapi.event.SReferenceChangeEvent;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -97,7 +97,7 @@ public class ImmatureReferencesTracker {
     }
 
     @Override
-    public void nodeAdded(@NotNull SNodeAddEvent event) {
+    public void nodeAdded(@NotNull SNodeAddEvent2 event) {
       for (SNode n: SNodeUtil.getDescendants(event.getChild())){
         for (org.jetbrains.mps.openapi.model.SReference r : n.getReferences()) {
           checkAndAddNewRef(r);

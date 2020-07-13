@@ -29,19 +29,19 @@ import org.jetbrains.mps.openapi.model.SNode;
  * @author Artem Tikhomirov
  */
 @Immutable
-public final class SNodeAddEvent extends AbstractModelChangeEvent {
+public final class SNodeAddEvent2 extends AbstractModelChangeEvent {
   private final SModel myModel;
   private final SNode myParent;
   private final SNode myChild;
   private final SContainmentLink myLink;
 
-  public SNodeAddEvent(@NotNull SModel model, @NotNull SNode node) {
+  public SNodeAddEvent2(@NotNull SModel model, @NotNull SNode node) {
     myModel = model;
     myChild = node;
     myParent = null;
     myLink = null;
   }
-  public SNodeAddEvent(@NotNull SModel model, @NotNull SNode parent, @NotNull SNode child, @NotNull SContainmentLink link) {
+  public SNodeAddEvent2(@NotNull SModel model, @NotNull SNode parent, @NotNull SNode child, @NotNull SContainmentLink link) {
     myModel = model;
     myParent = parent;
     myChild = child;
