@@ -228,7 +228,7 @@ public class ModelOutputStream extends DataOutputStream {
       writeShort(myLanguage2Index.get(id));
     } else {
       writeByte(LANGUAGE);
-      writeUUID(id.getIdValue());
+      writeUUID(id.getValll());
       writeString(lang.getQualifiedName());
       myLanguage2Index.put(id, myLanguageIndex++);
     }
@@ -245,7 +245,7 @@ public class ModelOutputStream extends DataOutputStream {
       writeShort(myConcept2Index.get(id));
     } else {
       writeByte(CONCEPT);
-      writeUUID(id.getLanguageId().getIdValue());
+      writeUUID(id.getLanguageId().getValll());
       writeLong(id.getIdValue());
       writeString(concept.getQualifiedName()); // FIXME MetaAdapterFactory shall be explicit about what concept name it takes
       myConcept2Index.put(id, myConceptIndex++);

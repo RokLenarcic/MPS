@@ -113,7 +113,7 @@ public final class SModelLegacy {
     //   [artem] I have no idea what the comment above is talking about (comes from 6ccc1cf020c2ee9e093f25ae2e83d977a9410799),
     //   engaged languages would rather cease altogether than got replaced with generators.
     SLanguageId id = MetaIdHelper.getLanguage(lang);
-    ModuleId moduleId = ModuleId.regular(id.getIdValue());
+    ModuleId moduleId = ModuleId.regular(id.getValll());
     return new ModuleReference(name, moduleId);
   }
 
