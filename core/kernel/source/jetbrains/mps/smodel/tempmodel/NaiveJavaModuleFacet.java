@@ -100,7 +100,7 @@ public final class NaiveJavaModuleFacet implements JavaModuleFacet {
   }
 
   @Override
-  public void save(Memento memento) {
+  public void save2(Memento memento) {
     throw new UnsupportedOperationException();
   }
 

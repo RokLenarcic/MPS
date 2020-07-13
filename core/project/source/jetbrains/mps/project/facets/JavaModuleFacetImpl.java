@@ -181,8 +181,8 @@ public class JavaModuleFacetImpl extends ModuleFacetBase implements JavaModuleFa
   }
 
   @Override
-  public void save(Memento memento) {
-    super.save(memento);
+  public void save2(Memento memento) {
+    super.save2(memento);
     if (myJavaLanguageLevel != null) {
       memento.put(JAVA_LANGUAGE_LEVEL, myJavaLanguageLevel.name());
     }

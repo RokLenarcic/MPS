@@ -48,7 +48,7 @@ public class UnknownFacet implements SModuleFacet {
   }
 
   @Override
-  public void save(Memento memento) {
+  public void save2(Memento memento) {
   }
 
   @Override

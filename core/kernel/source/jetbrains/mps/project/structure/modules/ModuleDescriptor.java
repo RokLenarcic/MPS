@@ -161,7 +161,7 @@ public class ModuleDescriptor implements CopyableDescriptor<ModuleDescriptor>  {
     removeFacetDescriptor(facet);
     final ModuleFacetDescriptor fd = new ModuleFacetDescriptor(facet.getFacetType(), new MementoImpl());
     // write defaults or actual values, if any
-    facet.save(fd.getMemento());
+    facet.save2(fd.getMemento());
     myFacets.add(fd);
   }
 
@@ -198,7 +198,7 @@ public class ModuleDescriptor implements CopyableDescriptor<ModuleDescriptor>  {
   public final void updateFacetDescriptor(@NotNull SModuleFacet facet) {
     for (ModuleFacetDescriptor facetDescriptor : myFacets) {
       if (facetDescriptor.getType().equals(facet.getFacetType())) {
-        facet.save(facetDescriptor.getMemento());
+        facet.save2(facetDescriptor.getMemento());
         break;
       }
     }

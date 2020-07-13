@@ -89,7 +89,7 @@ public abstract class ModuleFacetBase implements SModuleFacet {
 
 
   @Override
-  public void save(Memento memento) {
+  public void save2(Memento memento) {
     // no-op
   }
 
