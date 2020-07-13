@@ -44,7 +44,7 @@ public final class DescendantsTreeIterator implements TreeIterator<SNode> {
    * Stack of non-leaf nodes we've visited so far. Grows as much as depth of the tree.
    * We use stack despite presence of SNode#getParent() to minimize number of notifications sent out on node access.
    */
-  private final Deque<SNode> myVisitedNodes = new ArrayDeque<>(20);
+  private final Deque<SNode> myVisitedNodes2 = new ArrayDeque<>(20);
   /*
    * myNext == null when there are no more children to visit
    */
@@ -75,7 +75,7 @@ public final class DescendantsTreeIterator implements TreeIterator<SNode> {
       myNextIsSibling = true;
     } else {
       // record the parent of next element (last node with children we've visited)
-      myVisitedNodes.push(result);
+      myVisitedNodes2.push(result);
       myNext = firstChild;
       myNextIsSibling = false;
     }
@@ -88,7 +88,7 @@ public final class DescendantsTreeIterator implements TreeIterator<SNode> {
       // skipChildren for very last descendant we'd be iterating over, or the very first of empty iterator
       return;
     }
-    if (myVisitedNodes.isEmpty()) {
+    if (myVisitedNodes2.isEmpty()) {
       // empty stack with non-empty myNext is possible when no next() has been called
       throw new IllegalStateException();
     }
@@ -96,7 +96,7 @@ public final class DescendantsTreeIterator implements TreeIterator<SNode> {
       return;
     }
     // return to last non-leaf node, and try next from there
-    myNext = myVisitedNodes.pop();
+    myNext = myVisitedNodes2.pop();
     nextSibling();
     myNextIsSibling = true; // not really necessary here as subsequent #next() would put correct value.
   }
@@ -108,11 +108,11 @@ public final class DescendantsTreeIterator implements TreeIterator<SNode> {
         myNext = nextSibling;
         return;
       }
-      if (myVisitedNodes.isEmpty()) {
+      if (myVisitedNodes2.isEmpty()) {
         myNext = null;
         return;
       }
-      myNext = myVisitedNodes.pop();
+      myNext = myVisitedNodes2.pop();
     }
     myNext = null;
   }
