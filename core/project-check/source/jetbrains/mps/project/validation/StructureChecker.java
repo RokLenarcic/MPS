@@ -106,14 +106,14 @@ public class StructureChecker extends AbstractNodeCheckerInEditor implements ICh
       ChildCardinalityContext context = new ChildCardinalityContext(node, link, children);
       if (!link.isOptional() && children.isEmpty()) {
         InConceptProblem problem =  new InConceptProblem(concept, PredefinedStructureProblemKind.NO_CHILD_IN_OBLIGATORY_ROLE, null);
-        List<String> messages = facade.findTextMessagesForProblem(concept, problem, context);
+        List<String> messages = facade.findTextMessagesForProblem2(concept, problem, context);
         for (String message : messages) {
           errorsCollector.addError(new ConceptFeatureCardinalityError(node.getReference(), link, message));
         }
       }
       if (!link.isMultiple() && children.size() > 1) {
         InConceptProblem problem =  new InConceptProblem(concept, PredefinedStructureProblemKind.ONLY_ONE_CHILD_CAN_BE_IN_ROLE, null);
-        List<String> messages = facade.findTextMessagesForProblem(concept, problem, context);
+        List<String> messages = facade.findTextMessagesForProblem2(concept, problem, context);
         for (String message : messages) {
           errorsCollector.addError(new ConceptFeatureCardinalityError(node.getReference(), link, message));
         }
@@ -125,7 +125,7 @@ public class StructureChecker extends AbstractNodeCheckerInEditor implements ICh
         if (reference == null) {
           RefCardinalityContext context = new RefCardinalityContext(node, refLink, null);
           InConceptProblem problem =  new InConceptProblem(concept, PredefinedStructureProblemKind.NO_REF_IN_OBLIGATORY_ROLE, null);
-          List<String> messages = facade.findTextMessagesForProblem(concept, problem, context);
+          List<String> messages = facade.findTextMessagesForProblem2(concept, problem, context);
           for (String message : messages) {
             errorsCollector.addError(new ConceptFeatureCardinalityError(node.getReference(), refLink, message));
           }
@@ -167,7 +167,7 @@ public class StructureChecker extends AbstractNodeCheckerInEditor implements ICh
         assert link != null : "non-root node is supposed to have proper aggregation";
         FeedbackAspectRegistry registry = getFeedbackAspectRegistry();
         MessagesFacade facade = new MessagesFacade(registry);
-        List<String> messages = facade.findTextMessagesForProblem(concept, problem, context);
+        List<String> messages = facade.findTextMessagesForProblem2(concept, problem, context);
         for (String message : messages) {
           errorsCollector.addError(new ConceptFeatureMissingError(node, link, message));
         }
@@ -185,7 +185,7 @@ public class StructureChecker extends AbstractNodeCheckerInEditor implements ICh
         assert link != null : "non-root node is supposed to have proper aggregation";
         FeedbackAspectRegistry registry = getFeedbackAspectRegistry();
         MessagesFacade facade = new MessagesFacade(registry);
-        List<String> messages = facade.findTextMessagesForProblem(concept, problem, context);
+        List<String> messages = facade.findTextMessagesForProblem2(concept, problem, context);
         for (String message : messages) {
           errorsCollector.addError(new ConceptFeatureMissingError(node, link, message));
         }
@@ -203,7 +203,7 @@ public class StructureChecker extends AbstractNodeCheckerInEditor implements ICh
         FeedbackAspectRegistry registry = getFeedbackAspectRegistry();
         MessagesFacade facade = new MessagesFacade(registry);
         // fixme pass source node, remove all this flavour hell
-        List<String> messages = facade.findTextMessagesForProblem(concept, problem, context);
+        List<String> messages = facade.findTextMessagesForProblem2(concept, problem, context);
         for (String message : messages) {
           errorsCollector.addError(new ConceptFeatureMissingError(node, property, message));
         }

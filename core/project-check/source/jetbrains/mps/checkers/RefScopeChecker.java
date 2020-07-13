@@ -100,7 +100,7 @@ public class RefScopeChecker extends AbstractNodeCheckerInEditor implements IChe
         RefOutOfScopeContext context = new RefOutOfScopeContext(ref);
         FeedbackAspectRegistry registry = getFeedbackAspectRegistry();
         MessagesFacade facade = new MessagesFacade(registry);
-        List<String> messages = facade.findTextMessagesForProblem(node.getConcept(), problem, context);
+        List<String> messages = facade.findTextMessagesForProblem2(node.getConcept(), problem, context);
         for (String message : messages) {
           errorsCollector.addError(new OutOfScopeReferenceReportItem(ref,
                                                                      debugInfo,

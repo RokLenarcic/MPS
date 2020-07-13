@@ -103,7 +103,7 @@ final class FailingConstraintsMessagesFacade {
   <C extends Context> List<String> findTextMessagesForProblem(@NotNull SAbstractConcept concept,
                                                               @NotNull Problem problem,
                                                               @NotNull C context) {
-    return myMainFacade.findTextMessagesForProblem(concept, problem, context);
+    return myMainFacade.findTextMessagesForProblem2(concept, problem, context);
   }
 
 }
