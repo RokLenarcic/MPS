@@ -142,7 +142,7 @@ public class ModuleDescriptorPersistence {
             result_dxyzb6_a0a0a0a0a0a8.setModuleRef(result_dxyzb6_a0a0a0a0a0a0a8);
             final boolean result_dxyzb6_a1a0a0a0a0a0a8 = XmlUtil.booleanWithDefault(d, "reexport", true);
             result_dxyzb6_a0a0a0a0a0a8.setReexport(result_dxyzb6_a1a0a0a0a0a0a8);
-            SDependencyScope s = SDependencyScope.fromIdentity(d.getAttributeValue("scope"));
+            SDependencyScope s = SDependencyScope.fromIdentity2(d.getAttributeValue("scope"));
             final SDependencyScope result_dxyzb6_a3a0a0a0a0a0a8 = (s == null ? SDependencyScope.DEFAULT : s);
             result_dxyzb6_a0a0a0a0a0a8.setScope(result_dxyzb6_a3a0a0a0a0a0a8);
             return result_dxyzb6_a0a0a0a0a0a8;
