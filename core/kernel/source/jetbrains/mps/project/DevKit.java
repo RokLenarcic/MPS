@@ -37,26 +37,26 @@ import java.util.List;
 import java.util.Set;
 
 public class DevKit extends AbstractModule2 {
-  private DevkitDescriptor myDescriptor;
+  private DevkitDescriptor myDescriptor2;
 
   /* TODO make package local, move to appropriate package */
   public DevKit(DevkitDescriptor descriptor, IFile file) {
     super(file);
-    myDescriptor = descriptor;
+    myDescriptor2 = descriptor;
     setModuleReference(descriptor.getModuleReference());
   }
 
   @Override
   public DevkitDescriptor getModuleDescriptor() {
-    return myDescriptor;
+    return myDescriptor2;
   }
 
   @Override
   public void doSetModuleDescriptor(ModuleDescriptor moduleDescriptor) {
-    myDescriptor = (DevkitDescriptor) moduleDescriptor;
+    myDescriptor2 = (DevkitDescriptor) moduleDescriptor;
 
-    if (myDescriptor.getNamespace() != null) {
-      SModuleReference mp = new jetbrains.mps.project.structure.modules.ModuleReference(myDescriptor.getNamespace(), myDescriptor.getId());
+    if (myDescriptor2.getNamespace() != null) {
+      SModuleReference mp = new jetbrains.mps.project.structure.modules.ModuleReference(myDescriptor2.getNamespace(), myDescriptor2.getId());
       setModuleReference(mp);
     }
   }
@@ -70,7 +70,7 @@ public class DevKit extends AbstractModule2 {
     ModuleRepositoryFacade repoFacade = new ModuleRepositoryFacade(repo);
     // FIXME in fact, shall produce SLanguage, not Language module here
     // there are two uses in mbeddr that need to get fixed first
-    for (SModuleReference l : myDescriptor.getExportedLanguages()) {
+    for (SModuleReference l : myDescriptor2.getExportedLanguages()) {
       Language lang = repoFacade.getModule(l, Language.class);
       if (lang != null) {
         langs.add(lang);
@@ -103,7 +103,7 @@ public class DevKit extends AbstractModule2 {
   public Iterable<SLanguage> getAllExportedLanguageIds() {
     Set<SLanguage> result = new HashSet<>();
     for (DevKit dk : getAllExtendedDevkits()) {
-      for (SModuleReference l : dk.myDescriptor.getExportedLanguages()) {
+      for (SModuleReference l : dk.myDescriptor2.getExportedLanguages()) {
         SLanguage lang = MetaAdapterFactory.getLanguage(l);
         result.add(lang);
       }
@@ -118,7 +118,7 @@ public class DevKit extends AbstractModule2 {
     }
     ModuleRepositoryFacade repoFacade = new ModuleRepositoryFacade(repo);
     List<DevKit> result = new ArrayList<>();
-    for (SModuleReference ref : myDescriptor.getExtendedDevkits()) {
+    for (SModuleReference ref : myDescriptor2.getExtendedDevkits()) {
       DevKit devKit = repoFacade.getModule(ref, DevKit.class);
       if (devKit != null) {
         result.add(devKit);
@@ -150,7 +150,7 @@ public class DevKit extends AbstractModule2 {
     }
     ModuleRepositoryFacade repoFacade = new ModuleRepositoryFacade(repo);
     List<Solution> result = new ArrayList<>();
-    for (SModuleReference ref : myDescriptor.getExportedSolutions()) {
+    for (SModuleReference ref : myDescriptor2.getExportedSolutions()) {
       Solution solution = repoFacade.getModule(ref, Solution.class);
       if (solution != null) {
         result.add(solution);
@@ -178,7 +178,7 @@ public class DevKit extends AbstractModule2 {
     }
 
     // does this mean than once loaded with error, we have no chance to fix the module?
-    if (myDescriptor.getLoadException() != null){
+    if (myDescriptor2.getLoadException() != null){
       return;
     }
     try {
