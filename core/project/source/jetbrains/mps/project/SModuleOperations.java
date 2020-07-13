@@ -18,7 +18,6 @@ package jetbrains.mps.project;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.persistence.ModelCannotBeCreatedException;
-import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.facets.GenerationTargetFacet;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.TestsFacet;
@@ -120,10 +119,10 @@ public class SModuleOperations {
    */
   public static boolean isCompileInIdea(SModule module) {
     JavaModuleFacet facet = module.getFacet(JavaModuleFacet.class);
-    if (facet == null || facet.isCompileInMps() || !(module instanceof AbstractModule)) {
+    if (facet == null || facet.isCompileInMps() || !(module instanceof AbstractModule2)) {
       return false;
     }
-    final ModuleDescriptor md = ((AbstractModule) module).getModuleDescriptor();
+    final ModuleDescriptor md = ((AbstractModule2) module).getModuleDescriptor();
     return md != null && md.needsExternalIdeaCompile();
   }
 
@@ -186,7 +185,7 @@ public class SModuleOperations {
     return model;
   }
 
-  public static boolean needReloading(AbstractModule module) {
+  public static boolean needReloading(AbstractModule2 module) {
     // used to check model read for module's repository, now
     // intentionally do not check any longer, as EditableSModel.needsReloading() doesn't require model read, so why would SModule do?
 

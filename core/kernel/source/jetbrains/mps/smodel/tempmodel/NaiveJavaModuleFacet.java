@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.smodel.tempmodel;
 
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 import jetbrains.mps.project.facets.JavaLanguageLevel;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.vfs.IFile;
@@ -40,7 +40,7 @@ public final class NaiveJavaModuleFacet implements JavaModuleFacet {
   private final static Logger LOG = LogManager.getLogger(TempModule.class);
 
   @NotNull
-  private final AbstractModule myOwningModule;
+  private final AbstractModule2 myOwningModule;
   private final IFile mySourceGen;
   private final IFile myClassesGen;
 
@@ -50,7 +50,7 @@ public final class NaiveJavaModuleFacet implements JavaModuleFacet {
     return FACET_TYPE;
   }
 
-  public NaiveJavaModuleFacet(@NotNull AbstractModule owningModule, @Nullable String sourceGen, @NotNull String classesGen) {
+  public NaiveJavaModuleFacet(@NotNull AbstractModule2 owningModule, @Nullable String sourceGen, @NotNull String classesGen) {
     myOwningModule = owningModule;
     mySourceGen = sourceGen == null ? null : createTempDirectory("TempModule_source_gen");
     myClassesGen = createTempDirectory("TempModule_classes_gen");

@@ -11562,7 +11562,7 @@
             <node concept="37vLTI" id="59dmSAW9dee" role="3clFbG">
               <node concept="2ShNRf" id="59dmSAW9dK0" role="37vLTx">
                 <node concept="1pGfFk" id="59dmSAW9dz$" role="2ShVmc">
-                  <ref role="37wK5l" to="tqvn:~NaiveJavaModuleFacet.&lt;init&gt;(jetbrains.mps.project.AbstractModule,java.lang.String,java.lang.String)" resolve="NaiveJavaModuleFacet" />
+                  <ref role="37wK5l" to="tqvn:~NaiveJavaModuleFacet.&lt;init&gt;(jetbrains.mps.project.AbstractModule2,java.lang.String,java.lang.String)" resolve="NaiveJavaModuleFacet" />
                   <node concept="Xjq3P" id="59dmSAW9dX_" role="37wK5m" />
                   <node concept="Xl_RD" id="59dmSAW9eff" role="37wK5m">
                     <property role="Xl_RC" value="MODULE_SOURCE_GEN" />

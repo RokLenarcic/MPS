@@ -170,8 +170,8 @@ public class ModelImporter {
       if (myModelToImport != null) {
         ((SModelInternal) model).addModelImport(myModelToImport);
       }
-      if (myModuleDep != null && model.getModule() instanceof AbstractModule) {
-        ((AbstractModule) model.getModule()).addDependency(myModuleDep, false);
+      if (myModuleDep != null && model.getModule() instanceof AbstractModule2) {
+        ((AbstractModule2) model.getModule()).addDependency(myModuleDep, false);
       }
       if (myUsedLanguage != null) {
         ((SModelInternal) model).addLanguage(myUsedLanguage);

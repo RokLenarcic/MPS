@@ -16,7 +16,7 @@
 package jetbrains.mps.util;
 
 import jetbrains.mps.library.ModulesMiner;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.PathMacros;
 import jetbrains.mps.util.annotation.ToRemove;
@@ -77,9 +77,9 @@ public final class MacrosFactory implements MacroHelper.Source {
   @NotNull
   public static MacroHelper forModule(SModule module) {
     // XXX would be great to adapt/cast SModule to MacroHelper (or anything that could be source of macro values, so that we don't need to expose 'descriptorFile')
-    if (module instanceof AbstractModule && ((AbstractModule) module).getDescriptorFile() != null) {
+    if (module instanceof AbstractModule2 && ((AbstractModule2) module).getDescriptorFile() != null) {
       // no need to go through checks of  #forModuleFile(IFile) when we know for sure it is, indeed.
-      return new MacroHelperImpl(((AbstractModule) module).getDescriptorFile(), new ModuleMacros(PathMacros.getInstance()));
+      return new MacroHelperImpl(((AbstractModule2) module).getDescriptorFile(), new ModuleMacros(PathMacros.getInstance()));
     }
     return getGlobal();
   }
@@ -89,7 +89,7 @@ public final class MacrosFactory implements MacroHelper.Source {
    */
   @Deprecated
   @ToRemove(version = 2018.1)
-  public static MacroHelper forModule(AbstractModule module) {
+  public static MacroHelper forModule(AbstractModule2 module) {
     // todo: if descriptor file == null?
     IFile file = module.getDescriptorFile();
     return file == null ? null : forModuleFile(file);

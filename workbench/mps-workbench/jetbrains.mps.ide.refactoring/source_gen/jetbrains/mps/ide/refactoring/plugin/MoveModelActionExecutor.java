@@ -4,6 +4,7 @@ package jetbrains.mps.ide.refactoring.plugin;
 
 import jetbrains.mps.ide.actions.ModelCreationActionsBaseExecutor;
 import jetbrains.mps.ide.dialogs.project.creation.NewModelDialogSettings;
+import jetbrains.mps.project.AbstractModule2;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -23,7 +24,6 @@ import jetbrains.mps.smodel.structure.ExtensionPoint;
 import jetbrains.mps.refactoring.participant.MoveModelRefactoringParticipant;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.ide.dialogs.project.creation.NewModelDialog;
-import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.refactoring.participant.RefactoringSession;
 import java.util.Collection;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
@@ -119,7 +119,7 @@ public class MoveModelActionExecutor extends ModelCreationActionsBaseExecutor {
     }
 
     public void prepareRefactoring() {
-      NewModelDialog dialog = new NewModelDialog(myProject, (AbstractModule) myModule, getTitle(), myDialogSettingsFactory);
+      NewModelDialog dialog = new NewModelDialog(myProject, (AbstractModule2) myModule, getTitle(), myDialogSettingsFactory);
       dialog.show();
       myNewModel = check_lf1t34_a0c0m22(check_lf1t34_a0a2a21w(dialog.getResultHelper(), myOriginalModel));
     }
@@ -129,13 +129,13 @@ public class MoveModelActionExecutor extends ModelCreationActionsBaseExecutor {
         return;
       }
 
-      if (myNewModel.getModule() instanceof AbstractModule) {
+      if (myNewModel.getModule() instanceof AbstractModule2) {
         Collection<SModule> oldModuleDependencies = new GlobalModuleDependenciesManager(myOriginalModel.getModule()).getModules(GlobalModuleDependenciesManager.Deptype.VISIBLE);
         Collection<SModule> exisingModuleDependencies = new GlobalModuleDependenciesManager(myNewModel.getModule()).getModules(GlobalModuleDependenciesManager.Deptype.VISIBLE);
         for (SModelReference dependency : SetSequence.fromSet(new ModelDependencyScanner().crossModelReferences(true).usedLanguages(false).usedConcepts(false).walk(myNewModel).getCrossModelReferences())) {
           SModule depModule = dependency.resolve(myProject.getRepository()).getModule();
           if (!(exisingModuleDependencies.contains(depModule)) && oldModuleDependencies.contains(depModule)) {
-            ((AbstractModule) myNewModel.getModule()).addDependency(depModule.getModuleReference(), false);
+            ((AbstractModule2) myNewModel.getModule()).addDependency(depModule.getModuleReference(), false);
           }
         }
       }

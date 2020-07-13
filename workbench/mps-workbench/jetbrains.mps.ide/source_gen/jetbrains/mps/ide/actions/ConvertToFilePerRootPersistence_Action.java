@@ -34,7 +34,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import java.io.IOException;
 import jetbrains.mps.extapi.module.SModuleBase;
 import jetbrains.mps.extapi.model.SModelBase;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 import jetbrains.mps.persistence.ModelCannotBeCreatedException;
 import org.jetbrains.mps.openapi.persistence.ModelSaveException;
 
@@ -150,7 +150,7 @@ public class ConvertToFilePerRootPersistence_Action extends BaseAction {
               ((SModuleBase) module).unregisterModel((SModelBase) smodel);
             }
             oldFile.delete();
-            ((AbstractModule) module).updateModelsSet();
+            ((AbstractModule2) module).updateModelsSet();
           } catch (IOException ex) {
             if (LOG.isEnabledFor(Level.ERROR)) {
               LOG.error("cannot write " + smodel, ex);

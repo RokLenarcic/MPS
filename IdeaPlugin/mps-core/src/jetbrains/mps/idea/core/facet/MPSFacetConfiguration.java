@@ -30,6 +30,7 @@ import jetbrains.mps.ide.vfs.IdeaFileSystem;
 import jetbrains.mps.idea.core.facet.MPSConfigurationBean.State;
 import jetbrains.mps.idea.core.facet.ui.MPSFacetCommonTabUI;
 import jetbrains.mps.persistence.DefaultModelRoot;
+import jetbrains.mps.project.AbstractModule2;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
@@ -46,7 +47,7 @@ import java.util.Collections;
 /**
  *
  * SolutionIdea is a regular {@link jetbrains.mps.project.Solution}, we shall expect MPS code to treat it like a regular solution and to e.g.
- * {@link jetbrains.mps.project.AbstractModule#setModuleDescriptor(ModuleDescriptor) setModuleDescriptor} for it. Therefore, we use solution's MD, if any,
+ * {@link AbstractModule2#setModuleDescriptor(ModuleDescriptor) setModuleDescriptor} for it. Therefore, we use solution's MD, if any,
  * as a source of 'actual' state, except for attributes that are not part of MD and therefore kept in myActualState cfg bean.
  */
 public class MPSFacetConfiguration implements FacetConfiguration, PersistentStateComponent<State> {

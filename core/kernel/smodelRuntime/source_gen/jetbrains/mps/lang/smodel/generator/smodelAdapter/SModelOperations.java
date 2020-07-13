@@ -4,6 +4,8 @@ package jetbrains.mps.lang.smodel.generator.smodelAdapter;
 
 import jetbrains.mps.annotations.GeneratedClass;
 import java.util.List;
+
+import jetbrains.mps.project.AbstractModule2;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -22,7 +24,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.structure.stub.ProjectStructureBuilder;
 import org.jetbrains.mps.openapi.model.SModelReference;
 
@@ -149,8 +150,8 @@ public final class SModelOperations {
     // I don't want to create blank model so provide the original one as a node factory. As long as PSB doesn't change it, it's all the same. 
     // XXX the only defect with stateless approach is that each query gets a new instance, therefore n1.model.module != n1.model.module 
     // XXX Guess, we shall support any SModule here, but at the moment PSB deals with AbstractModule only 
-    if (module instanceof AbstractModule) {
-      return (SNode) new ProjectStructureBuilder((AbstractModule) module, model).convert();
+    if (module instanceof AbstractModule2) {
+      return (SNode) new ProjectStructureBuilder((AbstractModule2) module, model).convert();
     }
     return null;
   }

@@ -16,7 +16,7 @@
 package jetbrains.mps.project.facets;
 
 import jetbrains.mps.extapi.module.ModuleFacetBase;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 import jetbrains.mps.project.MementoWithFS;
 import jetbrains.mps.project.ProjectPathUtil;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
@@ -63,7 +63,7 @@ public class JavaModuleFacetImpl extends ModuleFacetBase implements JavaModuleFa
 
   @Override
   public boolean isCompileInMps() {
-    AbstractModule module = getModule();
+    AbstractModule2 module = getModule();
     ModuleDescriptor descriptor = module.getModuleDescriptor();
     return descriptor != null && descriptor.getCompileInMPS();
   }
@@ -82,8 +82,8 @@ public class JavaModuleFacetImpl extends ModuleFacetBase implements JavaModuleFa
 
   @NotNull
   @Override
-  public AbstractModule getModule() {
-    return (AbstractModule) super.getModule();
+  public AbstractModule2 getModule() {
+    return (AbstractModule2) super.getModule();
   }
 
   @Override
@@ -256,7 +256,7 @@ public class JavaModuleFacetImpl extends ModuleFacetBase implements JavaModuleFa
       return null;
     }
     // XXX would adore IFile from ModuleDescriptor, not String.
-    return fs.getFile(sourceGenPath).getParent().findChild(AbstractModule.CLASSES_GEN);
+    return fs.getFile(sourceGenPath).getParent().findChild(AbstractModule2.CLASSES_GEN);
   }
 
 

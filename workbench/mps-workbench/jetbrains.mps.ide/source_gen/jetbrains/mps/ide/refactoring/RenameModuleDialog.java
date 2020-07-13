@@ -4,7 +4,7 @@ package jetbrains.mps.ide.refactoring;
 
 import jetbrains.mps.annotations.GeneratedClass;
 import jetbrains.mps.ide.platform.refactoring.RenameDialog;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 import jetbrains.mps.project.MPSProject;
 import javax.swing.JPanel;
 import java.util.List;
@@ -26,12 +26,12 @@ import com.intellij.util.ui.JBUI;
 
 @GeneratedClass(node = "r:5a764b6f-e05f-4050-b22c-cbcad1577f1b(jetbrains.mps.ide.refactoring)/2482360940803573298", model = "r:5a764b6f-e05f-4050-b22c-cbcad1577f1b(jetbrains.mps.ide.refactoring)")
 public class RenameModuleDialog extends RenameDialog {
-  private final AbstractModule myModule;
+  private final AbstractModule2 myModule;
   private final MPSProject myProject;
   private JPanel myOptionsPanel;
-  private List<AbstractModule> mySubModules;
+  private List<AbstractModule2> mySubModules;
 
-  public RenameModuleDialog(MPSProject project, AbstractModule module) throws HeadlessException {
+  public RenameModuleDialog(MPSProject project, AbstractModule2 module) throws HeadlessException {
     super(project.getProject(), module.getModuleName(), "module");
     myModule = module;
     myProject = project;

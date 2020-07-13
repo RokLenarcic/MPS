@@ -49,7 +49,7 @@ import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.idea.core.icons.MPSIcons;
 import jetbrains.mps.idea.core.project.SolutionIdea;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.ModelAccessHelper;
@@ -86,7 +86,7 @@ public class ModuleLibraryType extends LibraryType<DummyLibraryProperties> {
     return JarFileSystem.getInstance().findFileByPath(vFile.getPath() + JarFileSystem.JAR_SEPARATOR);
   }
 
-  public static Set<VirtualFile> getModuleJars(AbstractModule usedModule) {
+  public static Set<VirtualFile> getModuleJars(AbstractModule2 usedModule) {
     Set<VirtualFile> stubFiles = new HashSet<VirtualFile>();
     for (String stubPath : SModuleOperations.getJavaFacet(usedModule).getClassPath()) {
       VirtualFile jarFile = getJarFile(stubPath);
@@ -132,7 +132,7 @@ public class ModuleLibraryType extends LibraryType<DummyLibraryProperties> {
   private Set<OrderRoot> createRootsFor(SRepository repository, List<SModuleReference> chosenElements) {
     final Set<OrderRoot> roots = new LinkedHashSet<OrderRoot>();
     for (SModuleReference moduleReference : chosenElements) {
-      AbstractModule module = new ModelAccessHelper(repository).runReadAction(() -> (AbstractModule) moduleReference.resolve(repository));
+      AbstractModule2 module = new ModelAccessHelper(repository).runReadAction(() -> (AbstractModule2) moduleReference.resolve(repository));
       roots.add(new OrderRoot(VirtualFileUtils.getOrCreateVirtualFile(module.getDescriptorFile()), ModuleXmlRootDetector.MPS_MODULE_XML, false));
       for (VirtualFile virtualFile : getModuleJars(module)) {
         roots.add(new OrderRoot(virtualFile, OrderRootType.CLASSES, false));
@@ -268,7 +268,7 @@ public class ModuleLibraryType extends LibraryType<DummyLibraryProperties> {
             @Override
             public void run() {
               for (SModuleReference module : chosenElements) {
-                AbstractModule chosenModule = (AbstractModule) module.resolve(repository);
+                AbstractModule2 chosenModule = (AbstractModule2) module.resolve(repository);
                 addedDescriptors.add(VirtualFileUtils.getOrCreateVirtualFile(chosenModule.getDescriptorFile()));
                 for (VirtualFile virtualFile : getModuleJars(chosenModule)) {
                   addedJars.add(virtualFile);
@@ -294,10 +294,10 @@ public class ModuleLibraryType extends LibraryType<DummyLibraryProperties> {
       @Override
       public void run() {
         for (SModule module : new ModuleRepositoryFacade(repository).getAllModules(SModule.class)) {
-          if (module instanceof SolutionIdea || ((AbstractModule) module).getDescriptorFile() == null) {
+          if (module instanceof SolutionIdea || ((AbstractModule2) module).getDescriptorFile() == null) {
             continue;
           }
-          if (excluded.contains(VirtualFileUtils.getOrCreateVirtualFile(((AbstractModule) module).getDescriptorFile()))) {
+          if (excluded.contains(VirtualFileUtils.getOrCreateVirtualFile(((AbstractModule2) module).getDescriptorFile()))) {
             // skip solutions that are already in a lib
             continue;
           }

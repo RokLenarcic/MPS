@@ -16,7 +16,7 @@
 package jetbrains.mps.smodel.tempmodel;
 
 import jetbrains.mps.module.ReloadableModule;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.vfs.IFile;
@@ -44,7 +44,7 @@ import java.util.Set;
  * @author Artem Tikhomirov
  * @since 2018.2
  */
-public class TempModule2 extends AbstractModule {
+public class TempModule2 extends AbstractModule2 {
   private final ModuleDescriptor myDescriptor;
 
   /*package*/ TempModule2() {

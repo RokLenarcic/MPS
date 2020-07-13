@@ -16,7 +16,7 @@
 package jetbrains.mps.project.dependency;
 
 import jetbrains.mps.extapi.module.TransientSModule;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.ErrorHandler;
 import jetbrains.mps.project.structure.ProjectStructureModule;
 import jetbrains.mps.project.structure.modules.Dependency;
@@ -90,7 +90,7 @@ class RuntimesOfUsedLanguageCalculator {
     @Override
     public Set<SModuleReference> findRuntimes(SModule module) {
       Set<SModuleReference> result = new HashSet<>();
-      ModuleDescriptor moduleDescriptor = ((AbstractModule) module).getModuleDescriptor();
+      ModuleDescriptor moduleDescriptor = ((AbstractModule2) module).getModuleDescriptor();
       if (moduleDescriptor == null) {
         LOG.warn("Module descriptor could not be found for the module " + module + "; falling back to the SourceStrategy.");
         return new SourceStrategy().findRuntimes(module);

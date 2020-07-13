@@ -23,7 +23,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.ModelDependencyUpdate;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.refactoring.runtime.access.RefactoringAccess;
@@ -239,7 +239,7 @@ public class RefactoringContext {
               setSelectedModule(descriptor.getModule());
               break;
             case MODULE:
-              setSelectedModule((AbstractModule) target);
+              setSelectedModule((AbstractModule2) target);
               break;
             default:
               throw new IllegalArgumentException("Wrong refactoring type " + refTarget.getTarget().getClass().getName());

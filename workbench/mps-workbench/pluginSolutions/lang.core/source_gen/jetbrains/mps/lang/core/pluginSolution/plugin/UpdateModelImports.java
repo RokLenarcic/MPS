@@ -22,7 +22,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.module.ReloadableModule;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
@@ -101,7 +101,7 @@ public class UpdateModelImports extends RefactoringParticipantBase<SNodeReferenc
       return;
     }
     SModelInternal modelInternal = (SModelInternal) model;
-    AbstractModule module = (AbstractModule) model.getModule();
+    AbstractModule2 module = (AbstractModule2) model.getModule();
     SModule targetModule = targetModel.getModule();
     if (targetModel != model) {
       if (!(SModelOperations.getImportedModelUIDs(model).contains(targetModel.getReference()))) {

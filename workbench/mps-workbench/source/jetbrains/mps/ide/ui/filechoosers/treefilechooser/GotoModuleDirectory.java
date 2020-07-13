@@ -22,7 +22,7 @@ import com.intellij.openapi.fileChooser.FileSystemTree;
 import com.intellij.openapi.fileChooser.actions.FileChooserAction;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.workbench.MPSDataKeys;
 
@@ -45,8 +45,8 @@ public final class GotoModuleDirectory extends FileChooserAction {
 
   private static VirtualFile getModulePath(AnActionEvent e) {
     SModule module = e.getData(MPSDataKeys.CONTEXT_MODULE);
-    if (!(module instanceof AbstractModule)) return null;
-    final VirtualFile moduleDir = VirtualFileUtils.getProjectVirtualFile(((AbstractModule) module).getModuleSourceDir());
+    if (!(module instanceof AbstractModule2)) return null;
+    final VirtualFile moduleDir = VirtualFileUtils.getProjectVirtualFile(((AbstractModule2) module).getModuleSourceDir());
     return (moduleDir != null) ? validated(moduleDir.getParent()) : null;
   }
 

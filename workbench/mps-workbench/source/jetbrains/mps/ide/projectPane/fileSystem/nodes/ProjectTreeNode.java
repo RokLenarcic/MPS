@@ -21,7 +21,7 @@ import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.module.DefaultNamespaceTreeBuilder;
 import jetbrains.mps.ide.ui.tree.module.ModuleTreeNodeComparator;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.Logger;
@@ -40,14 +40,14 @@ public class ProjectTreeNode extends AbstractFileTreeNode {
 
     List<ModuleTreeNode> moduleNodes = new LinkedList<>();
     for (SModule m : project.getProjectModules()) {
-      if (!(m instanceof AbstractModule)) {
+      if (!(m instanceof AbstractModule2)) {
         continue;
       }
-      IFile moduleDir = ((AbstractModule) m).getModuleSourceDir();
+      IFile moduleDir = ((AbstractModule2) m).getModuleSourceDir();
       if (moduleDir != null && moduleDir.exists()) {
         VirtualFile vfInProject = VirtualFileUtils.getProjectVirtualFile(moduleDir);
         if (vfInProject != null) {
-          moduleNodes.add(new ModuleTreeNode(project, (AbstractModule) m, vfInProject));
+          moduleNodes.add(new ModuleTreeNode(project, (AbstractModule2) m, vfInProject));
         } else {
           // this is an attempt to find out true cause for https://youtrack.jetbrains.com/issue/MPS-26261
           // it looks like project has modules loaded from files that are not IdeaFile instances.

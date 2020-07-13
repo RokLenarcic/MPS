@@ -18,7 +18,7 @@ package jetbrains.mps.ide.ui.tree.module;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.ui.tree.module.SModelsSubtree.StubsTreeNode;
 import jetbrains.mps.ide.ui.tree.module.SModelsSubtree.TestsTreeNode;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -35,7 +35,7 @@ public class ProjectSolutionTreeNode extends ProjectModuleTreeNode {
 
   private boolean myInitialized;
 
-  protected ProjectSolutionTreeNode(@NotNull AbstractModule solution, Project project, boolean shortNameOnly) {
+  protected ProjectSolutionTreeNode(@NotNull AbstractModule2 solution, Project project, boolean shortNameOnly) {
     super(solution);
     myShortNameOnly = shortNameOnly;
     setNodeIdentifier(solution.getModuleId().toString());

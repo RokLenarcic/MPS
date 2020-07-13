@@ -16,7 +16,7 @@
 package jetbrains.mps.ide.ui.dialogs.properties;
 
 import jetbrains.mps.generator.impl.plan.ModelScanner;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 import jetbrains.mps.project.dependency.GeneratorModuleScanner;
 import jetbrains.mps.smodel.ConceptDeclarationScanner;
 import jetbrains.mps.smodel.EditorDeclarationScanner;
@@ -39,14 +39,14 @@ import java.util.HashSet;
  * @author Artem Tikhomirov
  */
 class ScanModuleDependencyTask implements Runnable {
-  private final AbstractModule myModule;
+  private final AbstractModule2 myModule;
   private final HashSet<SModuleReference> extendsSet = new HashSet<>();
   private final HashSet<SModuleReference> generationTargets = new HashSet<>();
   private final HashSet<SModuleReference> xModuleSet = new HashSet<>();
   private Runnable myWhenDone;
   private Runnable myWhenChanged;
 
-  public ScanModuleDependencyTask(@NotNull AbstractModule module) {
+  public ScanModuleDependencyTask(@NotNull AbstractModule2 module) {
     myModule = module;
   }
 

@@ -16,7 +16,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.library.ModulesMiner;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 import jetbrains.mps.util.IFileUtil;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.Nullable;
@@ -65,16 +65,16 @@ public class ModuleFileTracker {
   private void initModuleFileMap() {
     myCanonicalFileToModuleMap.clear();
     for (SModule m : myRepo.getModules()) {
-      if (false == m instanceof AbstractModule) {
+      if (false == m instanceof AbstractModule2) {
         continue;
       }
-      IFile file = ((AbstractModule) m).getDescriptorFile();
+      IFile file = ((AbstractModule2) m).getDescriptorFile();
       if (file == null) {
         // XXX file used to be null for Generator module, now chances are generator overrides location of its language
         return;
       }
       addCanonicalFile(file, m);
-      addCanonicalFile(getSourceModuleDescriptor((AbstractModule) m), m);
+      addCanonicalFile(getSourceModuleDescriptor((AbstractModule2) m), m);
     }
   }
 
@@ -97,7 +97,7 @@ public class ModuleFileTracker {
   }
 
   @Nullable
-  private IFile getSourceModuleDescriptor(AbstractModule module) {
+  private IFile getSourceModuleDescriptor(AbstractModule2 module) {
     if (module.getModuleDescriptor() == null || module.getModuleDescriptor().getDeploymentDescriptor() == null) {
       return null;
     }

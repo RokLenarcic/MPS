@@ -21,7 +21,7 @@ import jetbrains.mps.ide.ui.tree.TreeElement;
 import jetbrains.mps.ide.ui.tree.TreeNodeVisitor;
 import jetbrains.mps.ide.ui.tree.module.NamespaceTreeBuilder.NamespaceNodeBuilder;
 import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 import jetbrains.mps.util.InternUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -85,8 +85,8 @@ public class NamespaceTextNode extends TextTreeNode implements TreeElement {
         models.addAll(((NamespaceTextNode) child).getModelsUnder());
       } else if (child instanceof ProjectModuleTreeNode) {
         SModule module = ((ProjectModuleTreeNode) child).getModule();
-        if (module instanceof AbstractModule) {
-          models.addAll(((AbstractModule) module).getModels());
+        if (module instanceof AbstractModule2) {
+          models.addAll(((AbstractModule2) module).getModels());
         }
       }
     }

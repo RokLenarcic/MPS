@@ -33,7 +33,7 @@ import jetbrains.mps.persistence.PersistenceVersionAware;
 import jetbrains.mps.persistence.PreinstalledModelFactoryTypes;
 import jetbrains.mps.persistence.java.library.JavaClassStubModelDescriptor;
 import jetbrains.mps.persistence.java.library.JavaClassStubsModelRoot;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.vfs.IFile;
@@ -73,11 +73,11 @@ public class MPSRepositoryUtil {
       if (projectModules.contains(module)) {
         continue;
       }
-      if (false == module instanceof AbstractModule) {
+      if (false == module instanceof AbstractModule2) {
         continue;
       }
-      final IFile descriptorFile = ((AbstractModule) module).getDescriptorFile();
-      final ModuleDescriptor moduleDescriptor = ((AbstractModule) module).getModuleDescriptor();
+      final IFile descriptorFile = ((AbstractModule2) module).getDescriptorFile();
+      final ModuleDescriptor moduleDescriptor = ((AbstractModule2) module).getModuleDescriptor();
       if (descriptorFile == null || moduleDescriptor == null) {
         continue;
       }

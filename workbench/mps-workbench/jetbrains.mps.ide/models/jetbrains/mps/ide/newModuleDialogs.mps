@@ -2261,7 +2261,7 @@
                       </node>
                       <node concept="2YIFZM" id="3G0t6VsK2gB" role="37wK5m">
                         <ref role="1Pybhc" to="18ew:~MacrosFactory" resolve="MacrosFactory" />
-                        <ref role="37wK5l" to="18ew:~MacrosFactory.forModule(jetbrains.mps.project.AbstractModule)" resolve="forModule" />
+                        <ref role="37wK5l" to="18ew:~MacrosFactory.forModule(jetbrains.mps.project.AbstractModule2)" resolve="forModule" />
                         <node concept="37vLTw" id="3G0t6VsK2gC" role="37wK5m">
                           <ref role="3cqZAo" node="6CFNGGphKi0" resolve="myModuleToCopy" />
                         </node>

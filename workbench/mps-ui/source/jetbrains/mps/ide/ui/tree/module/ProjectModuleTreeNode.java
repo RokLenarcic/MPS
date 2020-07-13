@@ -18,7 +18,7 @@ package jetbrains.mps.ide.ui.tree.module;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.TreeElement;
 import jetbrains.mps.ide.ui.tree.TreeNodeVisitor;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.Solution;
@@ -39,7 +39,7 @@ public abstract class ProjectModuleTreeNode extends MPSTreeNode implements MPSMo
     if (module instanceof Language) {
       return new ProjectLanguageTreeNode((Language) module, project, shortNameOnly);
     } else if (module instanceof Solution || module instanceof ProjectStructureModule) {
-      return new ProjectSolutionTreeNode((AbstractModule) module, project, shortNameOnly);
+      return new ProjectSolutionTreeNode((AbstractModule2) module, project, shortNameOnly);
     } else if (module instanceof DevKit) {
       return new ProjectDevKitTreeNode((DevKit) module, project, false);
     } else if (module instanceof Generator) {

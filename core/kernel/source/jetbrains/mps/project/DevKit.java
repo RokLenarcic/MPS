@@ -36,7 +36,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class DevKit extends AbstractModule {
+public class DevKit extends AbstractModule2 {
   private DevkitDescriptor myDescriptor;
 
   /* TODO make package local, move to appropriate package */

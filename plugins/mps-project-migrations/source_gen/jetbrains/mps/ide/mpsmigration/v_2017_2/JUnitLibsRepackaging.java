@@ -27,7 +27,7 @@ import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SModelName;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.ModelDependencyScanner;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 
 @GeneratedClass(node = "r:73a55312-0033-4c07-bbd4-89c7dbcb79fc(jetbrains.mps.ide.mpsmigration.v_2017_2)/6189686017432582676", model = "r:73a55312-0033-4c07-bbd4-89c7dbcb79fc(jetbrains.mps.ide.mpsmigration.v_2017_2)")
 public class JUnitLibsRepackaging extends BaseProjectMigration {
@@ -119,7 +119,7 @@ public class JUnitLibsRepackaging extends BaseProjectMigration {
       }
 
       for (SModuleReference module : SetSequence.fromSet(modulesToImport)) {
-        ((AbstractModule) projectModule).addDependency(module, false);
+        ((AbstractModule2) projectModule).addDependency(module, false);
       }
     }
     return true;

@@ -23,7 +23,7 @@ import jetbrains.mps.extapi.persistence.ModelFactoryService;
 import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.impl.plan.ModelScanner;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.smodel.FastNodeFinder;
 import jetbrains.mps.smodel.FastNodeFinderManager;
@@ -188,7 +188,7 @@ public final class ModelValidator {
     // Below, model content might be examined. I assume accessing model imports constitutes 'model loading/content access'
 
     SModule module = model.getModule();
-    final SearchScope moduleScope = (module instanceof AbstractModule) ? ((AbstractModule) module).getScope() : null;
+    final SearchScope moduleScope = (module instanceof AbstractModule2) ? ((AbstractModule2) module).getScope() : null;
     final SModelReference modelToValidateRef = model.getReference();
     for (final SModelReference reference : SModelOperations.getImportedModelUIDs(model)) {
       if (progress.isCanceled()) {

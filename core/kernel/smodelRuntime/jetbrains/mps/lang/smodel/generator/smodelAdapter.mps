@@ -4745,7 +4745,7 @@
                 <node concept="2OqwBi" id="7$gH_FyWXeL" role="10QFUP">
                   <node concept="2ShNRf" id="7$gH_FyWScq" role="2Oq$k0">
                     <node concept="1pGfFk" id="7$gH_FyWVJU" role="2ShVmc">
-                      <ref role="37wK5l" to="beok:~ProjectStructureBuilder.&lt;init&gt;(jetbrains.mps.project.AbstractModule,org.jetbrains.mps.openapi.model.SModel)" resolve="ProjectStructureBuilder" />
+                      <ref role="37wK5l" to="beok:~ProjectStructureBuilder.&lt;init&gt;(jetbrains.mps.project.AbstractModule2,org.jetbrains.mps.openapi.model.SModel)" resolve="ProjectStructureBuilder" />
                       <node concept="10QFUN" id="7$gH_FyWWdN" role="37wK5m">
                         <node concept="3uibUv" id="7$gH_FyWWtW" role="10QFUM">
                           <ref role="3uigEE" to="z1c3:~AbstractModule" resolve="AbstractModule" />

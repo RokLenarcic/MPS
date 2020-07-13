@@ -20,7 +20,7 @@ import jetbrains.mps.extapi.persistence.DefaultSourceRoot;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.SourceRoot;
 import jetbrains.mps.extapi.persistence.SourceRootKind;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.util.IFileUtil;
@@ -44,16 +44,16 @@ public class CopyFileBasedModelRootHelper<ModelRoot extends FileBasedModelRoot> 
   protected final ModelRoot myTargetModelRoot;
 
   @NotNull
-  protected final AbstractModule mySourceModule;
+  protected final AbstractModule2 mySourceModule;
 
   @NotNull
-  protected final AbstractModule myTargetModule;
+  protected final AbstractModule2 myTargetModule;
 
   public CopyFileBasedModelRootHelper(@NotNull ModelRoot sourceModelRoot, @NotNull ModelRoot targetModelRoot) {
     mySourceModelRoot = sourceModelRoot;
     myTargetModelRoot = targetModelRoot;
-    mySourceModule = ((AbstractModule) mySourceModelRoot.getModule());
-    myTargetModule = ((AbstractModule) myTargetModelRoot.getModule());
+    mySourceModule = ((AbstractModule2) mySourceModelRoot.getModule());
+    myTargetModule = ((AbstractModule2) myTargetModelRoot.getModule());
   }
 
 

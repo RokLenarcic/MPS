@@ -9,7 +9,7 @@ import jetbrains.mps.project.MPSProject;
 import javax.swing.tree.TreeNode;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.ide.dialogs.project.creation.NewModelDialog;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.ide.ui.dialogs.properties.MPSPropertiesConfigurable;
 import jetbrains.mps.ide.ui.dialogs.properties.ModelPropertiesConfigurable;
@@ -56,7 +56,7 @@ public class NewModelActionExecutor extends ModelCreationActionsBaseExecutor {
 
   @Override
   protected final SModel showDialog(SModule module) {
-    NewModelDialog dialog = new NewModelDialog(myProject, (AbstractModule) module, NewModelActionExecutor.getTitle(), myDialogSettingsFactory);
+    NewModelDialog dialog = new NewModelDialog(myProject, (AbstractModule2) module, NewModelActionExecutor.getTitle(), myDialogSettingsFactory);
     dialog.show();
     return check_e2o8ll_a2a11(dialog.getResultHelper());
   }

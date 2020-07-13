@@ -18,8 +18,7 @@ package jetbrains.mps.module;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.classloading.MPSModuleClassLoader;
 import jetbrains.mps.classloading.ModuleClassLoader;
-import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.vfs.openapi.FileSystem;
+import jetbrains.mps.project.AbstractModule2;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -33,7 +32,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
  * ReloadableModule which delegates to ClassLoaderManager
  * @author apyshkin
  */
-public class ReloadableModuleBase extends AbstractModule implements ReloadableModule {
+public class ReloadableModuleBase extends AbstractModule2 implements ReloadableModule {
   private final static Logger LOG = LogManager.getLogger(ReloadableModuleBase.class);
   private final ClassLoaderManager myManager = ClassLoaderManager.getInstance(); // to remove this I need to insert CLM into constructor and that is not an easy task
   private final List<SModuleDependenciesListener> myListeners = new CopyOnWriteArrayList<>();

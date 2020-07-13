@@ -7,6 +7,7 @@ import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.components.StoragePathMacros;
 import jetbrains.mps.annotations.GeneratedClass;
 import com.intellij.openapi.components.AbstractProjectComponent;
+import jetbrains.mps.project.AbstractModule2;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.platform.watching.ReloadManager;
 import jetbrains.mps.smodel.language.LanguageRegistry;
@@ -25,7 +26,6 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.RuntimeFlags;
 import com.intellij.openapi.startup.StartupManager;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.smodel.SLanguageHierarchy;
 import org.jetbrains.mps.openapi.language.SLanguage;
@@ -177,7 +177,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
     myMpsProject.getRepository().getModelAccess().runWriteAction(new Runnable() {
       public void run() {
         for (SModule m : ListSequence.fromList(myMpsProject.getProjectModulesWithGenerators())) {
-          if (!((m instanceof AbstractModule))) {
+          if (!((m instanceof AbstractModule2))) {
             continue;
           }
 
@@ -185,7 +185,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
           // version information persisted 
           // this code should be executed when all models are already there in the module to 
           // produce a correct list of used languages 
-          ModuleDescriptor desc = ((AbstractModule) m).getModuleDescriptor();
+          ModuleDescriptor desc = ((AbstractModule2) m).getModuleDescriptor();
           if (!(desc.hasLanguageVersions())) {
             SLanguageHierarchy languageHierarchy = new SLanguageHierarchy(m.getUsedLanguages());
             for (SLanguage lang : languageHierarchy.getExtended()) {
@@ -195,7 +195,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
               desc.getLanguageVersions().put(lang, 0);
             }
             desc.setHasLanguageVersions(true);
-            ((AbstractModule) m).setChanged();
+            ((AbstractModule2) m).setChanged();
           }
           if (!(desc.hasDependencyVersions())) {
             Set<SModule> visible = new LinkedHashSet<SModule>();
@@ -209,7 +209,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
               desc.getDependencyVersions().put(dep.getModuleReference(), 0);
             }
             desc.setHasDependencyVersions(true);
-            ((AbstractModule) m).setChanged();
+            ((AbstractModule2) m).setChanged();
           }
         }
       }

@@ -18,10 +18,9 @@ package jetbrains.mps.ide.vfs;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.smodel.ModelAccessHelper;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -63,7 +62,7 @@ public class ClassesGenPolicy extends BaseDirectoryIndexExcludePolicy {
         }
 
         if (classesGen.getParent() != null) {
-          IFile classesDir = classesGen.getParent().findChild(AbstractModule.CLASSES);
+          IFile classesDir = classesGen.getParent().findChild(AbstractModule2.CLASSES);
           VirtualFile classesVF = VirtualFileUtils.getProjectVirtualFile(classesDir);
           if (classesVF != null) {
             roots.add(classesVF);

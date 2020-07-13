@@ -11,7 +11,7 @@ import jetbrains.mps.project.EditableFilteringScope;
 import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import jetbrains.mps.persistence.DefaultModelRoot;
@@ -37,8 +37,8 @@ public class RemoveHistoryFiles extends BaseProjectMigration {
           return scope_kkza83_b0b_0;
         }
       };
-      Iterable<IFile> histFiles = Sequence.fromIterable(CommandUtil.modules(CommandUtil.selectScope(null, context))).ofType(AbstractModule.class).translate(new ITranslator2<AbstractModule, ModelRoot>() {
-        public Iterable<ModelRoot> translate(AbstractModule it) {
+      Iterable<IFile> histFiles = Sequence.fromIterable(CommandUtil.modules(CommandUtil.selectScope(null, context))).ofType(AbstractModule2.class).translate(new ITranslator2<AbstractModule2, ModelRoot>() {
+        public Iterable<ModelRoot> translate(AbstractModule2 it) {
           return it.getModelRoots();
         }
       }).ofType(DefaultModelRoot.class).select(new ISelector<DefaultModelRoot, IFile>() {

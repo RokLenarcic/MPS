@@ -21,7 +21,7 @@ import com.intellij.util.FilteringProcessor;
 import jetbrains.mps.extapi.module.SRepositoryExt;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.SModuleOperations;
@@ -245,7 +245,7 @@ public class TestMakeOnRealProject implements EnvironmentAware {
     });
   }
 
-  public void createJavaFiles(AbstractModule module) {
+  public void createJavaFiles(AbstractModule2 module) {
     createFile(module.getFacet(JavaModuleFacet.class).getOutputRoot(), TEST_JAVA_FILE, "class Test {}");
   }
 

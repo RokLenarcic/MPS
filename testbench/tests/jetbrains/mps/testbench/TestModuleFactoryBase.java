@@ -20,7 +20,7 @@ import jetbrains.mps.extapi.module.SRepositoryExt;
 import jetbrains.mps.extapi.persistence.ModelFactoryService;
 import jetbrains.mps.persistence.PersistenceUtil.InMemoryStreamDataSource;
 import jetbrains.mps.persistence.PreinstalledModelFactoryTypes;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.Solution;
@@ -87,7 +87,7 @@ public class TestModuleFactoryBase implements TestModuleFactory {
   }
 
   @Hack
-  private void populate(AbstractModule module) {
+  private void populate(AbstractModule2 module) {
     // no-op, subclasses may add whatever appropriate to the newly created module
     try {
       if (module instanceof Language || module instanceof Solution) {
@@ -237,17 +237,17 @@ public class TestModuleFactoryBase implements TestModuleFactory {
   }
 
   @Override
-  public void addUsedLanguage(@NotNull AbstractModule client, Language toUse) {
+  public void addUsedLanguage(@NotNull AbstractModule2 client, Language toUse) {
     addUsedLanguageImpl(client, toUse.getModuleReference(), false);
   }
 
   @Override
-  public void addUsedDevKit(@NotNull AbstractModule client, DevKit toUse) {
+  public void addUsedDevKit(@NotNull AbstractModule2 client, DevKit toUse) {
     addUsedLanguageImpl(client, toUse.getModuleReference(), true);
   }
 
   @Hack
-  private void addUsedLanguageImpl(@NotNull final AbstractModule client, final SModuleReference toUse, boolean isDevKit) {
+  private void addUsedLanguageImpl(@NotNull final AbstractModule2 client, final SModuleReference toUse, boolean isDevKit) {
     for (SModel m : client.getModels()) {
       if ("model-for-language-imports".equals(m.getModelName())) {
         // HACK. We set update mode of model data to prevent event dispatching

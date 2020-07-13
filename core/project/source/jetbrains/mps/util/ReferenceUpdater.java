@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.util;
 
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
@@ -174,8 +174,8 @@ public final class ReferenceUpdater {
         adjustGenerator((Generator) module);
       }else if (module instanceof Language) {
         adjustLanguage((Language) module);
-      } else if (module instanceof AbstractModule) {
-        adjustModule((AbstractModule) module);
+      } else if (module instanceof AbstractModule2) {
+        adjustModule((AbstractModule2) module);
       }
     });
 
@@ -295,7 +295,7 @@ public final class ReferenceUpdater {
     }
   }
 
-  private void adjustModule(AbstractModule module) {
+  private void adjustModule(AbstractModule2 module) {
     for (SDependency dependency : module.getDeclaredDependencies()) {
       SModuleReference depReference = dependency.getTargetModule();
       if (myModuleReferenceMap.containsKey(depReference)) {

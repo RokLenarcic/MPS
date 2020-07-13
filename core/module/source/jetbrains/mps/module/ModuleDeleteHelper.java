@@ -16,7 +16,7 @@
 package jetbrains.mps.module;
 
 import jetbrains.mps.extapi.persistence.DisposableDataSource;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectBase;
 import jetbrains.mps.project.facets.GenerationTargetFacet;
@@ -67,7 +67,7 @@ public final class ModuleDeleteHelper {
       return;
     }
     // fixme: MPS-18743
-    modules.stream().filter(module -> module instanceof AbstractModule).forEach(module -> ((AbstractModule) module).save());
+    modules.stream().filter(module -> module instanceof AbstractModule2).forEach(module -> ((AbstractModule2) module).save());
 
     modules = new ArrayList<>(modules);
 
@@ -215,8 +215,8 @@ public final class ModuleDeleteHelper {
   private void collectModuleFilesToDelete(SModule module) {
     collectModelsAndArtifactsToDelete(module);
 
-    if (module instanceof AbstractModule) {
-      AbstractModule curModule = (AbstractModule) module;
+    if (module instanceof AbstractModule2) {
+      AbstractModule2 curModule = (AbstractModule2) module;
 
       IFile descriptorFile = curModule.getDescriptorFile();
       if (descriptorFile != null) {

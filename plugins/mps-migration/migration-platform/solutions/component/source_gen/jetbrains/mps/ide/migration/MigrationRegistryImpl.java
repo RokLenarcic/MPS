@@ -4,6 +4,7 @@ package jetbrains.mps.ide.migration;
 
 import jetbrains.mps.annotations.GeneratedClass;
 import com.intellij.openapi.components.AbstractProjectComponent;
+import jetbrains.mps.project.AbstractModule2;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.project.ProjectHelper;
 import java.util.Collection;
@@ -19,7 +20,6 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.migration.runtime.base.MigrationModuleUtil;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.lang.migration.runtime.base.VersionFixer;
-import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.migration.global.MigrationOptions;
 import jetbrains.mps.migration.global.ProjectMigrationWithOptions;
@@ -107,17 +107,17 @@ public class MigrationRegistryImpl extends AbstractProjectComponent implements M
     if (!(vf.areDepsSatisfied())) {
       return;
     }
-    if (!((module instanceof AbstractModule))) {
+    if (!((module instanceof AbstractModule2))) {
       return;
     }
-    ModuleDescriptor descriptor = ((AbstractModule) module).getModuleDescriptor();
+    ModuleDescriptor descriptor = ((AbstractModule2) module).getModuleDescriptor();
     if (descriptor != null && descriptor.getLoadException() != null) {
       return;
     }
 
     vf.updateImportVersions();
-    if (module instanceof AbstractModule) {
-      (as_ufn3ol_a0a0a0h0m(module, AbstractModule.class)).save();
+    if (module instanceof AbstractModule2) {
+      (as_ufn3ol_a0a0a0h0m(module, AbstractModule2.class)).save();
     }
   }
 
@@ -177,7 +177,7 @@ public class MigrationRegistryImpl extends AbstractProjectComponent implements M
             }
           }).where(new IWhereFilter<SModule>() {
             public boolean accept(SModule it) {
-              int ver = Math.max(0, ((AbstractModule) it).getUsedLanguageVersion(mid.getLanguage()));
+              int ver = Math.max(0, ((AbstractModule2) it).getUsedLanguageVersion(mid.getLanguage()));
               return ver == mid.getFromVersion();
             }
           }).findFirst(new IWhereFilter<SModule>() {
@@ -201,7 +201,7 @@ public class MigrationRegistryImpl extends AbstractProjectComponent implements M
             }
           }).where(new IWhereFilter<SModule>() {
             public boolean accept(SModule it) {
-              int ver = Math.max(0, ((AbstractModule) it).getDependencyVersion(rid.getModule(it.getRepository())));
+              int ver = Math.max(0, ((AbstractModule2) it).getDependencyVersion(rid.getModule(it.getRepository())));
               return ver == rid.getFromVersion();
             }
           }).findFirst(new IWhereFilter<SModule>() {
@@ -237,7 +237,7 @@ public class MigrationRegistryImpl extends AbstractProjectComponent implements M
   private boolean canBeExecutedImmediately(ScriptApplied script) {
     // todo remove explicit class mention 
 
-    AbstractModule moduleToMigrate = (AbstractModule) script.getModule(myMpsProject.getRepository());
+    AbstractModule2 moduleToMigrate = (AbstractModule2) script.getModule(myMpsProject.getRepository());
     if (script.getScriptReference() instanceof MigrationScriptReference) {
       MigrationScriptReference sr = (MigrationScriptReference) script.getScriptReference();
       int v = Math.max(0, moduleToMigrate.getUsedLanguageVersion(sr.getLanguage(), false));
@@ -281,7 +281,7 @@ public class MigrationRegistryImpl extends AbstractProjectComponent implements M
     if (!(SetSequence.fromSet(MigrationModuleUtil.getUsedLanguages(m)).contains(ref.getLanguage()))) {
       return false;
     }
-    int dv = Math.max(0, ((AbstractModule) m).getUsedLanguageVersion(ref.getLanguage(), false));
+    int dv = Math.max(0, ((AbstractModule2) m).getUsedLanguageVersion(ref.getLanguage(), false));
     return dv <= ref.getFromVersion();
   }
 
@@ -293,7 +293,7 @@ public class MigrationRegistryImpl extends AbstractProjectComponent implements M
     }).contains(ref.getModuleReference()))) {
       return false;
     }
-    int dv = Math.max(0, ((AbstractModule) m).getDependencyVersion(ref.getModule(m.getRepository()), false));
+    int dv = Math.max(0, ((AbstractModule2) m).getDependencyVersion(ref.getModule(m.getRepository()), false));
     return dv <= ref.getFromVersion();
   }
 
@@ -301,7 +301,7 @@ public class MigrationRegistryImpl extends AbstractProjectComponent implements M
     List<ScriptApplied> result = ListSequence.fromList(new ArrayList<ScriptApplied>());
     for (SLanguage lang : SetSequence.fromSet(MigrationModuleUtil.getUsedLanguages(module))) {
       int currentLangVersion = lang.getLanguageVersion();
-      int ver = ((AbstractModule) module).getUsedLanguageVersion(lang, false);
+      int ver = ((AbstractModule2) module).getUsedLanguageVersion(lang, false);
 
       ver = Math.max(ver, 0);
       currentLangVersion = Math.max(currentLangVersion, 0);
@@ -314,8 +314,8 @@ public class MigrationRegistryImpl extends AbstractProjectComponent implements M
       }
     }
     for (SModule dep : SetSequence.fromSet(MigrationModuleUtil.getModuleDependencies(module))) {
-      int currentDepVersion = ((AbstractModule) dep).getModuleVersion();
-      int ver = ((AbstractModule) module).getDependencyVersion(dep, false);
+      int currentDepVersion = ((AbstractModule2) dep).getModuleVersion();
+      int ver = ((AbstractModule2) module).getDependencyVersion(dep, false);
 
       ver = Math.max(ver, 0);
       currentDepVersion = Math.max(currentDepVersion, 0);

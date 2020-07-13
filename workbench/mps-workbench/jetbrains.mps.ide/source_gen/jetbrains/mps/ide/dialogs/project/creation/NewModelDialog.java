@@ -4,9 +4,10 @@ package jetbrains.mps.ide.dialogs.project.creation;
 
 import jetbrains.mps.annotations.GeneratedClass;
 import com.intellij.openapi.ui.DialogWrapper;
+import jetbrains.mps.project.AbstractModule2;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.AbstractModule;
+
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import jetbrains.mps.project.Project;
@@ -30,7 +31,7 @@ public class NewModelDialog extends DialogWrapper {
   @NotNull
   private final MPSProject myProject;
   @NotNull
-  private final AbstractModule myModule;
+  private final AbstractModule2 myModule;
 
   private final JPanel myContentPane = new JPanel(new BorderLayout());
 
@@ -38,7 +39,7 @@ public class NewModelDialog extends DialogWrapper {
 
   private ModelCreateHelper myResult;
 
-  public NewModelDialog(final Project project, @NotNull final AbstractModule module, String title, final NewModelDialogSettings.Factory factory) throws HeadlessException {
+  public NewModelDialog(final Project project, @NotNull final AbstractModule2 module, String title, final NewModelDialogSettings.Factory factory) throws HeadlessException {
     super(ProjectHelper.toIdeaProject(project));
     setTitle(title);
     myProject = (MPSProject) project;

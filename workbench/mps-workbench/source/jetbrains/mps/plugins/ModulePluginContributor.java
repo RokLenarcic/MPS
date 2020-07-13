@@ -18,7 +18,7 @@ package jetbrains.mps.plugins;
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 import jetbrains.mps.util.MacroHelper;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.util.ModuleNameUtil;
@@ -103,7 +103,7 @@ public class ModulePluginContributor extends PluginContributor {
     // note, for deployed modules, with META-INF/module.xml as anchor/descriptor file, there's a hack in ModuleMacros that uses META-INF/.. as ${module} value
     //
     // AP, I beg your pardon, no idea where to take FS from if a module is not an instance of AbstractModule.
-    FileSystem fs = myModule instanceof AbstractModule ? ((AbstractModule) myModule).getFileSystem() : jetbrains.mps.vfs.FileSystem.getInstance();
+    FileSystem fs = myModule instanceof AbstractModule2 ? ((AbstractModule2) myModule).getFileSystem() : jetbrains.mps.vfs.FileSystem.getInstance();
     // I'd be pretty much satisfied with new java.io.File(cfgFullPath), but it is not capable of paths inside a jar.
     IFile cfg = fs.getFile(cfgFullPath);
     // I'd love to use IFile here, but MacroHelper gives me a string, not IFile, and, alas, there's no access to proper filesystem here

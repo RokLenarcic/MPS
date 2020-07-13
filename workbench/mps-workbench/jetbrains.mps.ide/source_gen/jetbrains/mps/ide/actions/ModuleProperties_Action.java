@@ -13,7 +13,7 @@ import com.intellij.openapi.actionSystem.Presentation;
 import jetbrains.mps.ide.IdeBundle;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
@@ -43,7 +43,7 @@ public class ModuleProperties_Action extends BaseAction {
     presentation.setText(IdeBundle.message("actions.module.properties.title"));
 
     // see MPS-19850 
-    presentation.setEnabledAndVisible(((SModule) MapSequence.fromMap(_params).get("module")) instanceof AbstractModule && ((AbstractModule) ((SModule) MapSequence.fromMap(_params).get("module"))).getModuleDescriptor() != null);
+    presentation.setEnabledAndVisible(((SModule) MapSequence.fromMap(_params).get("module")) instanceof AbstractModule2 && ((AbstractModule2) ((SModule) MapSequence.fromMap(_params).get("module"))).getModuleDescriptor() != null);
   }
   @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {

@@ -26,7 +26,7 @@ import com.intellij.openapi.roots.ui.configuration.projectRoot.LibrariesContaine
 import com.intellij.openapi.roots.ui.configuration.projectRoot.LibrariesContainerFactory;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.library.ModuleLibrariesUtil;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.dependency.UsedModulesCollector;
@@ -110,7 +110,7 @@ public abstract class ModuleRuntimeLibrariesImporter {
         if (usedModule instanceof StubSolutionIdea) {
           library = StubSolutionIdea.findLibrary((StubSolutionIdea) usedModule);
         } else {
-          library = ModuleLibrariesUtil.getOrCreateAutoLibrary((AbstractModule) usedModule, getProject(), myLibrariesContainer);
+          library = ModuleLibrariesUtil.getOrCreateAutoLibrary((AbstractModule2) usedModule, getProject(), myLibrariesContainer);
         }
 
         if (library != null) {

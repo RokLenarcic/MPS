@@ -19,7 +19,7 @@ import com.intellij.configurationStore.StoreReloadManager;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
 import jetbrains.mps.module.ModuleDeleteHelper;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.ProjectPathUtil;
 import jetbrains.mps.project.Solution;
@@ -225,30 +225,30 @@ public abstract class ModuleIDETests extends ModuleInProjectTest {
   }
 
   private interface ModuleSupplier {
-    AbstractModule get(String moduleName);
+    AbstractModule2 get(String moduleName);
   }
 
   private interface RenamedModuleChecker {
-    void check(String moduleName, AbstractModule module);
+    void check(String moduleName, AbstractModule2 module);
   }
 
   private void renameModule(ModuleSupplier moduleSupplier, @Nullable RenamedModuleChecker checker) {
     String moduleName = getNewModuleName();
     String newModuleName = getNewModuleName();
-    Reference<AbstractModule> moduleReference = new Reference<>();
+    Reference<AbstractModule2> moduleReference = new Reference<>();
     invokeInCommand(() -> moduleReference.set(moduleSupplier.get(moduleName)));
     invokeInCommand(() -> {
-      AbstractModule module = moduleReference.get();
-      final Collection<AbstractModule> subModules = new Renamer(myProject).getSubModules(module);
+      AbstractModule2 module = moduleReference.get();
+      final Collection<AbstractModule2> subModules = new Renamer(myProject).getSubModules(module);
 
       // If module name is not equals to folder name, that folder should not be renamed
       boolean mustBeMoved = module.getModuleName().equals(module.getModuleSourceDir().getName());
       final SModuleId moduleId = module.getModuleId();
 
-      AbstractModule result = new Renamer(myProject).renameModule(module, newModuleName);
+      AbstractModule2 result = new Renamer(myProject).renameModule(module, newModuleName);
 
       Assert.assertNull(module.getRepository());
-      module = (AbstractModule) myProject.getRepository().getModule(moduleId);
+      module = (AbstractModule2) myProject.getRepository().getModule(moduleId);
       Assert.assertNotNull("Renamed module was not found in project repository by SModuleId", module);
       Assert.assertEquals(module, result);
 
@@ -301,9 +301,9 @@ public abstract class ModuleIDETests extends ModuleInProjectTest {
       }
 
       // Check submodules
-      for (AbstractModule subModule : subModules) {
+      for (AbstractModule2 subModule : subModules) {
         Assert.assertNull(subModule.getRepository());
-        subModule = (AbstractModule) myProject.getRepository().getModule(subModule.getModuleId());
+        subModule = (AbstractModule2) myProject.getRepository().getModule(subModule.getModuleId());
         Assert.assertTrue(subModule.getModuleSourceDir().isDescendant(module.getModuleSourceDir()));
 
         // Check that model roots content folder is updated
@@ -509,7 +509,7 @@ public abstract class ModuleIDETests extends ModuleInProjectTest {
     });
   }
 
-  private void deleteModule(AbstractModule lang, boolean deleteFiles) {
+  private void deleteModule(AbstractModule2 lang, boolean deleteFiles) {
     new ModuleDeleteHelper(myProject).deleteModules(Collections.singletonList(lang), false, deleteFiles);
   }
 }

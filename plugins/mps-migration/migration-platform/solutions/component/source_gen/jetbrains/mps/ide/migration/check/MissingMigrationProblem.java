@@ -9,7 +9,7 @@ import jetbrains.mps.errors.item.ModuleReportItem;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.lang.migration.runtime.base.RefactoringScriptReference;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
@@ -52,7 +52,7 @@ public abstract class MissingMigrationProblem extends Problem<SModule> implement
       final Wrappers._T<String> msg = new Wrappers._T<String>();
       getReason().getRepository().getModelAccess().runReadAction(new Runnable() {
         public void run() {
-          msg.value = "The module " + myScriptReference.getModuleReference().getModuleName() + " does not provide refactoring log for version " + myScriptReference.getFromVersion() + ". " + "Some modules use this module with version " + myUsedVersion + " while current version is " + ((AbstractModule) getReason()).getModuleVersion() + ".";
+          msg.value = "The module " + myScriptReference.getModuleReference().getModuleName() + " does not provide refactoring log for version " + myScriptReference.getFromVersion() + ". " + "Some modules use this module with version " + myUsedVersion + " while current version is " + ((AbstractModule2) getReason()).getModuleVersion() + ".";
         }
       });
       return msg.value;

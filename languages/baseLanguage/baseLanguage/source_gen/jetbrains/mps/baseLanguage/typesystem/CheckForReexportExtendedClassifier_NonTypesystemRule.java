@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.typesystem;
 
 import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
+import jetbrains.mps.project.AbstractModule2;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
@@ -22,7 +23,6 @@ import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.BaseQuickFixProvider;
-import jetbrains.mps.project.AbstractModule;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -72,7 +72,7 @@ public class CheckForReexportExtendedClassifier_NonTypesystemRule extends Abstra
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(classifier, "Usages of this classifier outside of '" + module.getModuleName() + "' module requires setting 'Export' flag for the dependency on '" + classifierModule.getModuleName() + "' module", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "9721774220123915", null, errorTarget);
           {
             BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.PutReexportForExtendedClassifier_QuickFix", false);
-            intentionProvider.putArgument("module", ((AbstractModule) module));
+            intentionProvider.putArgument("module", ((AbstractModule2) module));
             intentionProvider.putArgument("moduleToImport", classifierModule);
             _reporter_2309309498.addIntentionProvider(intentionProvider);
           }

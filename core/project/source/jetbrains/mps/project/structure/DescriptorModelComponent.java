@@ -16,7 +16,7 @@
 package jetbrains.mps.project.structure;
 
 import jetbrains.mps.components.CoreComponent;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.containers.MultiMap;
 import jetbrains.mps.vfs.IFile;
@@ -188,8 +188,8 @@ public class DescriptorModelComponent implements CoreComponent {
         // Try to figure out what's the cause for MPS-31525
         if (module.getModuleName() == null) {
           IFile descriptorFile = null;
-          if (module instanceof AbstractModule) {
-            descriptorFile = ((AbstractModule) module).getDescriptorFile();
+          if (module instanceof AbstractModule2) {
+            descriptorFile = ((AbstractModule2) module).getDescriptorFile();
           }
           final String f = "Module [%s] (id:%s), loaded from %s, has no name. No descriptor model created";
           String m = String.format(f, module.getClass().getSimpleName(), module.getModuleReference().getModuleId(), descriptorFile);

@@ -36,7 +36,7 @@ import jetbrains.mps.extapi.module.SRepositoryExt;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.project.StubSolutionIdea;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
@@ -246,7 +246,7 @@ public class JdkStubSolutionManager extends AbstractJavaStubSolutionManager impl
     List<String> excludedPaths = new ArrayList<String>();
     final SModule mpsCore = BootstrapLanguages.bootstrapSolutionRef(ClassType.CORE).resolve(repository);
     ModuleDescriptor mpsCoreDesc;
-    if (mpsCore instanceof AbstractModule && (mpsCoreDesc = ((AbstractModule) mpsCore).getModuleDescriptor()) != null) {
+    if (mpsCore instanceof AbstractModule2 && (mpsCoreDesc = ((AbstractModule2) mpsCore).getModuleDescriptor()) != null) {
       excludedPaths.addAll(mpsCoreDesc.getJavaLibs());
     }
 
