@@ -214,8 +214,8 @@ public class SModuleOperations {
     }
     Project project = null;
     SRepository repository = module.getRepository();
-    if (repository instanceof ProjectRepository) {
-      project = ((ProjectRepository) repository).getProject();
+    if (repository instanceof ProjectRepository222) {
+      project = ((ProjectRepository222) repository).getProject();
     } else if (repository instanceof MPSModuleRepository) {
       // XXX perhaps, shall use ModuleRepositoryFacade here?
       Set<MPSModuleOwner> owners = ((MPSModuleRepository) repository).getOwners(module);

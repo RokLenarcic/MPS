@@ -46,18 +46,18 @@ import java.util.Set;
  * (i.e. module added to the global repository triggers moduleAdded for for both global and
  * each project repository
  */
-public class ProjectRepository extends SRepositoryBase implements SRepositoryExt, ReferenceScopeHelper.Source {
+public class ProjectRepository222 extends SRepositoryBase implements SRepositoryExt, ReferenceScopeHelper.Source {
   private final Project myProject;
   private final ModelAccess myProjectModelAccess;
   private final SRepositoryExt myRootRepo;
 
-  public ProjectRepository(@NotNull Project project, @NotNull SRepositoryExt rootRepo, @Nullable SRepositoryRegistry repositoryRegistry) {
+  public ProjectRepository222(@NotNull Project project, @NotNull SRepositoryExt rootRepo, @Nullable SRepositoryRegistry repositoryRegistry) {
     this(project, rootRepo, repositoryRegistry, new ProjectModelAccess(project));
   }
 
   // XXX in fact, the only reason to pass project here is to provide it from #getProject()
   //     there are very few uses of this knowledge, likely can get rid of it.
-  public ProjectRepository(@NotNull Project project, @NotNull SRepositoryExt rootRepo, @Nullable SRepositoryRegistry repositoryRegistry, @NotNull ModelAccess projectModelAccess) {
+  public ProjectRepository222(@NotNull Project project, @NotNull SRepositoryExt rootRepo, @Nullable SRepositoryRegistry repositoryRegistry, @NotNull ModelAccess projectModelAccess) {
     super(repositoryRegistry);
     myProject = project;
     myProjectModelAccess = projectModelAccess;

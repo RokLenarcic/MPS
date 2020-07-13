@@ -79,7 +79,7 @@ public abstract class ProjectBase extends Project {
 
   protected ProjectBase(@NotNull ProjectDescriptor projectDescriptor, @NotNull ComponentHost mpsPlatform) {
     this(projectDescriptor, mpsPlatform, false);
-    ProjectRepository r = new ProjectRepository(this, mpsPlatform.findComponent(MPSModuleRepository.class), mpsPlatform.findComponent(SRepositoryRegistry.class));
+    ProjectRepository222 r = new ProjectRepository222(this, mpsPlatform.findComponent(MPSModuleRepository.class), mpsPlatform.findComponent(SRepositoryRegistry.class));
     r.init();
     initRepository(r);
   }
