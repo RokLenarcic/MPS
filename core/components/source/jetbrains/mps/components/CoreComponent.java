@@ -17,7 +17,7 @@ package jetbrains.mps.components;
 
 /**
  * Contract : init and dispose methods are run with write lock
- * Usually <code>CoreComponent</code> is registered via one of the {@link ComponentPlugin} implementors
+ * Usually <code>CoreComponent</code> is registered via one of the {@link ComponentPlugin2} implementors
  * and is available via {@link ComponentHost#findComponent(Class)}
  *
  * @see ComponentHost

@@ -16,7 +16,7 @@
 package jetbrains.mps.core.platform;
 
 import jetbrains.mps.components.ComponentHost;
-import jetbrains.mps.components.ComponentPlugin;
+import jetbrains.mps.components.ComponentPlugin2;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.core.aspects.feedback.api.MPSFeedbackPlugin;
 import jetbrains.mps.generator.MPSGenerator;
@@ -41,7 +41,7 @@ import java.util.Iterator;
  */
 class PlatformBase implements Platform {
   // stack of initialized components. Use push and pop to modify, Deque#descendingIterator to iterate from older to newer.
-  private final Deque<ComponentPlugin> myComponentPlugins = new ArrayDeque<>();
+  private final Deque<ComponentPlugin2> myComponentPlugins = new ArrayDeque<>();
 
   PlatformBase(PlatformOptionsBuilder options) {
     MPSCore myCore = initAndRegister(new MPSCore());
@@ -82,8 +82,8 @@ class PlatformBase implements Platform {
   @Override
   public <T extends CoreComponent> T findComponent(@NotNull Class<T> componentClass) {
     // myComponentPlugins is a stack, but we would like to consult core plugins first
-    for (Iterator<ComponentPlugin> it = myComponentPlugins.descendingIterator(); it.hasNext();) {
-      final ComponentPlugin cp = it.next();
+    for (Iterator<ComponentPlugin2> it = myComponentPlugins.descendingIterator(); it.hasNext();) {
+      final ComponentPlugin2 cp = it.next();
       if (cp instanceof ComponentHost) {
         T rv = ((ComponentHost) cp).findComponent(componentClass);
         if (rv != null) {
@@ -101,7 +101,7 @@ class PlatformBase implements Platform {
     }
   }
 
-  private <T extends ComponentPlugin> T initAndRegister(T plugin) {
+  private <T extends ComponentPlugin2> T initAndRegister(T plugin) {
     plugin.init();
     myComponentPlugins.push(plugin);
     return plugin;

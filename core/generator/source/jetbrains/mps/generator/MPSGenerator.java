@@ -16,7 +16,7 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.components.ComponentHost;
-import jetbrains.mps.components.ComponentPlugin;
+import jetbrains.mps.components.ComponentPlugin2;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.extapi.module.FacetsRegistry;
 import jetbrains.mps.extapi.module.SRepositoryRegistry;
@@ -34,7 +34,7 @@ import org.jetbrains.mps.openapi.module.SModuleFacet;
  *
  * @author Artem Tikhomirov
  */
-public final class MPSGenerator extends ComponentPlugin implements ComponentHost {
+public final class MPSGenerator extends ComponentPlugin2 implements ComponentHost {
   private final ComponentHost myKernelComponents;
   private FacetFactory myGeneratorFacetFactory = new FacetFactory() {
     @Override

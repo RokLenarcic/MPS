@@ -16,13 +16,13 @@
 package jetbrains.mps.core.aspects.feedback.api;
 
 import jetbrains.mps.components.ComponentHost;
-import jetbrains.mps.components.ComponentPlugin;
+import jetbrains.mps.components.ComponentPlugin2;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public final class MPSFeedbackPlugin extends ComponentPlugin implements ComponentHost {
+public final class MPSFeedbackPlugin extends ComponentPlugin2 implements ComponentHost {
   private final LanguageRegistry myLanguageRegistry;
   private FeedbackAspectRegistry myFeedbackAspectRegistry;
 

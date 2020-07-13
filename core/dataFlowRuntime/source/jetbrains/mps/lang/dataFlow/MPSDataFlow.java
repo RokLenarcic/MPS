@@ -16,7 +16,7 @@
 package jetbrains.mps.lang.dataFlow;
 
 import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.components.ComponentPlugin;
+import jetbrains.mps.components.ComponentPlugin2;
 
 /**
  * FIXME Once we re-write reflective classloading in DataFlow with regular language aspect, we unlikely need this component plugin.
@@ -27,7 +27,7 @@ import jetbrains.mps.components.ComponentPlugin;
  * @author Artem Tikhomirov
  * @since 3.4
  */
-public class MPSDataFlow extends ComponentPlugin {
+public class MPSDataFlow extends ComponentPlugin2 {
 
   public MPSDataFlow(ClassLoaderManager clManager) {
   }

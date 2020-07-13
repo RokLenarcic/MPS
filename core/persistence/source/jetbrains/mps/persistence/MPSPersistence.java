@@ -16,7 +16,7 @@
 package jetbrains.mps.persistence;
 
 import jetbrains.mps.components.ComponentHost;
-import jetbrains.mps.components.ComponentPlugin;
+import jetbrains.mps.components.ComponentPlugin2;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.extapi.persistence.ModelFactoryService;
 import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryRuleService;
@@ -30,7 +30,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 /**
  * evgeny, 11/9/12
  */
-public final class MPSPersistence extends ComponentPlugin implements ComponentHost {
+public final class MPSPersistence extends ComponentPlugin2 implements ComponentHost {
   private final PersistenceFacade myPersistenceFacade;
   private final ModelFactoryService myModelFactoryService;
   private final DataSourceFactoryRuleService myDataSourceService;

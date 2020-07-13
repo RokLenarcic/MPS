@@ -20,7 +20,7 @@ import jetbrains.mps.checkers.IChecker;
 import jetbrains.mps.checkers.ModelPropertiesChecker;
 import jetbrains.mps.checkers.ModuleChecker;
 import jetbrains.mps.components.ComponentHost;
-import jetbrains.mps.components.ComponentPlugin;
+import jetbrains.mps.components.ComponentPlugin2;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.errors.CheckerRegistry;
 import jetbrains.mps.project.validation.StructureChecker;
@@ -39,7 +39,7 @@ import java.util.List;
  * @author Artem Tikhomirov
  * @since 2019.1
  */
-public class MPSProjectValidation extends ComponentPlugin implements ComponentHost {
+public class MPSProjectValidation extends ComponentPlugin2 implements ComponentHost {
   private final ComponentHost myHost;
   private final List<IChecker<?, ?>> myCheckers = new ArrayList<>();
   private final CheckerRegistry myRegistry;
