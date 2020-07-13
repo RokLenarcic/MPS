@@ -298,10 +298,10 @@
         <var name="menu" id="4474271214083117960" />
       </scope>
       <scope id="4474271214083117937" at="48,0,78,0" />
-      <unit id="4474271214083117970" at="57,17,62,5" name="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointIconRenderer$1" />
-      <unit id="4474271214083117988" at="63,17,68,5" name="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointIconRenderer$2" />
-      <unit id="4474271214083118007" at="70,17,75,5" name="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointIconRenderer$3" />
-      <unit id="4474271214083117744" at="28,0,95,0" name="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointIconRenderer" />
+      <unit id="4474271214083117970" at="57,17,62,5" name="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointIconRenderer2$1" />
+      <unit id="4474271214083117988" at="63,17,68,5" name="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointIconRenderer2$2" />
+      <unit id="4474271214083118007" at="70,17,75,5" name="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointIconRenderer2$3" />
+      <unit id="4474271214083117744" at="28,0,95,0" name="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointIconRenderer2" />
     </file>
   </root>
   <root nodeRef="r:e8d15a56-f89d-47fc-ac9f-8a35d3539ac3(jetbrains.mps.debugger.api.ui.breakpoints)/4474271214083118038">

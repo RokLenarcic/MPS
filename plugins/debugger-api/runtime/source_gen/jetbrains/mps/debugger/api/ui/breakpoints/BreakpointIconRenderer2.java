@@ -26,13 +26,13 @@ import jetbrains.mps.debug.api.breakpoints.IBreakpointsProvider;
 import jetbrains.mps.debug.api.breakpoints.BreakpointProvidersManager;
 
 @GeneratedClass(node = "r:e8d15a56-f89d-47fc-ac9f-8a35d3539ac3(jetbrains.mps.debugger.api.ui.breakpoints)/4474271214083117744", model = "r:e8d15a56-f89d-47fc-ac9f-8a35d3539ac3(jetbrains.mps.debugger.api.ui.breakpoints)")
-/*package*/ class BreakpointIconRenderer extends BreakpointIconRenderrerEx<ILocationBreakpoint> implements EditorMessageIconRenderer {
-  public BreakpointIconRenderer(ILocationBreakpoint breakpoint, Component component) {
+/*package*/ class BreakpointIconRenderer2 extends BreakpointIconRenderrerEx<ILocationBreakpoint> implements EditorMessageIconRenderer {
+  public BreakpointIconRenderer2(ILocationBreakpoint breakpoint, Component component) {
     super(breakpoint, component);
   }
   @Override
   public Icon getIcon() {
-    return BreakpointIconRenderer.getIconFor(myBreakpoint, DebugActionsUtil.getDebugSession(DataManager.getInstance().getDataContext(myComponent)));
+    return BreakpointIconRenderer2.getIconFor(myBreakpoint, DebugActionsUtil.getDebugSession(DataManager.getInstance().getDataContext(myComponent)));
   }
   @Override
   public String getTooltipText() {
@@ -76,7 +76,7 @@ import jetbrains.mps.debug.api.breakpoints.BreakpointProvidersManager;
     return menu;
   }
   public static Icon getIconFor(@NotNull IBreakpoint breakpoint) {
-    return BreakpointIconRenderer.getIconFor(breakpoint, null);
+    return BreakpointIconRenderer2.getIconFor(breakpoint, null);
   }
   private static Icon getIconFor(@NotNull IBreakpoint breakpoint, @Nullable AbstractDebugSession session) {
     if (session != null && session.isMute()) {
