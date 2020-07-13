@@ -54,7 +54,7 @@ class RepoChangeListener extends SRepositoryContentAdapter implements ProjectCom
   @Override
   public void projectOpened() {
     if (myProject != null) {
-      myProject.getRepository().getModelAccess().runReadAction(() -> subscribeTo(myProject.getRepository()));
+      myProject.getRepository().getModelAccess().runReadAction(() -> subscribeTo2(myProject.getRepository()));
     }
   }
 

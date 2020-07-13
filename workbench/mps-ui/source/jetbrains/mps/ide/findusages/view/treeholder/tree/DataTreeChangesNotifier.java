@@ -37,7 +37,7 @@ import java.util.Set;
 
 /**
  * Despite the name, not specific to DataTree any longer. Generic change notifier for elements supplied.
- * Use {@link #subscribeTo(SRepository)}/{@link #unsubscribeFrom(SRepository)} to activate/deactivate change tracking
+ * Use {@link #subscribeTo2(SRepository)}/{@link #unsubscribeFrom(SRepository)} to activate/deactivate change tracking
  */
 public class DataTreeChangesNotifier extends SRepositoryContentAdapter {
   private final MyCommandListener myChangeDispatch = new MyCommandListener();

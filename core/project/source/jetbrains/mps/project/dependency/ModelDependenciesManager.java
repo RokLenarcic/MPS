@@ -185,7 +185,7 @@ public class ModelDependenciesManager {
     private MyModuleWatcher(ModelDependenciesManager mdm, SRepository repository) {
       myDepManager = mdm;
       myRepository = repository;
-      subscribeTo(myRepository);
+      subscribeTo2(myRepository);
     }
 
     @Override

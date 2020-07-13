@@ -41,7 +41,7 @@ public class SRepositoryContentAdapter extends SModuleListenerBase implements
   }
 
   // Own methods
-  public void subscribeTo(SRepository repository) {
+  public void subscribeTo2(SRepository repository) {
     repository.getModelAccess().checkReadAccess();
     repository.addRepositoryListener(this);
   }
