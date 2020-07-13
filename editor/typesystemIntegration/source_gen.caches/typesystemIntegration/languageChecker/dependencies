@@ -41,7 +41,7 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell_Label" />
     <classNode dependClassName="jetbrains.mps.progress.EmptyProgressMonitor" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
-    <classNode dependClassName="jetbrains.mps.project.dependency.VisibilityUtil" />
+    <classNode dependClassName="jetbrains.mps.project.dependency2.VisibilityUtil" />
     <classNode dependClassName="jetbrains.mps.resolve.ReferenceResolverUtils" />
     <classNode dependClassName="jetbrains.mps.resolve.ResolverComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />

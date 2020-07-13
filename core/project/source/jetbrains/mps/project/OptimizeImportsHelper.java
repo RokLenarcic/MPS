@@ -16,7 +16,7 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.project.dependency.GeneratorModuleScanner;
+import jetbrains.mps.project.dependency2.GeneratorModuleScanner;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;

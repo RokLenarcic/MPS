@@ -27,9 +27,9 @@ import com.intellij.openapi.roots.ui.configuration.projectRoot.LibrariesContaine
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.library.ModuleLibrariesUtil;
 import jetbrains.mps.project.AbstractModule2;
-import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
-import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
-import jetbrains.mps.project.dependency.UsedModulesCollector;
+import jetbrains.mps.project.dependency2.GlobalModuleDependenciesManager;
+import jetbrains.mps.project.dependency2.GlobalModuleDependenciesManager.Deptype;
+import jetbrains.mps.project.dependency2.UsedModulesCollector;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.module.SModule;

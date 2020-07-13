@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.project.dependency;
+package jetbrains.mps.project.dependency2;
 
 import jetbrains.mps.extapi.module.TransientSModule;
 import jetbrains.mps.project.AbstractModule2;
-import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.ErrorHandler;
+import jetbrains.mps.project.dependency2.GlobalModuleDependenciesManager.ErrorHandler;
 import jetbrains.mps.project.structure.ProjectStructureModule;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.DeploymentDescriptor;

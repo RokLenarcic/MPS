@@ -17,7 +17,7 @@ package jetbrains.mps.ide.ui.dialogs.properties;
 
 import jetbrains.mps.generator.impl.plan.ModelScanner;
 import jetbrains.mps.project.AbstractModule2;
-import jetbrains.mps.project.dependency.GeneratorModuleScanner;
+import jetbrains.mps.project.dependency2.GeneratorModuleScanner;
 import jetbrains.mps.smodel.ConceptDeclarationScanner;
 import jetbrains.mps.smodel.EditorDeclarationScanner;
 import jetbrains.mps.smodel.Generator;

@@ -32,7 +32,7 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 import java.util.Set;
 import java.util.LinkedHashSet;
 import java.util.Collection;
-import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
+import jetbrains.mps.project.dependency2.GlobalModuleDependenciesManager;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.migration.runtime.base.MigrationModuleUtil;

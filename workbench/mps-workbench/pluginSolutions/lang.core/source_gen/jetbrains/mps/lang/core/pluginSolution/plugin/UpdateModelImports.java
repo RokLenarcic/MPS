@@ -25,7 +25,7 @@ import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.project.AbstractModule2;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.SModelOperations;
-import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
+import jetbrains.mps.project.dependency2.GlobalModuleDependenciesManager;
 
 public class UpdateModelImports extends RefactoringParticipantBase<SNodeReference, SNodeReference, SNode, SNode> implements MoveNodeRefactoringParticipant<SNodeReference, SNodeReference> {
 

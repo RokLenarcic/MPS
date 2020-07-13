@@ -13,9 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.project.dependency;
+package jetbrains.mps.project.dependency2;
 
-import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.ErrorHandler;
+import jetbrains.mps.project.dependency2.GlobalModuleDependenciesManager.ErrorHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.module.SDependency;

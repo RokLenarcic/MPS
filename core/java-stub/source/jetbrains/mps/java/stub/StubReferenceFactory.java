@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.java.stub;
 
-import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
-import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
+import jetbrains.mps.project.dependency2.GlobalModuleDependenciesManager;
+import jetbrains.mps.project.dependency2.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.IterableUtil;

@@ -15,7 +15,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import java.util.List;
 import java.util.Collection;
 import java.util.HashSet;
-import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
+import jetbrains.mps.project.dependency2.GlobalModuleDependenciesManager;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.errors.item.IssueKindReportItem;

@@ -17,7 +17,7 @@ package jetbrains.mps.classloading;
 
 import jetbrains.mps.classloading.GraphHolder.Graph;
 import jetbrains.mps.module.ReloadableModule;
-import jetbrains.mps.project.dependency.UsedModulesCollector;
+import jetbrains.mps.project.dependency2.UsedModulesCollector;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;

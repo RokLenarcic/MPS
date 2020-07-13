@@ -26,7 +26,7 @@ import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.ide.dialogs.project.creation.NewModelDialog;
 import jetbrains.mps.refactoring.participant.RefactoringSession;
 import java.util.Collection;
-import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
+import jetbrains.mps.project.dependency2.GlobalModuleDependenciesManager;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.ModelDependencyScanner;

@@ -17,7 +17,7 @@ package jetbrains.mps.project;
 
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.module.ReloadableModule;
-import jetbrains.mps.project.dependency.VisibilityUtil;
+import jetbrains.mps.project.dependency2.VisibilityUtil;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;

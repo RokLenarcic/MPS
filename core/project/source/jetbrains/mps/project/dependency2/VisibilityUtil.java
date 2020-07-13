@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.project.dependency;
+package jetbrains.mps.project.dependency2;
 
 import jetbrains.mps.project.AbstractModule2;
 import jetbrains.mps.scope.VisibleDepsSearchScope;

@@ -59,7 +59,7 @@ import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.ModuleInstanceCondition;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.VisibleModuleCondition;
-import jetbrains.mps.project.dependency.VisibilityUtil;
+import jetbrains.mps.project.dependency2.VisibilityUtil;
 import jetbrains.mps.scope.ConditionalScope;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.Language;
