@@ -117,22 +117,7 @@ public class DefaultModelPersistence implements ModelFactory, IndexAwareModelFac
     if (!(supports(dataSource))) {
       throw new UnsupportedDataSourceException(dataSource);
     }
-
-    final SModelHeader header = SModelHeader.create(ModelPersistence.LAST_VERSION);
-    final SModelReference modelReference = PersistenceFacade.getInstance().createModelReference(null, SModelId.generate(), modelName.getValue());
-    header.setModelReference(modelReference);
-    final DefaultSModelDescriptor rv = new DefaultSModelDescriptor(new PersistenceFacility(this, (StreamDataSource) dataSource), header);
-    // Hack to ensure newly created model is indeed empty. Otherwise, with StreamDataSource pointing to existing model stream, an attempt to
-    // do anything with the model triggers loading and the model get all the data. Two approaches deemed reasonable to tackle the issue:
-    // (a) enforce clear empty model (why would anyone call #create() then)
-    // (b) fail with error (too brutal?)
-    // Another alternative considered is to tolerate any DataSource in DefaultSModelDescriptor (or its persistence counterpart), so that
-    // one can create an empty model with NullDataSource, and later save with a proper DataSource (which yields more job to client and makes him
-    // question why SModel.save() is there). This task is reasonable regardless of final approach taken, but would take more effort, hence the hack.
-    if (dataSource.getTimestamp() != -1) { // chances are there's something in the stream already
-      rv.replace(new DefaultSModel(modelReference, header)); // model state is FULLY_LOADED, DataSource won't get read
-    }
-    return rv;
+    return null;
   }
 
   @NotNull
@@ -156,7 +141,22 @@ public class DefaultModelPersistence implements ModelFactory, IndexAwareModelFac
     final DefaultSModelDescriptor resultingModel = new DefaultSModelDescriptor(persistenceFacility, header);
     ModelLoadingState loadingLevel = detectLoadingLevel(options);
     readModelUpToLevel(dataSource, persistenceFacility, header, resultingModel, loadingLevel);
-    return resultingModel;
+    final SModelHeader header = SModelHeader.create(ModelPersistence.LAST_VERSION);
+    final SModelReference modelReference = PersistenceFacade.getInstance().createModelReference(null, SModelId.generate(), modelName.getValue());
+    header.setModelReference(modelReference);
+    final DefaultSModelDescriptor rv = new DefaultSModelDescriptor(new PersistenceFacility(this, (StreamDataSource) dataSource), header);
+    // Hack to ensure newly created model is indeed empty. Otherwise, with StreamDataSource pointing to existing model stream, an attempt to
+    // do anything with the model triggers loading and the model get all the data. Two approaches deemed reasonable to tackle the issue:
+    // (a) enforce clear empty model (why would anyone call #create() then)
+    // (b) fail with error (too brutal?)
+    // Another alternative considered is to tolerate any DataSource in DefaultSModelDescriptor (or its persistence counterpart), so that
+    // one can create an empty model with NullDataSource, and later save with a proper DataSource (which yields more job to client and makes him
+    // question why SModel.save() is there). This task is reasonable regardless of final approach taken, but would take more effort, hence the hack.
+    if (dataSource.getTimestamp() != -1) { // chances are there's something in the stream already
+      rv.replace(new DefaultSModel(modelReference, header)); // model state is FULLY_LOADED, DataSource won't get read
+    }
+    return rv;
+
   }
 
   private void readModelUpToLevel(@NotNull DataSource dataSource,
