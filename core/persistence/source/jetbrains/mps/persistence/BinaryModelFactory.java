@@ -81,28 +81,15 @@ public class BinaryModelFactory implements ModelFactory, IndexAwareModelFactory 
 
   @NotNull
   @Override
-  public MFProblem canCreate(@NotNull DataSource dataSource, @NotNull SModelName modelName, @NotNull ModelLoadingOption... options) {
-    if (!supports(dataSource)) {
-      return new DataSourceNotSupportedProblem(dataSource);
-    }
-    if (dataSource instanceof FileSystemBasedDataSource) {
-      if (((FileSystemBasedDataSource) dataSource).exists()) {
-        return () -> "Some of the data sources already exist on the disk";
-      }
-    }
-    return NO_PROBLEM;
-  }
-
-  @Override
-  public boolean supports(@NotNull DataSource dataSource) {
-    return dataSource instanceof StreamDataSource;
+  public SModel create(@NotNull DataSource dataSource,
+                       @NotNull SModelName modelName,
+                       @NotNull ModelLoadingOption... options) throws UnsupportedDataSourceException {
   }
 
   @NotNull
   @Override
-  public SModel create(@NotNull DataSource dataSource,
-                       @NotNull SModelName modelName,
-                       @NotNull ModelLoadingOption... options) throws UnsupportedDataSourceException {
+  public SModel load(@NotNull DataSource dataSource, @NotNull ModelLoadingOption... options) throws UnsupportedDataSourceException,
+                                                                                                    ModelLoadException {
     if (!supports(dataSource)) {
       throw new UnsupportedDataSourceException(dataSource);
     }
@@ -112,12 +99,7 @@ public class BinaryModelFactory implements ModelFactory, IndexAwareModelFactory 
     SModelReference newModelRef = FACADE().createModelReference(null, SModelId.generate(), modelName.getValue());
     header.setModelReference(newModelRef);
     return new DefaultSModelDescriptor(new PersistenceFacility(this, source), header);
-  }
 
-  @NotNull
-  @Override
-  public SModel load(@NotNull DataSource dataSource, @NotNull ModelLoadingOption... options) throws UnsupportedDataSourceException,
-                                                                                                    ModelLoadException {
     if (!supports(dataSource)) {
       throw new UnsupportedDataSourceException(dataSource);
     }
