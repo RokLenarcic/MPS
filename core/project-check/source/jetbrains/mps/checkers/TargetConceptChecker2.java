@@ -78,7 +78,7 @@ public final class TargetConceptChecker2 extends AbstractNodeCheckerInEditor imp
         RefCardinalityContext context = new RefCardinalityContext(node, link, target);
         FeedbackAspectRegistry registry = getFeedbackAspectRegistry();
         MessagesFacade facade = new MessagesFacade(registry);
-        List<String> messages = facade.findTextMessagesForProblem(node.getConcept(), problem, context);
+        List<String> messages = facade.findTextMessagesForProblem2(node.getConcept(), problem, context);
         errorsCollector.addError(new IncompatibleTargetReportItem.IncompatibleReferenceTargetReportItem(reference, messages.get(0)));
       }
     }
@@ -95,7 +95,7 @@ public final class TargetConceptChecker2 extends AbstractNodeCheckerInEditor imp
         IncorrectTargetChildRoleContext context = new IncorrectTargetChildRoleContext(child);
         FeedbackAspectRegistry registry = getFeedbackAspectRegistry();
         MessagesFacade facade = new MessagesFacade(registry);
-        List<String> messages = facade.findTextMessagesForProblem(node.getConcept(), problem, context);
+        List<String> messages = facade.findTextMessagesForProblem2(node.getConcept(), problem, context);
         errorsCollector.addError(new IncompatibleTargetReportItem.IncompatibleContainmentTargetReportItem(child, messages.get(0)));
       }
     }

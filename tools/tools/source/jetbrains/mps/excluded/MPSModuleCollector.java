@@ -17,7 +17,7 @@ package jetbrains.mps.excluded;
 
 import jetbrains.mps.core.platform.Platform;
 import jetbrains.mps.excluded.Utils.MyMacroHelper;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 import jetbrains.mps.project.ProjectPathUtil;
 import jetbrains.mps.project.facets.TestsFacetImpl;
 import jetbrains.mps.project.io.DescriptorIOException;
@@ -100,7 +100,7 @@ class MPSModuleCollector {
 
       IFile moduleDir = moduleIFile.getParent();
       // todo: rewrite this code using ProjectPathUtil
-      IFile classesGenDir = moduleDir.findChild(AbstractModule.CLASSES_GEN);
+      IFile classesGenDir = moduleDir.findChild(AbstractModule2.CLASSES_GEN);
       DescriptorEntry de = new DescriptorEntry(moduleDir);
       if (md instanceof SolutionDescriptor) {
         SolutionDescriptor sd = ((SolutionDescriptor) md);
@@ -130,7 +130,7 @@ class MPSModuleCollector {
           de.addSourcePath(generatorSrcPath);
           // FIXME need a proper mechanism to discover classesGen folder of a module.
           // Next code comes from JavaModuleFacetImpl.getClassesGen(), would be great to reuse one rather than copy
-          de.addClassGenPath(myFileSystem.getFile(PathUtil.toSystemIndependent(generatorSrcPath)).getParent().findChild(AbstractModule.CLASSES_GEN));
+          de.addClassGenPath(myFileSystem.getFile(PathUtil.toSystemIndependent(generatorSrcPath)).getParent().findChild(AbstractModule2.CLASSES_GEN));
         }
       }
     }

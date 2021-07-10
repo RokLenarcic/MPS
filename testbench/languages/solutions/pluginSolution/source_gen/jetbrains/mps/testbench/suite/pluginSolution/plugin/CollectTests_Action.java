@@ -40,7 +40,7 @@ import jetbrains.mps.testbench.suite.behavior.IModuleRef__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.testbench.suite.behavior.ITestRef__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.generator.GenerationFacade;
@@ -179,7 +179,7 @@ public class CollectTests_Action extends BaseAction {
                         }))) {
                           ListSequence.fromList(SLinkOperations.getChildren(suite, LINKS.testRef$fEbz)).addElement(SNodeOperations.cast(tref, CONCEPTS.ITestRef$Qb));
                           ((SModelInternal) model).addModelImport(smodel.getReference());
-                          ((AbstractModule) ((SModel) MapSequence.fromMap(_params).get("modelDesc")).getModule()).addDependency(module.value.getModuleReference(), false);
+                          ((AbstractModule2) ((SModel) MapSequence.fromMap(_params).get("modelDesc")).getModule()).addDependency(module.value.getModuleReference(), false);
                         }
                       }
                     }

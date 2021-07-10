@@ -85,7 +85,7 @@ abstract class UsageEntry {
     @Override
     /*package*/ void save(ModelOutputStream mos) throws IOException {
       mos.writeByte(TOKEN_CONCEPT_INSTANCE);
-      mos.writeUUID(myConcept.getLanguageId().getIdValue());
+      mos.writeUUID(myConcept.getLanguageId().getValll());
       mos.writeLong(myConcept.getIdValue());
     }
   }

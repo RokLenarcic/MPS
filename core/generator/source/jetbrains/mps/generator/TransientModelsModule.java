@@ -22,7 +22,7 @@ import jetbrains.mps.extapi.module.TransientSModule;
 import jetbrains.mps.generator.TransientModelsProvider.TransientSwapSpace;
 import jetbrains.mps.generator.impl.ModelVault;
 import jetbrains.mps.module.SDependencyImpl;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 import jetbrains.mps.smodel.FastNodeFinderManager;
 import jetbrains.mps.smodel.ModelDependencyUpdate;
 import jetbrains.mps.smodel.ModelImports;
@@ -53,7 +53,7 @@ import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.BiConsumer;
 
-public class TransientModelsModule extends AbstractModule implements TransientSModule {
+public class TransientModelsModule extends AbstractModule2 implements TransientSModule {
   private static final Logger LOG = LogManager.getLogger(TransientModelsModule.class);
 
   private final TransientModelsProvider myComponent;

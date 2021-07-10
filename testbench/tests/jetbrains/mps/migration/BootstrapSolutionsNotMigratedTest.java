@@ -16,7 +16,7 @@
 package jetbrains.mps.migration;
 
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.testbench.junit.suites.BaseCheckModulesTest;
@@ -46,7 +46,7 @@ public class BootstrapSolutionsNotMigratedTest extends BaseCheckModulesTest {
     final List<String> languageVersions = new ArrayList<>();
     final List<String> dependencyVersions = new ArrayList<>();
     Exception exception = ThreadUtils.runInUIThreadAndWait(() -> {
-      ModuleDescriptor moduleDescriptor = ((AbstractModule) myModule).getModuleDescriptor();
+      ModuleDescriptor moduleDescriptor = ((AbstractModule2) myModule).getModuleDescriptor();
       assert moduleDescriptor != null;
       languageVersions.addAll(moduleDescriptor.getLanguageVersions().keySet().stream().map(SLanguage::getQualifiedName).collect(Collectors.toList()));
       dependencyVersions.addAll(moduleDescriptor.getDependencyVersions().keySet().stream().map(SModuleReference::getModuleName).collect(Collectors.toList()));

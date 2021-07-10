@@ -16,7 +16,7 @@
 package jetbrains.mps.project.facets;
 
 import jetbrains.mps.extapi.module.ModuleFacetBase;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleFacetDescriptor;
 import jetbrains.mps.vfs.IFile;
@@ -32,7 +32,7 @@ public class TestsFacetImpl extends ModuleFacetBase implements TestsFacet {
 
   @Override
   public void attach() {
-    IFile descriptorFile = ((AbstractModule) getModule()).getDescriptorFile();
+    IFile descriptorFile = ((AbstractModule2) getModule()).getDescriptorFile();
     if (descriptorFile != null) {
       myModuleHome = descriptorFile.getParent();
     }

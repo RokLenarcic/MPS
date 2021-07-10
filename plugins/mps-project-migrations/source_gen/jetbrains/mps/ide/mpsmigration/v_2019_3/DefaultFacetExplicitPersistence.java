@@ -4,9 +4,9 @@ package jetbrains.mps.ide.mpsmigration.v_2019_3;
 
 import jetbrains.mps.annotations.GeneratedClass;
 import jetbrains.mps.migration.global.BaseProjectMigration;
+import jetbrains.mps.project.AbstractModule2;
 import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.smodel.Language;
@@ -38,10 +38,10 @@ public class DefaultFacetExplicitPersistence extends BaseProjectMigration {
       if (m.isReadOnly()) {
         continue;
       }
-      if (false == m instanceof AbstractModule) {
+      if (false == m instanceof AbstractModule2) {
         continue;
       }
-      ModuleDescriptor md = ((AbstractModule) m).getModuleDescriptor();
+      ModuleDescriptor md = ((AbstractModule2) m).getModuleDescriptor();
       if (md == null) {
         continue;
       }
@@ -83,8 +83,8 @@ public class DefaultFacetExplicitPersistence extends BaseProjectMigration {
         changed = true;
       }
       if (changed) {
-        ((AbstractModule) m).setChanged();
-        ((AbstractModule) m).save();
+        ((AbstractModule2) m).setChanged();
+        ((AbstractModule2) m).save();
       }
     }
     return true;

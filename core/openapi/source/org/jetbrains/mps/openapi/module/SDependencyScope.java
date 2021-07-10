@@ -82,7 +82,7 @@ public enum SDependencyScope {
 
   /**
    * scope to string
-   * @return identity one may use to persist the {@link #fromIdentity(String) scope}
+   * @return identity one may use to persist the {@link #fromIdentity2(String) scope}
    */
   @NotNull
   public String identify() {
@@ -95,7 +95,7 @@ public enum SDependencyScope {
    * @return scope instance with specified identity
    */
   @Nullable
-  public static SDependencyScope fromIdentity(@Nullable String identity) {
+  public static SDependencyScope fromIdentity2(@Nullable String identity) {
     for (SDependencyScope sd : SDependencyScope.values()) {
       if (sd.myIdentity.equals(identity)) {
         return sd;

@@ -9,7 +9,7 @@ import java.io.IOException;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.io.File;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 
 public class FirstMigration extends MigrationScriptBase {
   public String getCaption() {
@@ -38,6 +38,6 @@ public class FirstMigration extends MigrationScriptBase {
     return new File(projectHomePath(m), "first-migration.txt");
   }
   public static String projectHomePath(SModule m) {
-    return ((AbstractModule) m).getModuleSourceDir().getParent().getParent().getParent().getPath();
+    return ((AbstractModule2) m).getModuleSourceDir().getParent().getParent().getParent().getPath();
   }
 }

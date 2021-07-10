@@ -18,7 +18,7 @@ package jetbrains.mps.java.stub;
 import jetbrains.mps.components.ComponentHost;
 import jetbrains.mps.extapi.persistence.FolderSetDataSource;
 import jetbrains.mps.persistence.java.library.JavaClassStubModelDescriptor;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SNodeId.Foreign;
@@ -94,7 +94,7 @@ public class StubModelLazyLoadStressTest implements EnvironmentAware {
         trace("JCSMD.marked as " + newState + " from " + Thread.currentThread().getName());
       }
     };
-    model.setModule(new AbstractModule() {
+    model.setModule(new AbstractModule2() {
       {
         setModuleReference(moduleRef);
       }

@@ -4,13 +4,13 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.annotations.GeneratedClass;
 import jetbrains.mps.ide.dialogs.project.creation.NewModelDialogSettings;
+import jetbrains.mps.project.AbstractModule2;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.ide.dialogs.project.creation.NewModelDialog;
-import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.ide.dialogs.project.creation.NewModelDialogDefaultSettings;
 import jetbrains.mps.ide.ui.tree.module.StereotypeProvider;
 import jetbrains.mps.ide.IdeBundle;
@@ -44,7 +44,7 @@ public class CloneModelActionExecutor extends ModelCreationActionsBaseExecutor {
 
   @Override
   protected final SModel showDialog(SModule module) {
-    NewModelDialog dialog = new NewModelDialog(myProject, (AbstractModule) module, getTitle(), myDialogSettingsFactory);
+    NewModelDialog dialog = new NewModelDialog(myProject, (AbstractModule2) module, getTitle(), myDialogSettingsFactory);
     dialog.show();
     return check_59vj8a_a2a01(check_59vj8a_a0c0k(dialog.getResultHelper(), myOriginalModel));
   }

@@ -236,7 +236,7 @@ import jetbrains.mps.ide.platform.ui.CheckBoxNodeRenderer;
     }
     @Override
     public Icon getIcon() {
-      return BreakpointIconRenderer.getIconFor(myBreakpoint);
+      return BreakpointIconRenderer2.getIconFor(myBreakpoint);
     }
     @Override
     public String getText() {

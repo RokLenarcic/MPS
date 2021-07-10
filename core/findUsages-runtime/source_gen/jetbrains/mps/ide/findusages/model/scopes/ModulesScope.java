@@ -9,7 +9,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.annotations.NotNull;
 import java.util.Arrays;
 import java.util.Collection;
-import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
+import jetbrains.mps.project.dependency2.GlobalModuleDependenciesManager;
 import java.util.HashMap;
 import org.jdom.Element;
 import jetbrains.mps.project.Project;

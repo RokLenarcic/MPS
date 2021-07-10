@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.project.dependency;
+package jetbrains.mps.project.dependency2;
 
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.smodel.Language;
@@ -185,7 +185,7 @@ public class ModelDependenciesManager {
     private MyModuleWatcher(ModelDependenciesManager mdm, SRepository repository) {
       myDepManager = mdm;
       myRepository = repository;
-      subscribeTo(myRepository);
+      subscribeTo2(myRepository);
     }
 
     @Override
@@ -242,7 +242,7 @@ public class ModelDependenciesManager {
 
     public void dispose() {
       myIsDisposed = true;
-      unsubscribeFrom(myRepository);
+      unsubscribeFrom2(myRepository);
     }
   }
 }

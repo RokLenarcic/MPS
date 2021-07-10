@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.extapi.module;
 
+import jetbrains.mps.components.ComponentPlugin2;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -34,7 +35,7 @@ public class SRepositoryRegistry implements CoreComponent {
   private Set<SRepositoryListener> myGlobalListeners = new LinkedHashSet<>();
 
   /**
-   * @deprecated Instead, access instance through respective kernel {@link jetbrains.mps.components.ComponentPlugin} (i.e. {@code MPSCore}).
+   * @deprecated Instead, access instance through respective kernel {@link ComponentPlugin2} (i.e. {@code MPSCore}).
    *             There are no uses in MPS, although there are still few in mbeddr
    */
   @Deprecated

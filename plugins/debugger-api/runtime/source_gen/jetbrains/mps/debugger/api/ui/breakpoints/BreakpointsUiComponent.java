@@ -216,7 +216,7 @@ public class BreakpointsUiComponent extends BreakpointsUiComponentEx<IBreakpoint
 
   @Override
   protected BreakpointIconRenderrerEx<ILocationBreakpoint> createRenderrer(ILocationBreakpoint breakpoint, EditorComponent component) {
-    return new BreakpointIconRenderer(breakpoint, component);
+    return new BreakpointIconRenderer2(breakpoint, component);
   }
   @Override
   protected BreakpointPainterEx<ILocationBreakpoint> createPainter(ILocationBreakpoint breakpoint) {

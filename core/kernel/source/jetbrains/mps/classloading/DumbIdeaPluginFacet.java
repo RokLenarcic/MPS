@@ -38,7 +38,7 @@ public class DumbIdeaPluginFacet extends ModuleFacetBase implements IdeaPluginMo
   }
 
   @Override
-  public void save(Memento memento) {
+  public void save2(Memento memento) {
     memento.put("pluginId", pluginId);
   }
 

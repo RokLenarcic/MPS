@@ -326,7 +326,7 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
         CustomClassLoadingFacet facet = existingModule.getFacet(CustomClassLoadingFacet.class);
         assert facet != null;
         Memento memento = new MementoImpl();
-        facet.save(memento);
+        facet.save2(memento);
         desc.getModuleFacetDescriptors().add(new ModuleFacetDescriptor(facet.getFacetType(), memento));
         // XXX here used to be a check not to unregister from owner == this, but as long as it was commented out, just
         // use a method that unregisters from all owners at once.

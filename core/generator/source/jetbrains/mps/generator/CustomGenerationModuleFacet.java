@@ -86,7 +86,7 @@ public class CustomGenerationModuleFacet extends ModuleFacetBase implements Mode
   }
 
   @Override
-  public void save(Memento memento) {
+  public void save2(Memento memento) {
     memento.put("planModel", myPlanModel == null ? null : PersistenceFacade.getInstance().asString(myPlanModel));
   }
 }

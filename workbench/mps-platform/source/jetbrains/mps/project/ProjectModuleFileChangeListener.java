@@ -97,10 +97,10 @@ public final class ProjectModuleFileChangeListener implements ProjectModuleLoadi
         if (module == null) {
           continue;
         }
-        if (module instanceof AbstractModule) {
+        if (module instanceof AbstractModule2) {
           // FIXME If MD comes from another file, need to let AM know about the change!
           //       Perhaps, it's better just to unregister the module altogether and instantiate again?
-          ((AbstractModule) module).setModuleDescriptor(mh.getDescriptor(), false);
+          ((AbstractModule2) module).setModuleDescriptor(mh.getDescriptor(), false);
         }
       }
     });
@@ -143,7 +143,7 @@ public final class ProjectModuleFileChangeListener implements ProjectModuleLoadi
 
   @Override
   public void moduleLoaded(ModulePath modulePath, @NotNull SModule module) {
-    if (module instanceof AbstractModule) {
+    if (module instanceof AbstractModule2) {
       final IFile file = getProjectFS().getFile(modulePath.getPath());
       myProjectModulesAndFiles.track(file, module);
       // Shall account for more than one module for the same path (e.g. if/when ProjectModuleLoader dispatches events for generators)
@@ -154,7 +154,7 @@ public final class ProjectModuleFileChangeListener implements ProjectModuleLoadi
 
   @Override
   public void moduleRemoved(ModulePath modulePath, @NotNull SModule module) {
-    if (module instanceof AbstractModule) {
+    if (module instanceof AbstractModule2) {
       final IFile file = getProjectFS().getFile(modulePath.getPath());
       myProjectModulesAndFiles.forget(file, module);
       if (!myProjectModulesAndFiles.isAnyModuleTrackedFor(file)) {

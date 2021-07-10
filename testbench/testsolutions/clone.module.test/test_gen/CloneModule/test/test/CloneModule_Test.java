@@ -14,7 +14,7 @@ import jetbrains.mps.classloading.IdeaPluginModuleFacet;
 import junit.framework.Assert;
 import jetbrains.mps.generator.CustomGenerationModuleFacet;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -73,7 +73,7 @@ public class CloneModule_Test extends EnvironmentAwareTestCase {
   public void test_cloneLanguageWithAcessoryModels() throws Exception {
     final Language originalLang = resolveLanguage(TEST_LANG_ACCESORIES);
 
-    AbstractModule module = testModule(originalLang, MPSExtentions.DOT_LANGUAGE);
+    AbstractModule2 module = testModule(originalLang, MPSExtentions.DOT_LANGUAGE);
     Assert.assertTrue("Language clone is not a language", module instanceof Language);
     final Language clonedLang = as_i3fixg_a0a4a51(module, Language.class);
 
@@ -112,7 +112,7 @@ public class CloneModule_Test extends EnvironmentAwareTestCase {
   }
 
 
-  public static void checkModule(AbstractModule module) {
+  public static void checkModule(AbstractModule2 module) {
     MessageCollectProcessor<ModuleValidationProblem> processor = new MessageCollectProcessor<ModuleValidationProblem>();
     ValidationUtil.validateModule(module, processor);
     List<String> errors = processor.getErrors();
@@ -168,8 +168,8 @@ public class CloneModule_Test extends EnvironmentAwareTestCase {
   }
 
   @NotNull
-  private AbstractModule testModule(@NotNull final AbstractModule originalModule, final String moduleFileNameExtension) {
-    final Wrappers._T<AbstractModule> clonedModule = new Wrappers._T<AbstractModule>();
+  private AbstractModule2 testModule(@NotNull final AbstractModule2 originalModule, final String moduleFileNameExtension) {
+    final Wrappers._T<AbstractModule2> clonedModule = new Wrappers._T<AbstractModule2>();
     executeUnderLock(new Runnable() {
       public void run() {
 

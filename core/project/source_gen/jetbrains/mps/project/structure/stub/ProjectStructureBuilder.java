@@ -9,7 +9,7 @@ import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
@@ -57,7 +57,7 @@ public class ProjectStructureBuilder {
    * @param module the only module we build node for (e.g. we don't look into generators of a language module)
    * @param targetModel merely a factory for new node operation, is not modified and need not be complete (i.e. may have no SModelData associated)
    */
-  public ProjectStructureBuilder(@NotNull AbstractModule module, @NotNull SModel targetModel) {
+  public ProjectStructureBuilder(@NotNull AbstractModule2 module, @NotNull SModel targetModel) {
     mySourceModule = module;
     mySource = module.getModuleDescriptor();
     myFile = module.getDescriptorFile();

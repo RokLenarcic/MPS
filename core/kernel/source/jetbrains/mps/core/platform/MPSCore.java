@@ -17,7 +17,7 @@ package jetbrains.mps.core.platform;
 
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.components.ComponentHost;
-import jetbrains.mps.components.ComponentPlugin;
+import jetbrains.mps.components.ComponentPlugin2;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.extapi.module.FacetsRegistry;
 import jetbrains.mps.extapi.module.SRepositoryRegistry;
@@ -59,7 +59,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
  * XXX Now is the only reasonable {@link ComponentHost} implementation, although any ComponentPlugin could be CH (and do this in a generic way, just need
  *     to record initialized instances and look them up in {@link ComponentHost#findComponent(Class)} implementation.
  */
-public final class MPSCore extends ComponentPlugin implements ComponentHost {
+public final class MPSCore extends ComponentPlugin2 implements ComponentHost {
   private volatile boolean myInitialized = false;
   private ClassLoaderManager myClassLoaderManager;
   private LibraryInitializer myLibraryInitializer;

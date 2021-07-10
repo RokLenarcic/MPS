@@ -133,7 +133,7 @@ public final class LanguageImportHelper {
     Set<SModuleReference> usedModules = new HashSet<>();
     myProject.getModelAccess().runReadAction(() -> {
       usedModules.addAll(devkit.getAllExtendedDevkits().stream()
-                               .map(AbstractModule::getModuleReference)
+                               .map(AbstractModule2::getModuleReference)
                                .collect(Collectors.toSet()));
 
       usedModules.addAll(StreamSupport.stream(devkit.getAllExportedLanguageIds().spliterator(), false)

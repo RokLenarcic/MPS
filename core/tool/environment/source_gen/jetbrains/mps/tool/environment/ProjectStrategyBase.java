@@ -21,7 +21,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 
 @GeneratedClass(node = "r:2876f1ee-0b45-4db5-8c09-0682cdee5c67(jetbrains.mps.tool.environment)/6450649963068953208", model = "r:2876f1ee-0b45-4db5-8c09-0682cdee5c67(jetbrains.mps.tool.environment)")
 public abstract class ProjectStrategyBase implements ProjectStrategy {
@@ -103,8 +103,8 @@ public abstract class ProjectStrategyBase implements ProjectStrategy {
     project.getModelAccess().runWriteAction(new Runnable() {
       public void run() {
         for (SModule module : SetSequence.fromSet(changed)) {
-          if (module instanceof AbstractModule) {
-            ((AbstractModule) module).updateModelsSet();
+          if (module instanceof AbstractModule2) {
+            ((AbstractModule2) module).updateModelsSet();
           }
         }
       }

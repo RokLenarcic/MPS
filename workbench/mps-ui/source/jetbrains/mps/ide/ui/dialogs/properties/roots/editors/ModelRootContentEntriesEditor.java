@@ -47,7 +47,7 @@ import jetbrains.mps.ide.ui.dialogs.properties.roots.editors.ModelRootEntryConta
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.persistence.PersistenceRegistry;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
@@ -417,8 +417,8 @@ public class ModelRootContentEntriesEditor implements Disposable {
     SModule module = new ModelAccessHelper(myProject.getRepository()).runReadAction(() -> myProject.getRepository().getModule(myModuleDescriptor.getId()));
     assert module != null : "Trying to edit settings of a module " + myModuleDescriptor.getNamespace() + ", which is not in repository";
 
-    if (module instanceof AbstractModule) {
-      AbstractModule am = (AbstractModule) module;
+    if (module instanceof AbstractModule2) {
+      AbstractModule2 am = (AbstractModule2) module;
       IFile sourceDir = am.getModuleSourceDir();
       return sourceDir != null ? sourceDir : am.getDescriptorFile().getParent();
     }

@@ -21,7 +21,7 @@ import java.util.LinkedList;
 /**
  * evgeny, 10/14/11
  */
-public class ComponentPlugin {
+public class ComponentPlugin2 {
   private final Deque<CoreComponent> myComponents = new LinkedList<>();
 
   public void init() {

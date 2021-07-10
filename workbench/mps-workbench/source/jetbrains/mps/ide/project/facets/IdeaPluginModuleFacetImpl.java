@@ -56,7 +56,7 @@ public class IdeaPluginModuleFacetImpl extends ModuleFacetBase implements IdeaPl
   }
 
   @Override
-  public void save(Memento memento) {
+  public void save2(Memento memento) {
     memento.put("pluginId", myPersistencePluginId);
   }
 

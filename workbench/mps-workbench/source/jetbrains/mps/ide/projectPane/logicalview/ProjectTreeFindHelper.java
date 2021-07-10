@@ -29,7 +29,7 @@ import jetbrains.mps.ide.ui.tree.smodel.PackageNode;
 import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
 import jetbrains.mps.library.ModulesMiner;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.smodel.SNodeUtil;
@@ -75,10 +75,10 @@ public final class ProjectTreeFindHelper {
         return false;
       }
       final SModule module = ((ProjectModuleTreeNode) treeNode).getModule();
-      if (false == module instanceof AbstractModule) {
+      if (false == module instanceof AbstractModule2) {
         return false;
       }
-      final IFile descriptorFile = ((AbstractModule) module).getDescriptorFile();
+      final IFile descriptorFile = ((AbstractModule2) module).getDescriptorFile();
       if (descriptorFile == null) {
         // for DD case, we need descriptorFile as well.
         return false;
@@ -86,7 +86,7 @@ public final class ProjectTreeFindHelper {
       if (descriptorFile.equals(moduleFile)) {
         return true;
       }
-      final ModuleDescriptor md = ((AbstractModule) module).getModuleDescriptor();
+      final ModuleDescriptor md = ((AbstractModule2) module).getModuleDescriptor();
       if (md == null || md.getDeploymentDescriptor() == null) {
         return false;
       }

@@ -35,7 +35,7 @@ public final class SLanguageId {
   }
 
   @NotNull
-  public UUID getIdValue() {
+  public UUID getValll() {
     return new UUID(myHigh, myLow);
   }
 
@@ -64,7 +64,7 @@ public final class SLanguageId {
   }
 
   public String serialize(){
-    return getIdValue().toString();
+    return getValll().toString();
   }
 
   public static SLanguageId deserialize(String s){

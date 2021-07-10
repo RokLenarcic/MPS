@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.testbench;
 
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
@@ -70,7 +70,7 @@ public interface TestModuleFactory {
    */
   void removeRegisteredModules();
 
-  void addUsedLanguage(@NotNull AbstractModule client, Language toUse);
+  void addUsedLanguage(@NotNull AbstractModule2 client, Language toUse);
 
-  void addUsedDevKit(@NotNull AbstractModule client, DevKit toUse);
+  void addUsedDevKit(@NotNull AbstractModule2 client, DevKit toUse);
 }

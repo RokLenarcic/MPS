@@ -76,7 +76,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.FindUsagesFacade" />
     <classNode extendsClassName="jetbrains.mps.components.ComponentHost" />
-    <classNode extendsClassName="jetbrains.mps.components.ComponentPlugin" />
+    <classNode extendsClassName="jetbrains.mps.components.ComponentPlugin2" />
   </dependency>
 </dependenciesRoot>
 

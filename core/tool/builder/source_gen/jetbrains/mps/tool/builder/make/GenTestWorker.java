@@ -6,6 +6,8 @@ import jetbrains.mps.annotations.GeneratedClass;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
+
+import jetbrains.mps.project.AbstractModule2;
 import jetbrains.mps.tool.common.Script;
 import java.io.File;
 import java.io.IOException;
@@ -37,7 +39,7 @@ import org.jetbrains.mps.openapi.module.ModelAccess;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.project.AbstractModule;
+
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import java.util.LinkedList;
@@ -193,10 +195,10 @@ public class GenTestWorker extends BaseGeneratorWorker {
       public void run() {
         // the following updates stub models that could change due to the compilation happened (webr, 3.0 migration case) 
         for (SModule m : project.getRepository().getModules()) {
-          if (!((m instanceof AbstractModule))) {
+          if (!((m instanceof AbstractModule2))) {
             continue;
           }
-          ((AbstractModule) m).updateModelsSet();
+          ((AbstractModule2) m).updateModelsSet();
         }
       }
     });

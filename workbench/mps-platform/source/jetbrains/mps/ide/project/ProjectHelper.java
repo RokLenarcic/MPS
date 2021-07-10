@@ -18,7 +18,7 @@ package jetbrains.mps.ide.project;
 import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.project.ProjectRepository;
+import jetbrains.mps.project.ProjectRepository222;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.Nullable;
@@ -105,8 +105,8 @@ public class ProjectHelper {
 
   @Nullable
   public static Project getProject(SRepository repository) {
-    if (repository instanceof ProjectRepository) {
-      return ((ProjectRepository) repository).getProject();
+    if (repository instanceof ProjectRepository222) {
+      return ((ProjectRepository222) repository).getProject();
     }
     return null;
   }

@@ -19,15 +19,12 @@ import jetbrains.mps.checkers.IChecker;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.item.IssueKindReportItem;
 import jetbrains.mps.errors.item.ModelReportItem;
-import jetbrains.mps.extapi.model.TransientSModel;
 import jetbrains.mps.extapi.module.TransientSModule;
-import jetbrains.mps.extapi.persistence.ModelFactoryService;
 import jetbrains.mps.generator.impl.GenPlanTranslator;
-import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.impl.plan.DependencyCollectorPlanBuilder;
 import jetbrains.mps.generator.impl.plan.ModelScanner;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.ProjectStructureModule;
@@ -35,20 +32,13 @@ import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_AbstractRef;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
-import jetbrains.mps.smodel.FastNodeFinder;
-import jetbrains.mps.smodel.FastNodeFinderManager;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.ModelDependencyScanner;
-import jetbrains.mps.smodel.SModelInternal;
-import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.language.LanguageRegistry;
-import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.IterableUtil;
-import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.Logger;
@@ -62,10 +52,6 @@ import org.jetbrains.mps.openapi.module.SDependencyScope;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
-import org.jetbrains.mps.openapi.module.SearchScope;
-import org.jetbrains.mps.openapi.persistence.DataSource;
-import org.jetbrains.mps.openapi.persistence.ModelFactory;
-import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
 import org.jetbrains.mps.openapi.util.Processor;
 
 import java.io.File;
@@ -368,7 +354,7 @@ public class ValidationUtil {
   //returns true to continue analysing, false to stop
   // package-local until extracted into AbstractModuleValidator superclass to get subclassed by validators of particular module kind
   /*package*/
-  static boolean validateAbstractModule(final AbstractModule module, Processor<? super ModuleValidationProblem> processor) {
+  static boolean validateAbstractModule(final AbstractModule2 module, Processor<? super ModuleValidationProblem> processor) {
     Throwable loadException = module.getModuleDescriptor().getLoadException();
     if (loadException != null) {
       return processor.process(new ModuleValidationProblem(module, MessageStatus.ERROR, "Couldn't load module: " + loadException.getMessage()));
@@ -404,7 +390,7 @@ public class ValidationUtil {
         }
         // IDEA-compiled modules are likely loaded by IDEA and may lack access to classes managed by MPS classloaders.
         ModuleDescriptor depModuleDescriptor;
-        if (depModule instanceof AbstractModule && (depModuleDescriptor = ((AbstractModule) depModule).getModuleDescriptor()) != null) {
+        if (depModule instanceof AbstractModule2 && (depModuleDescriptor = ((AbstractModule2) depModule).getModuleDescriptor()) != null) {
           if (depModuleDescriptor.getCompileInMPS()) {
             String msg = "Dependency target %s has MPS-managed classloader, the module may fail to load dependent classes";
             if (!processor.process(new ModuleValidationProblem(module, MessageStatus.WARNING, String.format(msg, depModule.getModuleName())))) {

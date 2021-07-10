@@ -82,7 +82,7 @@ import static org.jetbrains.mps.openapi.module.FacetsFacade.FacetFactory;
  * It is undoubtedly ought to be fixed.
  * Moreover the implementations of this method return the original descriptor (copy they must return!). [not the problem of the abstract module per se]
  * Suggestion [to be done]:
- * Rather the {@link AbstractModule} must possess a special {@code #getEditingHandle} which returns a class which in turn is able to accumulate
+ * Rather the {@link AbstractModule2} must possess a special {@code #getEditingHandle} which returns a class which in turn is able to accumulate
  * all the changes user desire to accomplish and when user is finished with editing commit all the changes with one invocation of {@code handle.commit()}.
  * [or something like this]
  * 3. Also this subclass serves another purpose: it introduces model roots and module facets into module.
@@ -93,8 +93,8 @@ import static org.jetbrains.mps.openapi.module.FacetsFacade.FacetFactory;
  * @see ModuleDescriptor for the details
  */
 @Immutable
-public abstract class AbstractModule extends SModuleBase implements EditableSModule {
-  private static final Logger LOG = LogManager.getLogger(AbstractModule.class);
+public abstract class AbstractModule2 extends SModuleBase implements EditableSModule {
+  private static final Logger LOG = LogManager.getLogger(AbstractModule2.class);
 
   public static final String MODULE_DIR = "module";
   public static final String CLASSES_GEN = "classes_gen";
@@ -122,16 +122,16 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   }
 
   @Deprecated
-  protected AbstractModule() {
+  protected AbstractModule2() {
     this(getFSSingleton());
   }
 
-  protected AbstractModule(@NotNull FileSystem fileSystem) {
+  protected AbstractModule2(@NotNull FileSystem fileSystem) {
     myDescriptorFile = null;
     myFileSystem = fileSystem;
   }
 
-  protected AbstractModule(@Nullable IFile descriptorFile) {
+  protected AbstractModule2(@Nullable IFile descriptorFile) {
     myDescriptorFile = descriptorFile;
     if (descriptorFile != null) {
       myFileSystem = descriptorFile.getFileSystem();
@@ -803,7 +803,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
                 "#validateDependencyVersions() was not called on this module in appropriate moment.",
             new Throwable());
       }
-      return ((AbstractModule) dependency).getModuleVersion();
+      return ((AbstractModule2) dependency).getModuleVersion();
     }
     return res;
   }

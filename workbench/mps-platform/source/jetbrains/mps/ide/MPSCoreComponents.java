@@ -20,6 +20,7 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.vfs.newvfs.ManagingFS;
 import jetbrains.mps.baseLanguage.search.MPSBaseLanguage;
 import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.components.ComponentPlugin2;
 import jetbrains.mps.core.platform.Platform;
 import jetbrains.mps.core.platform.PlatformFactory;
 import jetbrains.mps.core.platform.PlatformOptionsBuilder;
@@ -38,7 +39,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
  * Is responsible to instantiate components that didn't fit into core but otherwise essential for MPS operation
  * (like BaseLanguage and Migration at the moment), though this is questionable.
  * <p>
- * IMPORTANT: please do not expose 'umbrella' {@link jetbrains.mps.components.ComponentPlugin component plugins} here,
+ * IMPORTANT: please do not expose 'umbrella' {@link ComponentPlugin2 component plugins} here,
  * just specific {@link jetbrains.mps.components.CoreComponent}, to avoid excessive dependencies in classpath (e.g. not only this module
  * depends on [mps-core], but also any other, like VCS, would). Once generic mechanism to access core components is in place, this class
  * would cease to depend from [mps-core] as well.

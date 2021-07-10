@@ -63,7 +63,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.query.runtime.CommandUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext" />
     <classNode dependClassName="jetbrains.mps.persistence.DefaultModelRoot" />
-    <classNode dependClassName="jetbrains.mps.project.AbstractModule" />
+    <classNode dependClassName="jetbrains.mps.project.AbstractModule2" />
     <classNode dependClassName="jetbrains.mps.project.EditableFilteringScope" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.util.IFileUtil" />

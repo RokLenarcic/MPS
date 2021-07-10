@@ -24,7 +24,7 @@ import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.model.ModelDeleteHelper;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.Solution;
@@ -189,8 +189,8 @@ public class DeleteModelHelper {
       delete(modelOwner, modelDescriptor, myDeleteFiles);
 
       //todo: check correctness - they are not ALL model owners
-      if (modelOwner instanceof AbstractModule) {
-        ((AbstractModule) modelOwner).save();
+      if (modelOwner instanceof AbstractModule2) {
+        ((AbstractModule2) modelOwner).save();
       }
     }
 

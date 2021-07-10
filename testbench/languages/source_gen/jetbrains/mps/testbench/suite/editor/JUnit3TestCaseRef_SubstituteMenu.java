@@ -24,7 +24,7 @@ import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.editor.runtime.completion.CompletionItemInformation;
@@ -125,7 +125,7 @@ public class JUnit3TestCaseRef_SubstituteMenu extends SubstituteMenuBase {
         public SNode createNode(@NotNull String pattern) {
           SNode tref = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb9L, "jetbrains.mps.testbench.suite.structure.JUnit3TestCaseRef"));
           SLinkOperations.setTarget(tref, LINKS.klass$Q7$q, myParameterObject);
-          ((AbstractModule) _context.getModel().getModule()).addDependency(SNodeOperations.getModel(myParameterObject).getModule().getModuleReference(), false);
+          ((AbstractModule2) _context.getModel().getModule()).addDependency(SNodeOperations.getModel(myParameterObject).getModule().getModuleReference(), false);
           ((SModelInternal) _context.getModel()).addModelImport(SModelOperations.getPointer(SNodeOperations.getModel(myParameterObject)));
           return tref;
         }

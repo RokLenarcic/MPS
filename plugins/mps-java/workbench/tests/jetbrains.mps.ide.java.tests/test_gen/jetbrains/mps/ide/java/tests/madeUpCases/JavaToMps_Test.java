@@ -4,6 +4,7 @@ package jetbrains.mps.ide.java.tests.madeUpCases;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import jetbrains.mps.project.AbstractModule2;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Rule;
@@ -17,7 +18,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.project.AbstractModule;
 
 @MPSLaunch
 public class JavaToMps_Test extends BaseTransformationTest {
@@ -146,7 +146,7 @@ public class JavaToMps_Test extends BaseTransformationTest {
       // FIXME resurrected getOutputPath 
       //        beware, there's custom src jar packaging to make sure {module}/resources/testData output path is available under -src.jar/module/, where getOutputPath() resolves to 
       //        Could utilize the fact there's BuildMps_ModuleResources root that points to resources/ and copies required resource files to binary distribution jar 
-      return ((AbstractModule) testMaterial).getOutputPath();
+      return ((AbstractModule2) testMaterial).getOutputPath();
     }
   }
 }

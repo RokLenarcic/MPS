@@ -18,16 +18,16 @@ package jetbrains.mps.ide.projectPane.fileSystem.nodes;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.ui.tree.module.MPSModuleTreeNode;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.StandaloneMPSProject;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 
 public class ModuleTreeNode extends AbstractFileTreeNode implements MPSModuleTreeNode {
-  private final AbstractModule myModule;
+  private final AbstractModule2 myModule;
 
-  ModuleTreeNode(MPSProject project, AbstractModule m, @NotNull VirtualFile moduleDir) {
+  ModuleTreeNode(MPSProject project, AbstractModule2 m, @NotNull VirtualFile moduleDir) {
     super(project, moduleDir);
     myModule = m;
 

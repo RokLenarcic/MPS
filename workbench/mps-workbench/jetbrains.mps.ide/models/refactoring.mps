@@ -2916,7 +2916,7 @@
                               </node>
                             </node>
                             <node concept="liA8E" id="Ta317REbeH" role="2OqNvi">
-                              <ref role="37wK5l" to="smoa:~Renamer.renameModule(jetbrains.mps.project.AbstractModule,java.lang.String)" resolve="renameModule" />
+                              <ref role="37wK5l" to="smoa:~Renamer.renameModule(jetbrains.mps.project.AbstractModule2,java.lang.String)" resolve="renameModule" />
                               <node concept="37vLTw" id="Ta317REbeI" role="37wK5m">
                                 <ref role="3cqZAo" node="29N7xYwTGoV" resolve="myModule" />
                               </node>
@@ -3035,7 +3035,7 @@
           </node>
           <node concept="3fqX7Q" id="5NLyd09yeHD" role="3clFbw">
             <node concept="2YIFZM" id="5NLyd09yeWY" role="3fr31v">
-              <ref role="37wK5l" to="smoa:~Renamer.needToRenameSubmodules(jetbrains.mps.project.AbstractModule)" resolve="needToRenameSubmodules" />
+              <ref role="37wK5l" to="smoa:~Renamer.needToRenameSubmodules(jetbrains.mps.project.AbstractModule2)" resolve="needToRenameSubmodules" />
               <ref role="1Pybhc" to="smoa:~Renamer" resolve="Renamer" />
               <node concept="37vLTw" id="5NLyd09yeYi" role="37wK5m">
                 <ref role="3cqZAo" node="29N7xYwTGoV" resolve="myModule" />
@@ -3055,7 +3055,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="769yZq7hVZx" role="2OqNvi">
-                <ref role="37wK5l" to="smoa:~Renamer.getSubModules(jetbrains.mps.project.AbstractModule)" resolve="getSubModules" />
+                <ref role="37wK5l" to="smoa:~Renamer.getSubModules(jetbrains.mps.project.AbstractModule2)" resolve="getSubModules" />
                 <node concept="37vLTw" id="769yZq7hWQR" role="37wK5m">
                   <ref role="3cqZAo" node="29N7xYwTGoV" resolve="myModule" />
                 </node>
@@ -3080,7 +3080,7 @@
                     <ref role="37wK5l" to="qqrq:~JBLabel.&lt;init&gt;(java.lang.String,int)" resolve="JBLabel" />
                     <node concept="2YIFZM" id="5NLyd09ynar" role="37wK5m">
                       <ref role="1Pybhc" to="smoa:~Renamer" resolve="Renamer" />
-                      <ref role="37wK5l" to="smoa:~Renamer.getSubmodulesInfoHtml(jetbrains.mps.project.Project,jetbrains.mps.project.AbstractModule)" resolve="getSubmodulesInfoHtml" />
+                      <ref role="37wK5l" to="smoa:~Renamer.getSubmodulesInfoHtml(jetbrains.mps.project.Project,jetbrains.mps.project.AbstractModule2)" resolve="getSubmodulesInfoHtml" />
                       <node concept="37vLTw" id="5NLyd09ynat" role="37wK5m">
                         <ref role="3cqZAo" node="2sTGsLqeK$D" resolve="myProject" />
                       </node>

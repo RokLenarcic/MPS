@@ -79,7 +79,7 @@ public abstract class ProjectBase extends Project {
 
   protected ProjectBase(@NotNull ProjectDescriptor projectDescriptor, @NotNull ComponentHost mpsPlatform) {
     this(projectDescriptor, mpsPlatform, false);
-    ProjectRepository r = new ProjectRepository(this, mpsPlatform.findComponent(MPSModuleRepository.class), mpsPlatform.findComponent(SRepositoryRegistry.class));
+    ProjectRepository222 r = new ProjectRepository222(this, mpsPlatform.findComponent(MPSModuleRepository.class), mpsPlatform.findComponent(SRepositoryRegistry.class));
     r.init();
     initRepository(r);
   }
@@ -153,7 +153,7 @@ public abstract class ProjectBase extends Project {
    */
   @Override
   public final void addModule(@NotNull SModule module) {
-    IFile descriptorFile = module instanceof AbstractModule ? ((AbstractModule) module).getDescriptorFile() : null;
+    IFile descriptorFile = module instanceof AbstractModule2 ? ((AbstractModule2) module).getDescriptorFile() : null;
     if (descriptorFile != null) {
       ModulePath path = new ModulePath(descriptorFile.getPath(), null);
       // if file points to a file shared b/w language and generator, the it's Generator we are trying to add, addModule0 returns false so that we don't record
@@ -291,8 +291,8 @@ public abstract class ProjectBase extends Project {
     getModelAccess().checkWriteAccess();
     //  TODO FIXME get rid of onModuleLoad
     for (SModule m : getProjectModulesWithGenerators()) {
-      if (m instanceof AbstractModule) {
-        ((AbstractModule) m).onModuleLoad();
+      if (m instanceof AbstractModule2) {
+        ((AbstractModule2) m).onModuleLoad();
       }
     }
   }

@@ -136,7 +136,7 @@
     <classNode dependClassName="jetbrains.mps.java.core.newparser.JavaConvertUtil" />
     <classNode dependClassName="jetbrains.mps.java.core.newparser.JavaToMpsConverter" />
     <classNode dependClassName="jetbrains.mps.progress.ProgressMonitorAdapter" />
-    <classNode dependClassName="jetbrains.mps.project.AbstractModule" />
+    <classNode dependClassName="jetbrains.mps.project.AbstractModule2" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleDescriptor" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
@@ -182,7 +182,7 @@
     <classNode dependClassName="jetbrains.mps.java.core.newparser.JavaConvertUtil" />
     <classNode dependClassName="jetbrains.mps.java.core.newparser.JavaToMpsConverter" />
     <classNode dependClassName="jetbrains.mps.progress.ProgressMonitorAdapter" />
-    <classNode dependClassName="jetbrains.mps.project.AbstractModule" />
+    <classNode dependClassName="jetbrains.mps.project.AbstractModule2" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccessHelper" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />

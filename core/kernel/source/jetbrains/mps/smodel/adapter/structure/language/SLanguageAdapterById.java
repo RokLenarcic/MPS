@@ -69,18 +69,18 @@ public final class SLanguageAdapterById extends SLanguageAdapter {
 
   @Override
   public int hashCode() {
-    return myLanguage.getIdValue().hashCode();
+    return myLanguage.getValll().hashCode();
   }
 
   @Override
   @Nullable
   public Language getSourceModule() {
-    return ((Language) MPSModuleRepository.getInstance().getModule(ModuleId.regular(myLanguage.getIdValue())));
+    return ((Language) MPSModuleRepository.getInstance().getModule(ModuleId.regular(myLanguage.getValll())));
   }
 
   @Override
   public SModuleReference getSourceModuleReference() {
-    return new ModuleReference(getQualifiedName(), ModuleId.regular(myLanguage.getIdValue()));
+    return new ModuleReference(getQualifiedName(), ModuleId.regular(myLanguage.getValll()));
   }
 
   @Override

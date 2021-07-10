@@ -17,7 +17,7 @@ package jetbrains.mps.typechecking.internal;
 
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.components.ComponentHost;
-import jetbrains.mps.components.ComponentPlugin;
+import jetbrains.mps.components.ComponentPlugin2;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.languageScope.LanguageScopeFactory;
 import jetbrains.mps.smodel.language.LanguageRegistry;
@@ -31,7 +31,7 @@ import org.jetbrains.mps.openapi.module.SRepository;
  *
  * @author Fedor Isakov
  */
-public class MPSTypechecking extends ComponentPlugin implements ComponentHost {
+public class MPSTypechecking extends ComponentPlugin2 implements ComponentHost {
 
   // dependencies
   @NotNull private final LanguageRegistry myLanguageRegistry;

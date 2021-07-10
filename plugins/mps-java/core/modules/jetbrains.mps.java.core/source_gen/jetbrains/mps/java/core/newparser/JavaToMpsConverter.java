@@ -27,7 +27,7 @@ import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import java.io.IOException;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -189,7 +189,7 @@ public class JavaToMpsConverter {
 
     myModelAccess.runWriteAction(new Runnable() {
       public void run() {
-        ((AbstractModule) myModule).addDependency(PersistenceFacade.getInstance().createModuleReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)"), false);
+        ((AbstractModule2) myModule).addDependency(PersistenceFacade.getInstance().createModuleReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)"), false);
 
         if (myModel == null) {
           myModels = ListSequence.fromList(new ArrayList<SModel>());

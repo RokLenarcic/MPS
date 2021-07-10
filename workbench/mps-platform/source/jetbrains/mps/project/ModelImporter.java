@@ -17,7 +17,7 @@ package jetbrains.mps.project;
 
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.module.ReloadableModule;
-import jetbrains.mps.project.dependency.VisibilityUtil;
+import jetbrains.mps.project.dependency2.VisibilityUtil;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
@@ -170,8 +170,8 @@ public class ModelImporter {
       if (myModelToImport != null) {
         ((SModelInternal) model).addModelImport(myModelToImport);
       }
-      if (myModuleDep != null && model.getModule() instanceof AbstractModule) {
-        ((AbstractModule) model.getModule()).addDependency(myModuleDep, false);
+      if (myModuleDep != null && model.getModule() instanceof AbstractModule2) {
+        ((AbstractModule2) model.getModule()).addDependency(myModuleDep, false);
       }
       if (myUsedLanguage != null) {
         ((SModelInternal) model).addLanguage(myUsedLanguage);

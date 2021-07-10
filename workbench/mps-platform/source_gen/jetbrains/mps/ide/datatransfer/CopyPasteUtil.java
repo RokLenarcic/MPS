@@ -44,7 +44,7 @@ import jetbrains.mps.smodel.SLanguageHierarchy;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SInterfaceConcept;
@@ -394,7 +394,7 @@ public final class CopyPasteUtil {
             continue;
           }
 
-          ((AbstractModule) targetModule).addDependency(module.getModuleReference(), false);
+          ((AbstractModule2) targetModule).addDependency(module.getModuleReference(), false);
         }
       }
     };

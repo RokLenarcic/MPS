@@ -46,7 +46,7 @@ import javax.swing.UIManager;
     myCheckBox.setSelected(breakpoint.isEnabled());
     myCheckBox.setBackground(bg);
     myLabel.setText(breakpoint.getPresentation());
-    myLabel.setIcon(BreakpointIconRenderer.getIconFor(breakpoint));
+    myLabel.setIcon(BreakpointIconRenderer2.getIconFor(breakpoint));
   }
   public JCheckBox getCheckBox() {
     return myCheckBox;

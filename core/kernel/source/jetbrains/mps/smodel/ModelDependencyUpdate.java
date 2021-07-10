@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SLanguage;
@@ -111,7 +111,7 @@ public final class ModelDependencyUpdate {
 
   /**
    * Takes actual list of model imports and propagates these dependencies into model's module dependencies.
-   * Works with {@link AbstractModule} instances only, and relies on {@linkplain AbstractModule#getScope() module's scope}
+   * Works with {@link AbstractModule2} instances only, and relies on {@linkplain AbstractModule2#getScope() module's scope}
    * to decide whether an import is needed.
    *
    * XXX Does pretty much the same what {@code MissingDependenciesFixer} does.
@@ -122,12 +122,12 @@ public final class ModelDependencyUpdate {
     if (module == null) {
       throw new IllegalStateException("Could not update module dependencies of a model which doesn't belong to any module");
     }
-    if (false == module instanceof AbstractModule) {
+    if (false == module instanceof AbstractModule2) {
       // we can update AbstractModule instances only.
       return this;
     }
     ModelImports modelImports = new ModelImports(myModel);
-    SearchScope moduleScope = ((AbstractModule) module).getScope();
+    SearchScope moduleScope = ((AbstractModule2) module).getScope();
     for (org.jetbrains.mps.openapi.model.SModelReference importRef : modelImports.getImportedModels()) {
       SModel importedModel = moduleScope.resolve(importRef);
       if (importedModel != null) {
@@ -145,7 +145,7 @@ public final class ModelDependencyUpdate {
         // XXX do I care to report import failed?
         continue;
       }
-      ((AbstractModule) module).addDependency(moduleReference, false);
+      ((AbstractModule2) module).addDependency(moduleReference, false);
     }
     return this;
   }

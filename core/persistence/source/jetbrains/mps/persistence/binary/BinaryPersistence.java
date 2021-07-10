@@ -290,7 +290,7 @@ public final class BinaryPersistence {
     int langIndex, conceptIndex, propertyIndex, associationIndex, aggregationIndex;
     langIndex = conceptIndex = propertyIndex = associationIndex = aggregationIndex = 0;
     for(LangInfo ul : languagesInUse) {
-      os.writeUUID(ul.getLanguageId().getIdValue());
+      os.writeUUID(ul.getLanguageId().getValll());
       os.writeString(ul.getName());
       ul.setIntIndex(langIndex++);
       //
@@ -393,7 +393,7 @@ public final class BinaryPersistence {
     os.writeShort(refs.size());
     for (SLanguage l : refs) {
       // id, name, version
-      os.writeUUID(MetaIdHelper.getLanguage(l).getIdValue());
+      os.writeUUID(MetaIdHelper.getLanguage(l).getValll());
       os.writeString(l.getQualifiedName());
     }
   }

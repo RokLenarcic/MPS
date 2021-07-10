@@ -45,7 +45,7 @@ import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelOperations;
-import jetbrains.mps.project.dependency.VisibilityUtil;
+import jetbrains.mps.project.dependency2.VisibilityUtil;
 import org.jetbrains.annotations.NonNls;
 import javax.swing.JOptionPane;
 import jetbrains.mps.editor.runtime.commands.EditorCommand;

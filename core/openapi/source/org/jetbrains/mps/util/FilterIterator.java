@@ -32,12 +32,12 @@ import java.util.NoSuchElementException;
  * @author Artem Tikhomirov
  */
 public final class FilterIterator<T> implements Iterator<T> {
-  private final Iterator<? extends T> myIterator;
+  private final Iterator<? extends T> myIterator2;
   private final Condition<T> myCondition;
   private T myNext;
 
   public FilterIterator(@NotNull Iterator<? extends T> iterator, @NotNull Condition<T> condition) {
-    myIterator = iterator;
+    myIterator2 = iterator;
     myCondition = condition;
     myNext = nextInternal();
   }
@@ -59,12 +59,12 @@ public final class FilterIterator<T> implements Iterator<T> {
 
   @Override
   public void remove() {
-    myIterator.remove();
+    myIterator2.remove();
   }
 
   private T nextInternal() {
-    while (myIterator.hasNext()) {
-      T next = myIterator.next();
+    while (myIterator2.hasNext()) {
+      T next = myIterator2.next();
       if (myCondition.met(next)) {
         return next;
       }

@@ -94,7 +94,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SLanguage" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SDependency" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SDependencyScope" />
-    <classNode extendsClassName="jetbrains.mps.project.AbstractModule" />
+    <classNode extendsClassName="jetbrains.mps.project.AbstractModule2" />
     <classNode extendsClassName="org.jetbrains.mps.openapi.module.SModule" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.runtime.evaluation.container.GeneratorUtil">

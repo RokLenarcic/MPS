@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.project.dependency.ModelDependenciesManager;
+import jetbrains.mps.project.dependency2.ModelDependenciesManager;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.smodel.language.LanguageRegistry;

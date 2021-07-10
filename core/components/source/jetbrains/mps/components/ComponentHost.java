@@ -21,7 +21,7 @@ import org.jetbrains.annotations.Nullable;
 /**
  * This is a group of components at a given layer of initialization.
  * At the moment, there's only 1, application-wide layer (aka j.m.core.platform.Platform).
- * {@link ComponentPlugin} plugs {@link CoreComponent} and expose any/all of them through API of {@link ComponentHost}.
+ * {@link ComponentPlugin2} plugs {@link CoreComponent} and expose any/all of them through API of {@link ComponentHost}.
  * In the future, however, we might want to make Project a {@link ComponentHost} as well, and provide means
  * to publish own components into layers (publish/withdraw).
  *

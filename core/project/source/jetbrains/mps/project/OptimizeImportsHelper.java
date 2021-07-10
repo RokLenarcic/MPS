@@ -16,7 +16,7 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.project.dependency.GeneratorModuleScanner;
+import jetbrains.mps.project.dependency2.GeneratorModuleScanner;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
@@ -273,7 +273,7 @@ public class OptimizeImportsHelper {
 
   //----additional methods--------
 
-  private String optimizeModuleImports(AbstractModule module, Result result, Collection<SModuleReference> toKeep) {
+  private String optimizeModuleImports(AbstractModule2 module, Result result, Collection<SModuleReference> toKeep) {
     List<Dependency> unusedDeps = new ArrayList<>();
     final SModuleReference optimizedModuleReference = module.getModuleReference();
     HashSet<SModuleReference> inUse = new HashSet<>(toKeep);
@@ -365,7 +365,7 @@ public class OptimizeImportsHelper {
     return report.toString();
   }
 
-  private String removeFromImports(AbstractModule module, List<Dependency> unusedDeps) {
+  private String removeFromImports(AbstractModule2 module, List<Dependency> unusedDeps) {
     StringBuilder report = new StringBuilder("Import for module " + module.getModuleName() + " were optimized \n");
 
     for (Dependency dep : unusedDeps) {

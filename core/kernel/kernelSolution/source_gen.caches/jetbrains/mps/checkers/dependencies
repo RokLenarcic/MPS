@@ -200,7 +200,7 @@
     <classNode dependClassName="jetbrains.mps.util.containers.MultiMap" />
     <classNode dependClassName="jetbrains.mps.util.containers.SetBasedMultiMap" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.event.SNodeAddEvent" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.event.SNodeAddEvent2" />
     <classNode dependClassName="org.jetbrains.mps.openapi.event.SNodeRemoveEvent" />
     <classNode dependClassName="org.jetbrains.mps.openapi.event.SPropertyChangeEvent" />
     <classNode dependClassName="org.jetbrains.mps.openapi.event.SReferenceChangeEvent" />
@@ -261,8 +261,8 @@
     <classNode dependClassName="jetbrains.mps.errors.item.NodeFeatureFlavouredItem" />
     <classNode dependClassName="jetbrains.mps.errors.item.NodeFlavouredItem" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
-    <classNode dependClassName="jetbrains.mps.project.AbstractModule" />
-    <classNode dependClassName="jetbrains.mps.project.dependency.VisibilityUtil" />
+    <classNode dependClassName="jetbrains.mps.project.AbstractModule2" />
+    <classNode dependClassName="jetbrains.mps.project.dependency2.VisibilityUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />

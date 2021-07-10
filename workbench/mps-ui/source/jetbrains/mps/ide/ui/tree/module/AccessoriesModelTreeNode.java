@@ -18,7 +18,7 @@ package jetbrains.mps.ide.ui.tree.module;
 import jetbrains.mps.icons.MPSIcons.Nodes.Models;
 import jetbrains.mps.ide.ui.tree.ErrorState;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
-import jetbrains.mps.project.dependency.VisibilityUtil;
+import jetbrains.mps.project.dependency2.VisibilityUtil;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;

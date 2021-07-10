@@ -22,7 +22,7 @@ import org.jetbrains.mps.openapi.model.SModel;
  * Base class for property, reference and node change events.
  * @see SPropertyChangeEvent
  * @see SReferenceChangeEvent
- * @see SNodeAddEvent
+ * @see SNodeAddEvent2
  * @see SNodeRemoveEvent
  * @see org.jetbrains.mps.openapi.model.SNodeChangeListener
  * @author Artem Tikhomirov

@@ -17,7 +17,7 @@ package jetbrains.mps.typesystem;
 
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.components.ComponentHost;
-import jetbrains.mps.components.ComponentPlugin;
+import jetbrains.mps.components.ComponentPlugin2;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.typechecking.backend.TypecheckingBackend.ProviderLevel;
@@ -28,7 +28,7 @@ import jetbrains.mps.typesystem.inference.TypeContextManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public final class MPSTypesystem extends ComponentPlugin implements ComponentHost {
+public final class MPSTypesystem extends ComponentPlugin2 implements ComponentHost {
 
   public static final String TYPECHECKING_DEFAULT = "jetbrains.mps.typechecking.default";
 

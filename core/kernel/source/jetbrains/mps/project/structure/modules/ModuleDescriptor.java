@@ -16,7 +16,7 @@
 package jetbrains.mps.project.structure.modules;
 
 import jetbrains.mps.persistence.MementoImpl;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.util.annotation.ToRemove;
@@ -45,11 +45,11 @@ import java.util.function.Supplier;
  * to read module dependencies and identity information.
  *
  * -----------------------------------------------------------------------------------------------------------------------------------
- * FIXME This class mixes up the persistence and editing aspects of the {@link AbstractModule} class.
+ * FIXME This class mixes up the persistence and editing aspects of the {@link AbstractModule2} class.
  * FIXME in order to edit facets/model roots in the module a client needs to access such entities as {@link ModuleFacetDescriptor}, {@link ModelRootDescriptor} directly,
- * FIXME when he has just an {@link AbstractModule} (which leads to a low-level module#getModuleDescriptor.getFacetDescriptors().add...)
- * FIXME obviously it is wrong: a client should rather work with {@link SModuleFacet} entities in the case of editing an {@link AbstractModule}, not descriptors.
- * FIXME OTOH it cannot be a plain persistence descriptor since in order to update (more or less) any properties of an {@link AbstractModule}
+ * FIXME when he has just an {@link AbstractModule2} (which leads to a low-level module#getModuleDescriptor.getFacetDescriptors().add...)
+ * FIXME obviously it is wrong: a client should rather work with {@link SModuleFacet} entities in the case of editing an {@link AbstractModule2}, not descriptors.
+ * FIXME OTOH it cannot be a plain persistence descriptor since in order to update (more or less) any properties of an {@link AbstractModule2}
  * FIXME we use such pattern in the {@code AbstractModule} as:
  * <code>
  *   AbstractModule module;
@@ -57,7 +57,7 @@ import java.util.function.Supplier;
  *   <change descriptor freely as we wish>
  *   module.setDescriptor(descriptor); // commit descriptor
  * </code>
- * which is needed in order to guarantee a consistency of the {@link AbstractModule} operations.
+ * which is needed in order to guarantee a consistency of the {@link AbstractModule2} operations.
  *
  * TODO Also I would rather use in the ModuleDescriptor hierarchy composition instead of inheritance. The {@link #myDeploymentDescriptor} reference is especially repelling here.
  *
@@ -161,7 +161,7 @@ public class ModuleDescriptor implements CopyableDescriptor<ModuleDescriptor>  {
     removeFacetDescriptor(facet);
     final ModuleFacetDescriptor fd = new ModuleFacetDescriptor(facet.getFacetType(), new MementoImpl());
     // write defaults or actual values, if any
-    facet.save(fd.getMemento());
+    facet.save2(fd.getMemento());
     myFacets.add(fd);
   }
 
@@ -198,7 +198,7 @@ public class ModuleDescriptor implements CopyableDescriptor<ModuleDescriptor>  {
   public final void updateFacetDescriptor(@NotNull SModuleFacet facet) {
     for (ModuleFacetDescriptor facetDescriptor : myFacets) {
       if (facetDescriptor.getType().equals(facet.getFacetType())) {
-        facet.save(facetDescriptor.getMemento());
+        facet.save2(facetDescriptor.getMemento());
         break;
       }
     }
@@ -243,7 +243,7 @@ public class ModuleDescriptor implements CopyableDescriptor<ModuleDescriptor>  {
   /**
    * Additional source files to compile along with module's own generated output.
    * Though, uses are bit odd:
-   *  - There's unused {@link AbstractModule#getSourcePaths()}
+   *  - There's unused {@link AbstractModule2#getSourcePaths()}
    *  - JavaModuleFacet manifests these {@link jetbrains.mps.project.facets.JavaModuleFacet#getAdditionalSourcePaths()}, likely using module descriptor just as a storage (it's what JMF does anyway)
    *  - Make respects these to compile a module
    */

@@ -15,7 +15,7 @@ import jetbrains.mps.vcs.diff.StructChangeSetBuilder;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.event.SPropertyChangeEvent;
 import org.jetbrains.mps.openapi.event.SReferenceChangeEvent;
-import org.jetbrains.mps.openapi.event.SNodeAddEvent;
+import org.jetbrains.mps.openapi.event.SNodeAddEvent2;
 import org.jetbrains.mps.openapi.event.SNodeRemoveEvent;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.Nullable;
@@ -64,7 +64,7 @@ public class StructDifferenceDialog extends DialogWrapper implements DataProvide
       public void referenceChanged(@NotNull SReferenceChangeEvent p0) {
         update();
       }
-      public void nodeAdded(@NotNull SNodeAddEvent p0) {
+      public void nodeAdded(@NotNull SNodeAddEvent2 p0) {
         update();
       }
       public void nodeRemoved(@NotNull SNodeRemoveEvent p0) {

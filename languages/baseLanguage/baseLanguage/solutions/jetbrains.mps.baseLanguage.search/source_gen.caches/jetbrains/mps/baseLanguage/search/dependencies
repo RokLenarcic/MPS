@@ -30,7 +30,7 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.annotations.GeneratedClass" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.search.ClassifierSuccessors" />
-    <classNode extendsClassName="jetbrains.mps.components.ComponentPlugin" />
+    <classNode extendsClassName="jetbrains.mps.components.ComponentPlugin2" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.search.MpsScopesUtil">
     <classNode dependClassName="java.lang.Boolean" />

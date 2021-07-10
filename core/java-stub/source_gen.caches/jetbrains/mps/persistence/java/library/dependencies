@@ -64,7 +64,7 @@
     <classNode dependClassName="jetbrains.mps.extapi.module.SModuleBase" />
     <classNode dependClassName="jetbrains.mps.extapi.persistence.FolderSetDataSource" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
-    <classNode dependClassName="jetbrains.mps.project.AbstractModule" />
+    <classNode dependClassName="jetbrains.mps.project.AbstractModule2" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelLoadResult" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />

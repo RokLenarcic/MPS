@@ -20,7 +20,7 @@ import jetbrains.mps.ide.editorTabs.tabfactory.TabsComponent;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.event.SNodeAddEvent;
+import org.jetbrains.mps.openapi.event.SNodeAddEvent2;
 import org.jetbrains.mps.openapi.event.SNodeRemoveEvent;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -54,14 +54,14 @@ class RepoChangeListener extends SRepositoryContentAdapter implements ProjectCom
   @Override
   public void projectOpened() {
     if (myProject != null) {
-      myProject.getRepository().getModelAccess().runReadAction(() -> subscribeTo(myProject.getRepository()));
+      myProject.getRepository().getModelAccess().runReadAction(() -> subscribeTo2(myProject.getRepository()));
     }
   }
 
   @Override
   public void projectClosed() {
     if (myProject != null) {
-      myProject.getRepository().getModelAccess().runReadAction(() -> unsubscribeFrom(myProject.getRepository()));
+      myProject.getRepository().getModelAccess().runReadAction(() -> unsubscribeFrom2(myProject.getRepository()));
     }
     myChangedRoots.clear();
     myTabsComponents.clear();
@@ -103,7 +103,7 @@ class RepoChangeListener extends SRepositoryContentAdapter implements ProjectCom
   }
 
   @Override
-  public void nodeAdded(@NotNull SNodeAddEvent event) {
+  public void nodeAdded(@NotNull SNodeAddEvent2 event) {
     if (event.isRoot()) {
       myChangedRoots.add(event.getChild().getReference());
     }

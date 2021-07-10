@@ -17,8 +17,8 @@ package jetbrains.mps.project.facets;
 
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.extapi.persistence.FileDataSource;
-import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
-import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
+import jetbrains.mps.project.dependency2.GlobalModuleDependenciesManager;
+import jetbrains.mps.project.dependency2.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;

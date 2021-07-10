@@ -11,7 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.ModelImports;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.lang.migration.behavior.IMigrationUnit__BehaviorDescriptor;
@@ -40,7 +40,7 @@ public class Migration_Queries {
     SLinkOperations.setPointer(SLinkOperations.setNewChild(c, LINKS.superclass$_pqe, CONCEPTS.ClassifierType$IZ), LINKS.classifier$pQ_R, new SNodePointer("90746344-04fd-4286-97d5-b46ae6a81709/r:52a3d974-bd4f-4651-ba6e-a2de5e336d95(jetbrains.mps.lang.migration/jetbrains.mps.lang.migration.methods)", "6807933448469658100"));
 
     ModelImports m = new ModelImports(futureModel);
-    AbstractModule mod = (AbstractModule) module;
+    AbstractModule2 mod = (AbstractModule2) module;
 
     m.addUsedLanguage(MetaAdapterFactory.getLanguage(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, "jetbrains.mps.lang.plugin"));
     m.addUsedLanguage(MetaAdapterFactory.getLanguage(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, "jetbrains.mps.lang.pattern"));

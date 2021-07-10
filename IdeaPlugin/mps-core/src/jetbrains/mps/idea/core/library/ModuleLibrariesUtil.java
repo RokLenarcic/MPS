@@ -30,7 +30,7 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.idea.core.project.SolutionIdea;
 import jetbrains.mps.idea.core.project.StubSolutionIdea;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.IFileUtil;
@@ -105,13 +105,13 @@ public class ModuleLibrariesUtil {
       @Override
       public void run() {
         for (SModule m : repository.getModules()) {
-          if (false == m instanceof AbstractModule) {
+          if (false == m instanceof AbstractModule2) {
             continue;
           }
           // Indeed, we don't check for xml file of a source module descriptor (available through DeploymentDescriptor). The reason is
           // we care about deployed modules only, therefore expect moduleXmlPaths to be filled only with 'module.xml' files of deployed modules and
           // straightforward IFile match against repository module's files shall suffice.
-          final IFile moduleDescriptorFile = ((AbstractModule) m).getDescriptorFile();
+          final IFile moduleDescriptorFile = ((AbstractModule2) m).getDescriptorFile();
           if (moduleDescriptorFile != null && moduleXmlPaths.contains(canonical(moduleDescriptorFile))) {
             modules.add(m.getModuleReference());
           }
@@ -136,7 +136,7 @@ public class ModuleLibrariesUtil {
     return ModuleLibrariesUtil.extractMPSModulesFromTheirIDEALibraryCounterpart(repository, libs);
   }
 
-  public static Library getOrCreateAutoLibrary(AbstractModule usedModule, Project project, LibrariesContainer container) {
+  public static Library getOrCreateAutoLibrary(AbstractModule2 usedModule, Project project, LibrariesContainer container) {
     Library library = getAutoLibrary(usedModule.getModuleReference(), project);
     if (library != null) {
       return library;

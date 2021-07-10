@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.scope;
 
-import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
-import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
+import jetbrains.mps.project.dependency2.GlobalModuleDependenciesManager;
+import jetbrains.mps.project.dependency2.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.smodel.BaseScope;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.util.IterableUtil;
@@ -38,7 +38,7 @@ import java.util.Set;
 
 /**
  * {@link org.jetbrains.mps.openapi.module.SearchScope} implementation that uses
- * {@link jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype#VISIBLE 'visible'} module dependencies to build a scope.
+ * {@link jetbrains.mps.project.dependency2.GlobalModuleDependenciesManager.Deptype#VISIBLE 'visible'} module dependencies to build a scope.
  * <p>
  * Since this class deals with {@code SModule} and {@code SModel}, appropriate model access (at least read) is expected from the caller.
  * </p>

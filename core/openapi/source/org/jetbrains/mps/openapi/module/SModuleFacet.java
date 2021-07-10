@@ -50,7 +50,7 @@ public interface SModuleFacet {
    * Gives the module facet the opportunity to persist into the supplied memento whatever configuration information
    * may be needed to restore the models in the future.
    */
-  void save(Memento memento);
+  void save2(Memento memento);
 
   /**
    * Allows the model root to read its previously saved configuration information

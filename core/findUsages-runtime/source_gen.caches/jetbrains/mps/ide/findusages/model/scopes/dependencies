@@ -60,7 +60,7 @@
     <classNode dependClassName="jetbrains.mps.ide.findusages.CantLoadSomethingException" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.CantSaveSomethingException" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
-    <classNode dependClassName="jetbrains.mps.project.dependency.GlobalModuleDependenciesManager" />
+    <classNode dependClassName="jetbrains.mps.project.dependency2.GlobalModuleDependenciesManager" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jdom.Element" />

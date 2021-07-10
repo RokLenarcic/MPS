@@ -220,7 +220,7 @@
     <classNode dependClassName="jetbrains.mps.messages.IMessageHandler" />
     <classNode dependClassName="jetbrains.mps.messages.Message" />
     <classNode dependClassName="jetbrains.mps.messages.MessageKind" />
-    <classNode dependClassName="jetbrains.mps.project.AbstractModule" />
+    <classNode dependClassName="jetbrains.mps.project.AbstractModule2" />
     <classNode dependClassName="jetbrains.mps.project.io.DescriptorIOFacade" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.GeneratorDescriptor" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.LanguageDescriptor" />

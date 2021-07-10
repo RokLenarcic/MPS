@@ -20,7 +20,7 @@ import jetbrains.mps.extapi.module.SRepositoryExt;
 import jetbrains.mps.library.ModuleFileTracker.Delta;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.library.contributor.LibDescriptor;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 import jetbrains.mps.project.io.DescriptorIOFacade;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.smodel.MPSModuleOwner;
@@ -155,8 +155,8 @@ public class SLibrary implements MPSModuleOwner, Comparable<SLibrary> {
         if (module == null) {
           continue;
         }
-        if (module instanceof AbstractModule) {
-          ((AbstractModule) module).setModuleDescriptor(mh.getDescriptor(), false);
+        if (module instanceof AbstractModule2) {
+          ((AbstractModule2) module).setModuleDescriptor(mh.getDescriptor(), false);
         }
       }
     });
@@ -208,8 +208,8 @@ public class SLibrary implements MPSModuleOwner, Comparable<SLibrary> {
       }
     }
     for (SModule module : loaded) {
-      if (module instanceof AbstractModule) {
-        ((AbstractModule) module).onModuleLoad();
+      if (module instanceof AbstractModule2) {
+        ((AbstractModule2) module).onModuleLoad();
       }
     }
     // FIXME it shall be myFileTracker that is responsible for listener attach/detach on track/forget, though have to figure out how

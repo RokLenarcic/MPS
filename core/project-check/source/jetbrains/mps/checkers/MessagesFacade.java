@@ -61,7 +61,7 @@ public final class MessagesFacade {
   }
 
   @NotNull
-  public <C extends Context> List<String> findTextMessagesForProblem(@NotNull SAbstractConcept concept, @NotNull Problem problem, @NotNull C context) {
+  public <C extends Context> List<String> findTextMessagesForProblem2(@NotNull SAbstractConcept concept, @NotNull Problem problem, @NotNull C context) {
     if (noRegistryPresent()) {
       legacyDefaults(problem, context);
     }

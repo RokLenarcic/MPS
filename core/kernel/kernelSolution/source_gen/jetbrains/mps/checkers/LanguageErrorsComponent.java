@@ -30,7 +30,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.util.Consumer;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import org.jetbrains.mps.openapi.event.SNodeAddEvent;
+import org.jetbrains.mps.openapi.event.SNodeAddEvent2;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.event.SNodeRemoveEvent;
 import org.jetbrains.mps.openapi.event.SReferenceChangeEvent;
@@ -324,7 +324,7 @@ public class LanguageErrorsComponent extends LanguageErrorsCollector {
     removeModelListeners();
   }
 
-  /*package*/ void processEvent(SNodeAddEvent event) {
+  /*package*/ void processEvent(SNodeAddEvent2 event) {
     SetSequence.fromSet(myDependenciesToInvalidate).addElement(event.getParent());
     SetSequence.fromSet(myInvalidNodes).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(((SNode) event.getChild()), null, true, new SAbstractConcept[]{})));
   }
@@ -382,7 +382,7 @@ public class LanguageErrorsComponent extends LanguageErrorsCollector {
       processEvent(event);
     }
     @Override
-    public void nodeAdded(@NotNull SNodeAddEvent event) {
+    public void nodeAdded(@NotNull SNodeAddEvent2 event) {
       if (event.isRoot()) {
         return;
       }

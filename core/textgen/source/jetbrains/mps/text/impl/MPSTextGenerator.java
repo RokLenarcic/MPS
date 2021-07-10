@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.text.impl;
 
-import jetbrains.mps.components.ComponentPlugin;
+import jetbrains.mps.components.ComponentPlugin2;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import org.jetbrains.annotations.NotNull;
 
@@ -24,7 +24,7 @@ import org.jetbrains.annotations.NotNull;
  * @author Artem Tikhomirov
  * @since 3.4
  */
-public class MPSTextGenerator extends ComponentPlugin {
+public class MPSTextGenerator extends ComponentPlugin2 {
   private final LanguageRegistry myLanguageRegistry;
 
   public MPSTextGenerator(@NotNull LanguageRegistry languageRegistry) {

@@ -17,7 +17,7 @@ package jetbrains.mps.smodel.event;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.event.SNodeAddEvent;
+import org.jetbrains.mps.openapi.event.SNodeAddEvent2;
 import org.jetbrains.mps.openapi.event.SNodeReadEvent;
 import org.jetbrains.mps.openapi.event.SNodeRemoveEvent;
 import org.jetbrains.mps.openapi.event.SPropertyChangeEvent;
@@ -139,7 +139,7 @@ public final class ModelEventDispatch {
     if (myChangeListeners.isEmpty()) {
       return;
     }
-    final SNodeAddEvent event = role == null ? new SNodeAddEvent(myModel, child) : new SNodeAddEvent(myModel, node, child, role);
+    final SNodeAddEvent2 event = role == null ? new SNodeAddEvent2(myModel, child) : new SNodeAddEvent2(myModel, node, child, role);
     for (SNodeChangeListener l : myChangeListeners) {
       l.nodeAdded(event);
     }

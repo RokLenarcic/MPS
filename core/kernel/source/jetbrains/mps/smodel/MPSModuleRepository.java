@@ -21,7 +21,7 @@ import jetbrains.mps.extapi.module.SModuleBase;
 import jetbrains.mps.extapi.module.SRepositoryBase;
 import jetbrains.mps.extapi.module.SRepositoryExt;
 import jetbrains.mps.extapi.module.SRepositoryRegistry;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.containers.ManyToManyMap;
@@ -140,7 +140,7 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
     SModuleId moduleId = moduleToRegister.getModuleReference().getModuleId();
     String moduleFqName = moduleToRegister.getModuleName();
 
-    AbstractModule aModuleToRegister = (AbstractModule) moduleToRegister;
+    AbstractModule2 aModuleToRegister = (AbstractModule2) moduleToRegister;
 
     SModule existing = getModule(moduleId);
     if (existing != null) {
@@ -152,7 +152,7 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
       if (!Objects.equals(existing.getModuleName(), moduleFqName)) {
         String msg = "Trying to register a module with the same identity but different name. There's module '%s' in the repository, and new module is '%s'.\n" +
                      "Original module comes from %s, contesting from %s";
-        LOG.error(String.format(msg, existing.getModuleName(), moduleFqName, ((AbstractModule) existing).getDescriptorFile(), aModuleToRegister.getDescriptorFile()));
+        LOG.error(String.format(msg, existing.getModuleName(), moduleFqName, ((AbstractModule2) existing).getDescriptorFile(), aModuleToRegister.getDescriptorFile()));
       }
       myModuleToOwners.addLink(existing, owner);
       return (T) existing;
@@ -170,7 +170,7 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
   }
 
   // Adding not saved model can cause data loss, see MPS-18743.
-  private void checkModelsAreNotChanged(AbstractModule aModuleToRegister) {
+  private void checkModelsAreNotChanged(AbstractModule2 aModuleToRegister) {
     for (org.jetbrains.mps.openapi.model.SModel model : aModuleToRegister.getModels()) {
       if (model instanceof EditableSModel && ((EditableSModel) model).isChanged()) {
         LOG.error("Added a module with unsaved model to a repository. " +

@@ -14,7 +14,7 @@ import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -46,8 +46,8 @@ public class UpdateJavaStubMethodRefs extends BaseProjectMigration {
         public void run() {
           Sequence.fromIterable(CommandUtil.modules(CommandUtil.selectScope(null, context))).visitAll(new IVisitor<SModule>() {
             public void visit(SModule it) {
-              if (it instanceof AbstractModule) {
-                AbstractModule module = (AbstractModule) it;
+              if (it instanceof AbstractModule2) {
+                AbstractModule2 module = (AbstractModule2) it;
                 module.updateExternalReferences();
                 if (!((module instanceof Generator))) {
                   // generators are saved as part of owning Language's save, no need to do it twice 

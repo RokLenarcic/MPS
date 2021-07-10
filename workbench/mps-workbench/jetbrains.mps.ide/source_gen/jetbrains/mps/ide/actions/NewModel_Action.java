@@ -13,7 +13,7 @@ import com.intellij.openapi.actionSystem.Presentation;
 import jetbrains.mps.ide.IdeBundle;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 import javax.swing.tree.TreeNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -37,7 +37,7 @@ public class NewModel_Action extends BaseAction {
     Presentation presentation = event.getPresentation();
     presentation.setText(IdeBundle.message("actions.model.new.text"));
 
-    if (!(((SModule) MapSequence.fromMap(_params).get("module")) instanceof AbstractModule)) {
+    if (!(((SModule) MapSequence.fromMap(_params).get("module")) instanceof AbstractModule2)) {
       presentation.setEnabledAndVisible(false);
     } else {
       String stereotype = NewModelActionExecutor.getDefaultStereotypeProvider(((TreeNode) MapSequence.fromMap(_params).get("treeNode"))).getStereotype();

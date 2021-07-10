@@ -40,7 +40,7 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.event.AbstractModelChangeEvent;
-import org.jetbrains.mps.openapi.event.SNodeAddEvent;
+import org.jetbrains.mps.openapi.event.SNodeAddEvent2;
 import org.jetbrains.mps.openapi.event.SNodeRemoveEvent;
 import org.jetbrains.mps.openapi.event.SPropertyChangeEvent;
 import org.jetbrains.mps.openapi.event.SReferenceChangeEvent;
@@ -412,13 +412,13 @@ public final class NodeVirtualFileSystem extends VirtualFileSystem implements Di
               changedFiles.add(vf);
             }
           }
-        } else if (evt instanceof SNodeAddEvent) {
+        } else if (evt instanceof SNodeAddEvent2) {
           // SNode.getReference() for (later) deleted node produces invalid pointer
-          MPSNodeVirtualFile vf = rvf.getVirtualFile(new SNodePointer(evt.getModel().getReference(), ((SNodeAddEvent) evt).getChild().getNodeId()));
+          MPSNodeVirtualFile vf = rvf.getVirtualFile(new SNodePointer(evt.getModel().getReference(), ((SNodeAddEvent2) evt).getChild().getNodeId()));
           if (vf != null) {
             deletedFiles.remove(vf);
           } else {
-            vf = rvf.getVirtualFile(((SNodeAddEvent) evt).getChild().getContainingRoot().getReference());
+            vf = rvf.getVirtualFile(((SNodeAddEvent2) evt).getChild().getContainingRoot().getReference());
             if (vf != null) {
               changedFiles.add(vf);
             }
@@ -452,7 +452,7 @@ public final class NodeVirtualFileSystem extends VirtualFileSystem implements Di
     }
 
     @Override
-    public void nodeAdded(@NotNull SNodeAddEvent event) {
+    public void nodeAdded(@NotNull SNodeAddEvent2 event) {
       if (event.isRoot()) {
         // added root of no interest - there could be no file for it yet.
         return;

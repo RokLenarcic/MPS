@@ -17,7 +17,7 @@ package jetbrains.mps.testbench;
 
 import jetbrains.mps.core.platform.Platform;
 import jetbrains.mps.extapi.module.SRepositoryExt;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Generator;
@@ -122,11 +122,11 @@ public class ModuleMpsTest implements EnvironmentAware {
     myTestModuleFactory.removeModule(module);
   }
 
-  public void addUsedLanguage(AbstractModule client, Language toUse) {
+  public void addUsedLanguage(AbstractModule2 client, Language toUse) {
     myTestModuleFactory.addUsedLanguage(client, toUse);
   }
 
-  public void addUsedDevKit(AbstractModule client, DevKit toUse) {
+  public void addUsedDevKit(AbstractModule2 client, DevKit toUse) {
     myTestModuleFactory.addUsedDevKit(client, toUse);
   }
 }

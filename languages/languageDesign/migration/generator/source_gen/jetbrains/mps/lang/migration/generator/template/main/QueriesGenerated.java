@@ -157,11 +157,11 @@ public class QueriesGenerated extends QueryProviderBase {
     return MigrationScript__BehaviorDescriptor.getGeneratedClassName_id7w5LXrJJkLe.invoke(SNodeOperations.asSConcept(CONCEPTS.MigrationScript$u3));
   }
   public static Object propertyMacro_GetValue_3_0(final PropertyMacroContext _context) {
-    long msb = MetaIdByDeclaration.getLanguageId((Language) SNodeOperations.getModel(_context.getOriginalCopiedInputNode(_context.getNode())).getModule()).getIdValue().getMostSignificantBits();
+    long msb = MetaIdByDeclaration.getLanguageId((Language) SNodeOperations.getModel(_context.getOriginalCopiedInputNode(_context.getNode())).getModule()).getValll().getMostSignificantBits();
     return "0x" + Long.toHexString(msb) + "L";
   }
   public static Object propertyMacro_GetValue_3_1(final PropertyMacroContext _context) {
-    long lsb = MetaIdByDeclaration.getLanguageId((Language) SNodeOperations.getModel(_context.getOriginalCopiedInputNode(_context.getNode())).getModule()).getIdValue().getLeastSignificantBits();
+    long lsb = MetaIdByDeclaration.getLanguageId((Language) SNodeOperations.getModel(_context.getOriginalCopiedInputNode(_context.getNode())).getModule()).getValll().getLeastSignificantBits();
     return "0x" + Long.toHexString(lsb) + "L";
   }
   public static Object propertyMacro_GetValue_3_2(final PropertyMacroContext _context) {

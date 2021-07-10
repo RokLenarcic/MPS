@@ -32,14 +32,5 @@ public class LogHandler implements IMessageHandler {
 
   @Override
   public void handle(@NotNull IMessage msg) {
-    Object messageObject = createMessageObject(msg.getText(), msg.getHintObject());
-    Throwable t = msg.getException();
-    if (msg.getKind() == MessageKind.ERROR) {
-      myLog.error(messageObject, t);
-    } else if (msg.getKind() == MessageKind.WARNING) {
-      myLog.warn(messageObject, t);
-    } else {
-      myLog.info(messageObject, t);
-    }
   }
 }

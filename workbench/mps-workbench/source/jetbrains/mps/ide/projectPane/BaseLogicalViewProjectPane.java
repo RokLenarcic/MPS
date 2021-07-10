@@ -53,7 +53,7 @@ import jetbrains.mps.make.IMakeNotificationListener.Stub;
 import jetbrains.mps.make.MakeNotification;
 import jetbrains.mps.make.MakeServiceComponent;
 import jetbrains.mps.module.ReloadableModule;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
@@ -463,10 +463,10 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
     List<SModule> modules = getSelectedModules();
     if (modules != null) {
       for (SModule m : modules) {
-        if (!(m instanceof AbstractModule)) {
+        if (!(m instanceof AbstractModule2)) {
           continue;
         }
-        AbstractModule module = (AbstractModule) m;
+        AbstractModule2 module = (AbstractModule2) m;
         IFile home = module.getModuleSourceDir();
         if (home != null) {
           VirtualFile vfile = VirtualFileUtils.getProjectVirtualFile(home);

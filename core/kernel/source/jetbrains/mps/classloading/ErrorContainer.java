@@ -16,7 +16,7 @@
 package jetbrains.mps.classloading;
 
 import jetbrains.mps.classloading.ModuleUpdater.SearchError;
-import jetbrains.mps.project.dependency.PostingWarningsErrorHandler;
+import jetbrains.mps.project.dependency2.PostingWarningsErrorHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.module.SDependency;

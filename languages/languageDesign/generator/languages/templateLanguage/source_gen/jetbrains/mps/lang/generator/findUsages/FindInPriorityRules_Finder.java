@@ -15,7 +15,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.project.dependency.GeneratorModuleScanner;
+import jetbrains.mps.project.dependency2.GeneratorModuleScanner;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;

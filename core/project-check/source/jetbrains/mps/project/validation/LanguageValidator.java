@@ -18,7 +18,7 @@ package jetbrains.mps.project.validation;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.dependency.VisibilityUtil;
+import jetbrains.mps.project.dependency2.VisibilityUtil;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.ConceptDeclarationScanner;
 import jetbrains.mps.smodel.EditorDeclarationScanner;

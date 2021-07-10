@@ -5,6 +5,7 @@ package jetbrains.mps.ide.migration.wizard;
 import jetbrains.mps.annotations.GeneratedClass;
 import java.util.List;
 import jetbrains.mps.ide.migration.ScriptApplied;
+import jetbrains.mps.project.AbstractModule2;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.errors.item.IssueKindReportItem;
 import com.intellij.openapi.progress.ProgressIndicator;
@@ -20,7 +21,6 @@ import jetbrains.mps.ide.migration.check.MissingMigrationProblem;
 import java.util.Collections;
 import jetbrains.mps.lang.migration.runtime.base.RefactoringScriptReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.project.AbstractModule;
 
 @GeneratedClass(node = "a5b1c28d-abeb-49a6-a58c-559039616d64/r:49062720-8530-4489-916a-fdd3a02a7b82(jetbrains.mps.migration.component/jetbrains.mps.ide.migration.wizard)/2620437876316539590", model = "a5b1c28d-abeb-49a6-a58c-559039616d64/r:49062720-8530-4489-916a-fdd3a02a7b82(jetbrains.mps.migration.component/jetbrains.mps.ide.migration.wizard)")
 public class MigrationsMissingError extends MigrationError {
@@ -74,7 +74,7 @@ public class MigrationsMissingError extends MigrationError {
         }).toListSequence();
         return (IssueKindReportItem) new MissingMigrationProblem.MissingRefactoringLogProblem(it, Collections.min(ListSequence.fromList(languageUsages).select(new ISelector<SModule, Integer>() {
           public Integer select(SModule module) {
-            return ((AbstractModule) module).getDependencyVersion(it.getModule(module.getRepository()));
+            return ((AbstractModule2) module).getDependencyVersion(it.getModule(module.getRepository()));
           }
         }).toListSequence()));
       }

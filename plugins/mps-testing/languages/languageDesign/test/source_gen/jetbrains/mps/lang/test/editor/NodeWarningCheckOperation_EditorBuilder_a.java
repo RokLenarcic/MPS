@@ -29,7 +29,7 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic
 import java.util.List;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Set;
 import jetbrains.mps.findUsages.FindUsagesManager;
@@ -169,7 +169,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
 
       public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
         SAbstractConcept concept = CONCEPTS.WarningStatement$15;
-        AbstractModule module = ((AbstractModule) SNodeOperations.getModel(node).getModule());
+        AbstractModule2 module = ((AbstractModule2) SNodeOperations.getModel(node).getModule());
         Set<SNode> warningInstances = FindUsagesManager.getInstance().findInstances(module.getScope(), Collections.singleton(concept), true, new EmptyProgressMonitor());
         return SetSequence.fromSet(warningInstances).toListSequence().select(new ISelector<SNode, SNode>() {
           public SNode select(SNode it) {

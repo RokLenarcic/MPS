@@ -40,7 +40,7 @@ import java.util.function.Function;
 public abstract class Project implements MPSModuleOwner, IProject {
   private final String myName;
   private final ProjectScope myScope = new ProjectScope();
-  private ProjectRepository myRepository;
+  private ProjectRepository222 myRepository;
 
   private boolean myDisposed;
 
@@ -56,14 +56,14 @@ public abstract class Project implements MPSModuleOwner, IProject {
    */
   @Deprecated
   @ToRemove(version = 2018.3)
-  protected Project(String name, @NotNull Function<Project, ProjectRepository> repoFactory) {
+  protected Project(String name, @NotNull Function<Project, ProjectRepository222> repoFactory) {
     myName = name;
     myRepository = repoFactory.apply(this);
   }
 
   // not sure I need exactly ProjectRepository, not e.g SRepositoryExt or plain SRepository
   // just don't want to deal with exact type of myRepository field right now
-  protected final void initRepository(@NotNull ProjectRepository repository) {
+  protected final void initRepository(@NotNull ProjectRepository222 repository) {
     myRepository = repository;
   }
 

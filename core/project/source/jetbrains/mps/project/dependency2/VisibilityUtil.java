@@ -13,9 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.project.dependency;
+package jetbrains.mps.project.dependency2;
 
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 import jetbrains.mps.scope.VisibleDepsSearchScope;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -30,7 +30,7 @@ public final class VisibilityUtil {
 
   private VisibilityUtil(SModule from) {
     // in fact, AM.getScope does exactly new VDSS(), but doesn't hurt to assume it may change in future
-    myScope = from instanceof AbstractModule ? ((AbstractModule) from).getScope() : new VisibleDepsSearchScope(from.getRepository(), from);
+    myScope = from instanceof AbstractModule2 ? ((AbstractModule2) from).getScope() : new VisibleDepsSearchScope(from.getRepository(), from);
   }
 
   public static VisibilityUtil forModel(@NotNull SModel from) {
@@ -61,13 +61,13 @@ public final class VisibilityUtil {
 
   public static boolean isVisible(SModule from, SModule what) {
     // FIXME module.getScope() might get expensive, refactor this class to reuse scope instance once obtained
-    return ((AbstractModule) from).getScope().resolve(what.getModuleReference()) != null;
+    return ((AbstractModule2) from).getScope().resolve(what.getModuleReference()) != null;
   }
 
   public static boolean isVisible(SModule from, SModel what) {
     SModule module = what.getModule();
     if (module == null) return false;
-    return ((AbstractModule) from).getScope().resolve(what.getReference()) != null;
+    return ((AbstractModule2) from).getScope().resolve(what.getReference()) != null;
   }
 
   public static boolean isVisible(SModel from, SModel what) {

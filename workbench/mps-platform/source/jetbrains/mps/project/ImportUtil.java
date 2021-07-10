@@ -33,7 +33,7 @@ import java.util.HashSet;
 public class ImportUtil {
   public static void addModelDepsByNode(SRepository repo, SModel model, SNode node, boolean addModuleImports) {
     final SModelInternal modelInternal = (SModelInternal) model;
-    final AbstractModule module = ((AbstractModule) model.getModule());
+    final AbstractModule2 module = ((AbstractModule2) model.getModule());
     final Collection<SLanguage> importedLanguages = modelInternal.importedLanguageIds();
     ModelDependencyScanner scan = new ModelDependencyScanner().crossModelReferences(true).usedLanguages(true);
     scan.walk(SNodeOperations.getNodeDescendants(node, null, true, new SAbstractConcept[]{}));
@@ -54,7 +54,7 @@ public class ImportUtil {
     }
   }
 
-  private static void addModuleImport(SRepository repo, AbstractModule module, SModelReference ref) {
+  private static void addModuleImport(SRepository repo, AbstractModule2 module, SModelReference ref) {
     SModuleReference moduleRef;
     if (ref.getModuleReference() != null) {
       moduleRef = ref.getModuleReference();

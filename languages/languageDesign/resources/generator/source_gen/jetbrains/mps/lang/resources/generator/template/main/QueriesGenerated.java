@@ -80,11 +80,11 @@ public class QueriesGenerated extends QueryProviderBase {
     return (String) Icon__BehaviorDescriptor.getResourceId_id2p1v3tOadt0.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.icon$hI2G));
   }
   public static Object propertyMacro_GetValue_6_0(final PropertyMacroContext _context) {
-    long msb = MetaIdByDeclaration.getConceptId(_context.getNode()).getLanguageId().getIdValue().getMostSignificantBits();
+    long msb = MetaIdByDeclaration.getConceptId(_context.getNode()).getLanguageId().getValll().getMostSignificantBits();
     return "0x" + Long.toHexString(msb) + "L";
   }
   public static Object propertyMacro_GetValue_6_1(final PropertyMacroContext _context) {
-    long lsb = MetaIdByDeclaration.getConceptId(_context.getNode()).getLanguageId().getIdValue().getLeastSignificantBits();
+    long lsb = MetaIdByDeclaration.getConceptId(_context.getNode()).getLanguageId().getValll().getLeastSignificantBits();
     return "0x" + Long.toHexString(lsb) + "L";
   }
   public static Object propertyMacro_GetValue_6_2(final PropertyMacroContext _context) {
@@ -95,11 +95,11 @@ public class QueriesGenerated extends QueryProviderBase {
     return NameUtil.nodeFQName(_context.getNode());
   }
   public static Object propertyMacro_GetValue_6_4(final PropertyMacroContext _context) {
-    long msb = MetaIdByDeclaration.getConceptId(_context.getNode()).getLanguageId().getIdValue().getMostSignificantBits();
+    long msb = MetaIdByDeclaration.getConceptId(_context.getNode()).getLanguageId().getValll().getMostSignificantBits();
     return "0x" + Long.toHexString(msb) + "L";
   }
   public static Object propertyMacro_GetValue_6_5(final PropertyMacroContext _context) {
-    long lsb = MetaIdByDeclaration.getConceptId(_context.getNode()).getLanguageId().getIdValue().getLeastSignificantBits();
+    long lsb = MetaIdByDeclaration.getConceptId(_context.getNode()).getLanguageId().getValll().getLeastSignificantBits();
     return "0x" + Long.toHexString(lsb) + "L";
   }
   public static Object propertyMacro_GetValue_6_6(final PropertyMacroContext _context) {

@@ -9,14 +9,14 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 import java.util.Objects;
-import jetbrains.mps.project.dependency.VisibilityUtil;
+import jetbrains.mps.project.dependency2.VisibilityUtil;
 import java.util.Set;
 import jetbrains.mps.errors.item.FlavouredItem;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.errors.item.NodeFlavouredItem;
 import jetbrains.mps.errors.item.NodeFeatureFlavouredItem;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModel;
 
@@ -59,7 +59,7 @@ public class ModuleImportQuickFix implements EditorQuickFix {
   }
   @Override
   public void execute(SRepository repository) {
-    ((AbstractModule) myReference.getSourceNode().getModel().getModule()).addDependency(targetModuleRef, false);
+    ((AbstractModule2) myReference.getSourceNode().getModel().getModule()).addDependency(targetModuleRef, false);
   }
   private static SModule check_pyx31o_a0b0g(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {

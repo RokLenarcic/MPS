@@ -29,7 +29,7 @@ import com.intellij.openapi.util.Pair;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.project.SolutionIdea;
-import jetbrains.mps.project.dependency.VisibilityUtil;
+import jetbrains.mps.project.dependency2.VisibilityUtil;
 import jetbrains.mps.workbench.action.BaseAction;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;

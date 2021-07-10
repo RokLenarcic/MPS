@@ -9,7 +9,7 @@ import com.intellij.ide.plugins.IdeaPluginDescriptor;
 import com.intellij.ide.plugins.PluginManager;
 import com.intellij.openapi.extensions.PluginId;
 import java.io.File;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 import java.io.IOException;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -31,7 +31,7 @@ public class CheckPluginPresent extends MigrationScriptBase {
     try {
       IdeaPluginDescriptor pd = PluginManager.getPlugin(PluginId.getId("jetbrains.mps.ide.httpsupport"));
       if (pd != null && pd.isEnabled()) {
-        new File(((AbstractModule) m).getModuleSourceDir().getParent().getParent().getParent().getPath(), "result.txt").createNewFile();
+        new File(((AbstractModule2) m).getModuleSourceDir().getParent().getParent().getParent().getPath(), "result.txt").createNewFile();
       }
     } catch (IOException e) {
     }

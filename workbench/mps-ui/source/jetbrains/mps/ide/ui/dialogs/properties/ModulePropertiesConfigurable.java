@@ -88,7 +88,7 @@ import jetbrains.mps.ide.ui.finders.LanguageUsagesFinder;
 import jetbrains.mps.ide.ui.finders.ModelUsagesFinder;
 import jetbrains.mps.ide.ui.finders.ModuleUsagesFinder;
 import jetbrains.mps.lang.migration.runtime.base.VersionFixer;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule2;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleInstanceCondition;
@@ -186,7 +186,7 @@ import java.util.stream.StreamSupport;
 
 public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
   private final ModuleDescriptor myModuleDescriptor;
-  private AbstractModule myModule;
+  private AbstractModule2 myModule;
   /*
    * Generally module's repository would be the same as the project's.
    * However, one of possible repository story evolution scenario suggests deployed modules could
@@ -207,7 +207,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     //     For scenario when module comes not from the project's repo, use of module.getRepository looks odd as we lock project repo
     //     to get data of a module from a different repository (although one can pretend that locking project repo locks all dependency repositories as well).
     myModuleRepository = module.getRepository();
-    myModule = (AbstractModule) module;
+    myModule = (AbstractModule2) module;
     myModuleDescriptor = myModule.getModuleDescriptor();
     myFacetTabsPersistence = new FacetTabsPersistence(project).initFromEP();
 
@@ -268,7 +268,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     // FIXME why on Earth do we set module descriptor to a module?! Is there better way to tell module to refresh its settings????
     //TODO: remove when generator will be separated from language
     if (myModule instanceof Generator) {
-      myModule = (AbstractModule) myModuleDescriptor.getModuleReference().resolve(myModuleRepository);
+      myModule = (AbstractModule2) myModuleDescriptor.getModuleReference().resolve(myModuleRepository);
     }
     myModule.save();
   }

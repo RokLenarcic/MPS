@@ -63,7 +63,7 @@ public class MPSProject extends ProjectBase implements FileBasedProject, Project
     final MPSModuleRepository extRepo = mpsCore.getPlatform().findComponent(MPSModuleRepository.class);
     final SRepositoryRegistry registry = mpsCore.getPlatform().findComponent(SRepositoryRegistry.class);
     final ModelAccess projectMA = ((WorkbenchModelAccess) ApplicationManager.getApplication().getComponent(ModelAccess.class)).createForProject(MPSProject.this);
-    final ProjectRepository repo = new ProjectRepository(this, extRepo, registry, projectMA);
+    final ProjectRepository222 repo = new ProjectRepository222(this, extRepo, registry, projectMA);
     repo.init();
     initRepository(repo);
   }
