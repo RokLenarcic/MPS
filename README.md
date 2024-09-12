@@ -60,3 +60,5 @@ For *MacOS* users it is required to use the JetBrains JDK (https://bintray.com/j
 ----------------------
 _Develop with pleasure!
 JetBrains MPS Team_
+Trigger delta
+Trigger delta
